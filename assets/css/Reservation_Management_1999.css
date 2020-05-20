@@ -1,0 +1,19 @@
+#push {
+    width: 60px;
+    height: 30px;
+    float: left;
+    height: 100%;
+    background: red;
+    z-index: 99;
+    visibility: hidden;
+    margin-right: 20px;
+}
+
+#space_around {
+    /* padding-left: 102px; */
+    WIDTH: 100%;
+    MARGIN: AUTO;
+}
+header div {
+    display: flex;
+}

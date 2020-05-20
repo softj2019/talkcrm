@@ -1,0 +1,898 @@
+a{
+text-decoration:none;
+}
+
+body {
+    line-height: 1;
+    /* min-height: 100vh; */
+
+
+}
+
+header {
+    width: 100%;
+    float: right;
+    height: 80px;
+    background: #EDEFF3;
+}
+/* header div {
+    display: flex;
+    padding-left: 0px;
+} */
+.dropdown {
+    position: absolute;
+    top: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    padding-left: 11px;
+    text-align: left;
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    background: #FFFFFF;
+}
+
+dl#downdrop{
+
+display:none;
+}
+
+#kCalendar #header span:nth-child(1){
+float:left;
+}
+
+
+#kCalendar #header span:nth-child(3){
+float:right;
+}
+
+#crm_new{
+    WIDTH: 90%;
+    margin: auto;
+    position: relative;
+    top: -50PX;
+}
+
+
+#crm_new li:nth-child(1){
+float:left;
+border:1px solid #384253;
+font-size:14px;
+  font-family: 'Noto Sans KR', sans-serif;
+  width:80px;
+  height:40px;
+  line-height:40px;
+  text-align:center;
+}
+#crm_new li:nth-child(2){
+float:right;
+width:40px;
+height:40px;
+background-color:#F0F0F0;
+border:1px solid #CCCCCC;
+background-image:url('../img/backspace.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+
+.tab_area{
+  width:100%;
+  margin:0 auto;
+}
+.tab{
+height:40px;
+}
+.tab li {float:left;width:33.33%;}
+.tab li a{    display: block;
+    /* padding: 0 20px; */
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 40px;
+    background-color: #D9D9D9;
+    text-decoration: none;
+    text-align: center;
+	width:100%;
+    color: #333333;
+    font-size: 14px;
+	border-right: 2px solid white;
+}
+li#t a{
+border-right: none!Important;
+}
+
+#border{
+display: block;
+    border: 1px solid #CCCCCC;
+    height: 400px;
+    padding: 10px;
+}
+
+.panel{
+    height: 410px;
+	line-height:1.5;
+
+    width: 90%;
+   font-size:14px;
+   color:#333333;
+    margin: auto;
+	text-decoration:none!important;
+	  font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 10px;
+	margin-bottom: 20px;
+
+  }
+
+
+dl.dropdown img{
+position: absolute;
+    right: 20px;
+    top: 16px;
+}
+
+.dropdown dd,
+.dropdown dt {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dropdown ul {
+    margin: -1px 0 0 0;
+}
+
+.dropdown dd {
+    position: relative;
+}
+
+.dropdown a,
+.dropdown a:visited {
+    color: #666666;
+    text-decoration: none;
+    outline: none;
+    font-size: 12px;
+}
+.tab1{
+border-top:2px solid #2BC8AD;
+background:white;
+}
+
+.dropdown dt a {
+
+    display: block;
+    /* padding: 8px 20px 5px 10px; */
+    min-height: 25px;
+    line-height: 24px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    border: 0;
+    width: 100%;
+}
+
+.dropdown dt a span,
+.multiSel span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 3px 2px 0;
+    font-size: 14px;
+}
+
+.dropdown dd ul {
+ background-color: #F8F8F8;
+    border: 0;
+    color: #333333;
+    display: none;
+    left: -11px;
+	z-index:99;
+    font-size: 14px;
+    /* padding: 2px 15px 2px 5px; */
+    position: absolute;
+    top: 2px;
+    width: 211px;
+    list-style: none;
+    height: 250px;
+    overflow: auto;
+}
+
+.dropdown span.value {
+    display: none;
+}
+
+.dropdown dd ul li {
+    padding: 5px;
+    display: block;
+}
+
+.dropdown dd ul li a:hover {
+    background-color: #fff;
+}
+
+
+
+#down {
+    display: none;
+}
+
+#sidebar_open nav:nth-child(1) span:nth-child(2) {
+    cursor: pointer;
+    cursor: pointer;
+    line-height: 0.1;
+}
+
+div#sidebar ul li:nth-child(1) img {
+    cursor: pointer;
+}
+
+
+
+#sidebar_open nav span a {
+    font-size: 16px;
+    color: #CCCCCC;
+    padding-left: 32px;
+    position: relative;
+
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+span#selectBox1 img {
+    padding-left: 77px;
+    vertical-align: text-top;
+    padding-top: 7px;
+
+}
+
+a#crm_a {
+    background-image: url('/img/arrow_up.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: right;
+    position: relative;
+    top: 5px;
+}
+
+a#crm_b {
+    background-image: url('/img/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: right;
+    position: relative;
+    top: 5px;
+}
+
+span#selectBox1 {
+    width: 180px;
+    position: relative;
+    height: 40px;
+    float: left;
+    text-align: left;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../img/select\ arrow.svg) no-repeat 95% 50%;
+    background-color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 10px;
+    font-weight: 400;
+    border: 1px solid #CCCCCC;
+
+}
+
+.selected {
+    text-decoration: line-through;
+    font-weight: 700;
+    color: red
+}
+
+
+input[id="cb1"] + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #bcbcbc;
+    cursor: pointer;
+}
+
+input[id="cb1"]:checked + label {
+    background-image: url('../img/select_check.png');
+}
+
+input[id="cb1"] {
+    display: none;
+}
+
+header nav {
+
+    line-height: 40px;
+    margin-top: 20px;
+    height: 60px;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333333;
+}
+
+div#testVal p {
+    position: relative;
+}
+
+input[id="checkBox1"]:checked + label,
+input[id="checkBox2"]:checked + label,
+input[id="checkBox3"]:checked + label,
+input[id="checkBox4"]:checked + label,
+input[id="checkBox5"]:checked + label {
+    background-image: url('../img/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+div#testVal p input {
+    display: none;
+}
+
+.mutliSelect input {
+    display: none;
+}
+
+.mutliSelect label {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #CCCCCC;
+    position: relative;
+    top: 12px;
+    margin-right: 5px;
+    background-color: #FFFFFF;
+    float: left;
+}
+
+
+div#testVal input {
+    padding-right: 5px;
+}
+
+div#testVal span {
+    padding-left: 5px;
+}
+
+#calander_container {
+    width: 100%;
+    height: 940px;
+	background:#EDEFF3;
+    margin-top: 20px;
+    clear: both;
+}
+
+#save{
+background:#F0F0F0;
+    width: 90%;
+	font-size:14px;
+    margin: auto;
+	color:#666666;
+	height:30px;
+    text-align: center;
+	    font-family: 'Noto Sans KR', sans-serif;
+	line-height:30px;
+	margin-bottom:10px;
+}
+
+.calander_container_left {
+    float: left;
+    display: flex;
+
+    width: 13.4%;
+    height: 96%;
+    flex-direction: column;
+    margin-left: 96px;
+    justify-content: space-between;
+}
+
+.calander_container_left nav:nth-child(1) {
+    width: 100%;
+    height: 37%;
+
+
+}
+
+.calander_container_left nav:nth-child(2) {
+
+    width: 100%;
+
+	background:white;
+
+}
+
+
+.calander_container_right{
+    background: white;
+    width: 80%;
+    height: 902px;
+    float: left;
+    position: relative;
+    margin-left: 20px;
+
+}
+#testVal p {
+
+    clear: both;
+    padding-left: 6px;
+    text-align: left;
+}
+
+#testVal {
+    visibility: hidden;
+    height: auto;
+    background: #F8F8F8;
+    position: absolute;
+    display: unset !important;
+    border: 1px solid gray;
+    background: white;
+}
+
+#divLayer1 {
+    width: 200px;
+    display: block !important;
+    position: relative;
+    height: 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 1px;
+    font-weight: 400;
+
+
+}
+
+header nav:nth-child(1) {
+    /* width: 268px !important; */
+    margin-right: 36px;
+}
+
+header nav:nth-child(2) {
+    width: 350px !important;
+}
+
+header div nav:nth-child(3) {
+    width: 230px !important;
+    padding-left: 10px;
+}
+
+header div nav:nth-child(4) {
+    margin-left: 10px;
+    width: 190px;
+    cursor: pointer;
+
+
+
+}
+
+header div nav:nth-child(5) {
+    margin-left: 10px;
+    text-align: center;
+}
+
+header div nav:nth-child(5) span {}
+
+
+header div nav:nth-child(5) select {
+    width: 180px;
+    height: 40px;
+    float: left;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../img/select arrow.svg') no-repeat 95% 50%;
+    background-color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 10px;
+    font-weight: 400;
+    border: 1px solid #CCCCCC;
+
+}
+
+header div nav:nth-child(2) select {
+    width: 110px;
+    height: 40px;
+    float: left;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../img/select arrow.svg') no-repeat 95% 50%;
+    background-color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    padding-left: 10px;
+    font-weight: 400;
+    border: 1px solid #CCCCCC;
+}
+
+#sidebar_open nav:nth-child(1) {
+    background-color: #47515C;
+    width: 100%;
+    line-height: normal !important;
+    padding-top: 31px;
+    /* height: 50px !important; */
+    height: 80px;
+    margin-top: auto !important;
+}
+
+#sidebar_open nav {
+
+    display: flex;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 22px;
+}
+
+
+#sidebar_open nav span:nth-child(1) {
+    padding-left: 20px;
+
+
+}
+
+.click span:nth-child(2) {
+    background: #5A667B;
+
+    padding-left: 31px;
+    width: 100%;
+    font-size: 16px;
+    color: #CCCCCC;
+    display: flex;
+    /* height: 255px; */
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#sidebar_open nav span:nth-child(2) {
+    padding-left: 31px;
+    width: 100%;
+    height: 100%;
+    line-height: 3;
+    font-size: 16px;
+    color: #CCCCCC;
+
+}
+#sidebar_open nav .logo-right {
+    padding-left: 70px !important;
+
+}
+#sidebar_open nav span {
+    display: block;
+    width: 89%;
+    position: relative;
+}
+
+header div nav:nth-child(4) span:nth-child(2) img {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+}
+
+
+header div nav:nth-child(4) span:nth-child(2) {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 30PX;
+    position: relative;
+    padding-left: 3;
+    width: 100px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    float: left;
+    color: #2BC8AD;
+    border: 1px solid #2BC8AD;
+    display: block;
+    text-align: left;
+    background: white;
+}
+
+#sidebar_open ul li {}
+
+#sidebar_open ul li:nth-child(1) {
+    height: 80px !important;
+    line-height: 80px;
+    width: 100%;
+    font-weight: 900;
+    color: white;
+    font-size: 20px;
+    background-color: #47515C !important;
+}
+
+#sidebar_open ul li {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    color: #CCCCCC;
+    font-weight: 400;
+
+}
+
+#sidebar_open nav:nth-child(1) span img {
+    top: auto !important;
+}
+
+#sidebar_open nav span img {
+    vertical-align: text-top;
+}
+
+#sidebar_open ul li span {
+    display: block;
+
+}
+
+#sidebar_open ul {}
+
+#sidebar_open {
+    width: 230px;
+    height: 50px;
+    overflow: hidden;
+    background: #323D49;
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    height: 100%;
+}
+
+
+header div nav:nth-child(4) span:nth-child(1) {
+    width: 80px;
+    height: 40px;
+    box-sizing: border-box;
+    float: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    border: 1px solid #CCCCCC;
+    font-size: 14px;
+    display: block;
+    background: white;
+    text-align: center;
+    color: #666666;
+
+}
+
+header div nav:nth-child(6) ul:nth-child(1) {
+    width: 184px;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    justify-content: space-around;
+}
+
+.bar {
+    color: #CCCCCC;
+    height: 15px;
+    width: 1px;
+    line-height: 15px;
+    position: relative;
+    top: 8px;
+}
+
+header div nav:nth-child(6) ul:nth-child(2) {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    float: right;
+}
+
+header div nav:nth-child(6) ul:nth-child(1) li {
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    width: 50%;
+    padding-left: 25px;
+    color: #666666;
+}
+
+header div nav:nth-child(6) {
+    margin-left: 114px;
+    width: 400px;
+}
+
+nav.click {
+    display: block !important;
+    overflow: hidden;
+}
+
+.date-p {
+    text-align: center;
+    word-break: keep-all;
+    font-size: 20px;
+    color: #CCCCCC;
+    width: 88%;
+    position: absolute;
+    bottom: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+#sidebar ul {
+    height: 60%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#sidebar ul li img {
+    vertical-align: middle;
+}
+
+img.arrow_down {
+    cursor: pointer;
+
+}
+
+.arrow_down,
+.arrow_up {
+    vertical-align: middle !important;
+    position: absolute;
+    right: 0;
+    top: 27px;
+
+}
+
+.arrow_up {
+    display: none;
+    cursor: pointer;
+}
+
+#sidebar ul li {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+#height_defalut{
+display:none;
+}
+
+#defalut_blue{
+display:none;
+}
+
+header div nav:nth-child(6) ul:nth-child(1) li img {
+    position: absolute;
+    top: 9px;
+    left: 0;
+}
+
+
+
+header div nav:nth-child(2) form,
+header div nav:nth-child(3) form {
+    position: relative;
+}
+
+header div nav:nth-child(2) form input[type="submit"] {}
+
+header div nav:nth-child(3) form input[type="text"] {
+    width: 100% !important;
+}
+
+header div nav:nth-child(2) form input[type="text"],
+header div nav:nth-child(3) form input[type="text"] {
+    width: 67%;
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    padding-left: 10px;
+    font-weight: 400;
+    color: #CCCCCC;
+    float: left;
+    box-sizing: border-box;
+    display: block;
+
+}
+
+
+header div nav:nth-child(2) form input[type="submit"],
+header div nav:nth-child(3) form input[type="submit"] {
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    float: right;
+    border: none;
+    box-sizing: border-box;
+    background: #384253;
+    color: white;
+}
+
+
+header div nav:nth-child(2) form input::placeholder {
+    color: #CCCCCC;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+#sidebar {
+    position: absolute;
+    height: 100%;
+    width: 70px;
+    top: 0;
+    background: #323D49;
+    left: 0;
+    font-size: 12px;
+    font-family: 14px;
+}
+
+
+
+.tabs {
+  border-right: 1px solid #ccc;
+}
+.tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tabs input[type=radio] {
+  display: none;
+}
+
+.tabs label:hover {
+  background-color: white;
+}
+.tabs [id^="tab"]:checked + label {
+  border-bottom-color: white;
+  background: white;
+  color: #333;
+}
+
+.tab-content {
+  display: none;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  background-color: white;
+}
+
+#tab1:checked ~ #tab-content1,
+#tab2:checked ~ #tab-content2,
+#tab3:checked ~ #tab-content3 {
+  display: block;
+}
+
+.tabs label {
+  display: block;
+  float: left;
+  width: 33.33333%;
+  height:40px;
+  border: 1px solid #ccc;
+  border-right: none;
+  background-color:#D9D9D9;
+  text-align: center;
+  cursor: pointer;
+  width:100%;
+  -webkit-transition: background-color 150ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
+}
+.tabs label:hover {
+  background-color: white;
+}
+.tabs [id^="tab"]:checked + label {
+ border-top:2px solid #2BC8AD;
+  color: #333;
+}
+.other-content {
+  color: white;
+}
+
