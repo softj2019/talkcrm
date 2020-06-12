@@ -72,6 +72,7 @@
     justify-content: center;
     align-items: center;
     overflow: auto;
+    position:relative;/*2020.05.20 추가*/
 }
 .mainimgwrap img{
     max-width:100%;
@@ -212,9 +213,10 @@
 
 .tool-detail .colorview{
     height:10px;
-    background:red;
+    background:#111111;/*2020.05.20 수정*/
     margin-top:5px;
     position:relative;
+    cursor: pointer;/*2020.05.20 추가*/
 }
 .colorpop.on{
     display:block;
@@ -263,6 +265,7 @@
 .colorpop .colorbox:hover{
     border:1px solid #fff;
 }
+/*2020.05.20 수정, 추가 ~ 287
 .colorbox.red{
     background:#f46161;
 }
@@ -272,6 +275,16 @@
 .colorbox.mint{
     background:#61c9c5;
 }
+*/
+.colorbox:nth-of-type(1){background-color:#3B88FE}
+.colorbox:nth-of-type(2){background-color:#BE37F5}
+.colorbox:nth-of-type(3){background-color:#E53B7A}
+.colorbox:nth-of-type(4){background-color:#FE6150}
+.colorbox:nth-of-type(5){background-color:#FF8546}
+.colorbox:nth-of-type(6){background-color:#FFB43F}
+.colorbox:nth-of-type(7){background-color:#FECB3C}
+.colorbox:nth-of-type(8){background-color:#FFF768}
+.colorbox:nth-of-type(9){background-color:#111111}
 #penchart3 .iv-imgwrap{
     max-width: none!important;
     max-height:700px;

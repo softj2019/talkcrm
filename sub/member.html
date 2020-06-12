@@ -15,6 +15,8 @@
     <link href="../assets/css/reset.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/common.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css">
+    <!-- 2020.05.20 추가 뷰어-->
+    <link href="../assets/css/jquery-cropper.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
         window.addEventListener("load", function(){
         setTimeout(loaded, 100);
@@ -116,15 +118,18 @@
                         <div class="head-tit">
                             <h1>고객관리</h1>
                         </div>
-                        <div class="form-box clearfix">
+                        <div class="form-box clearfix"><!--05.25 form-box 전체 수정-->
                             <form>
-                                <select>
-                                    <option>고객명</option>
-                                    <option>전화번호</option>
-                                    <option>주민번호</option>
-                                    <option>고객번호</option>
-                                </select>
-                                <input type="text" placeholder="고객검색" class="custSrc-btn">
+                                <div class="select-mem">
+                                    <a href="#">고객명</a>
+                                    <ul>
+                                        <li>고객명</li>
+                                        <li>전화번호</li>
+                                        <li>주민번호</li>
+                                        <li>고객번호</li>
+                                    </ul>
+                                </div>
+                                <input type="text" placeholder="고객검색" class="custSrc-btn ">
                                 <input type="submit" value="검색" class="">
                             </form>
                         </div>
@@ -135,7 +140,6 @@
                             <button type="button" class="call-btn"><img src="../assets/img/icon_P_hone.svg" alt=""><span>전화걸기</span></button>
                         </div>
                         <div class="btn2 clearfix">
-                            <!-- 2020.05.19 클래스 borad-b 추가 -->
                             <!-- 2020.05.19 클래스 borad-b -> board-b수정 -->
                             <button type="button" class="customerl-btn board-b">
                                 <img src="../assets/img/Profile_green.svg">
@@ -12758,7 +12762,9 @@
             </div>
         </div>
     </div>
-    <script src="../assets/js/common.js"></script>
+<!--    2020.05.25 삭제 <script src="../assets/js/common.js"></script>-->
+<!--    2020.05.20 MaterialDesign-Webfont 추가-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css" rel="stylesheet">
     <link href="../assets/css/penchart.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../assets/plugins/jquery-drawr/jquery.drawr.combined.js?v=2"></script>
     <div class="modal " id="penchart1">
@@ -12881,7 +12887,7 @@
             </div>
         </div>
     </div>
-    <div class="modal" id="penchart2">
+    <div class="modal " id="penchart2">
         <div class="modal-bg"></div>
         <div class="modalContent">
             <header class="modalHd">
@@ -12962,7 +12968,7 @@
                                 </tbody>
                             </table>
                             <div class="editwrap">
-                                <div class="toolwrap mb20 drawr-toolbox drawr-toolbox-brush" style="z-index: 999">
+                                <div class="toolwrap mb20" style="z-index: 999"><!--2020.05.25 Class 삭제-->
                                     <button class="tool-pen">
                                         <svg id="icon_grey_pen" width="15" height="15" viewbox="0 0 15 15">
                                             <path d="M7.644,2.885,2.308,8.365,0,15l6.635-2.163L11.971,7.5Zm6.779-.433L12.548.577a1.749,1.749,0,0,0-2.6,0L8.365,2.163l4.327,4.471L14.423,4.9A1.828,1.828,0,0,0,15,3.606,1.781,1.781,0,0,0,14.423,2.452Z" fill="#ccc"/>
@@ -13033,31 +13039,15 @@
                                                 <div class="colorbox red"></div>
                                             </div>
                                         </div>
-                                        <input type="text" value="100%">
+                                        <input type="text" value="100" id="opacity-input">
                                     </div>
-                                    <div class="flexwrap">
-                                        <span>채우기</span>
-                                        <div class="colorview">
-                                            <div class="colorpop on">
-                                                <div class="colorbox red"></div>
-                                                <div class="colorbox blue"></div>
-                                                <div class="colorbox mint"></div>
-                                                <div class="colorbox blue"></div>
-                                                <div class="colorbox red"></div>
-                                                <div class="colorbox blue"></div>
-                                                <div class="colorbox mint"></div>
-                                                <div class="colorbox blue"></div>
-                                                <div class="colorbox red"></div>
-                                            </div>
-                                        </div>
-                                        <input type="text" value="70%">
-                                    </div>
+                                    <!--2020.05.20 채우기 삭제-->
                                 </div>
                             </div>
                         </div>
                         <div class="mt10">
                             <button class="btn-white w100 mb10">삭제</button>
-                            <button class="btn-grey w100">저장</button>
+                            <button class="btn-grey w100" id="save-btn">저장</button>
                         </div>
                     </div>
                 </div>
@@ -13074,45 +13064,46 @@
             <div class="modalBody">
                 <div class="clearfix">
                    <div class="iv iv-hd">
-                                <p><span class="iv-tit">제목</span>수술기획서</p>
-                                <p>
-                                    <span class="iv-tit">고객명</span>오리진
-                                    <span class="iv-tit">고객번호</span>131313133
-                                    <span class="iv-tit">일자</span>2020-02-19-수 12:35:27
-                                </p>
-                            </div>
-                            <div class="iv iv-imgwrap">
-                                <img src="../assets/img/imgview-sam.png" alt="">
-                            </div>
-                            <div class="iv iv-edit">
-                                <div class="left">
-                                    <button type="button" class="glass-pl"></button>
-                                    <button type="button" class="glass-mn"></button>
-                                    <button type="button" class="view100"></button>
-                                    <button type="button" class="rotate90"></button>
-                                    <button type="button" class="rotate180"></button>
-                                    <button type="button" class="flip-hor"></button>
-                                    <button type="button" class="flip-ver"></button>
-                                </div>
-                                <div class="right">
-                                    <button type="button" class="delete"></button>
-                                    <button type="button" class="download"></button>
-                                    <div class="pagebox">
-                                           <button class="Larrow"></button>
-                                           <p class="pagenumber">
-                                               <span>2</span>
-                                               /
-                                               <span>5</span>
-                                           </p>
-                                           <button class="Rarrow"></button>
-                                   </div>
-                                </div>
-                            </div>
+                        <p><span class="iv-tit">제목</span>수술기획서</p>
+                        <p>
+                            <span class="iv-tit">고객명</span>오리진
+                            <span class="iv-tit">고객번호</span>131313133
+                            <span class="iv-tit">일자</span>2020-02-19-수 12:35:27
+                        </p>
+                    </div>
+                    <div class="iv iv-imgwrap">
+                        <img src="../assets/img/imgview-sam.png" alt="" id="image" style="display:none;"><!--2020.05.20 id, style 추가-->
+                    </div>
+                    <div class="iv iv-edit">
+                        <div class="left">
+                            <button type="button" class="glass-pl"></button>
+                            <button type="button" class="glass-mn"></button>
+                            <button type="button" class="view100"></button>
+                            <button type="button" class="rotate90"></button>
+                            <button type="button" class="rotate180"></button>
+                            <button type="button" class="flip-hor"></button>
+                            <button type="button" class="flip-ver"></button>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="delete"></button>
+                            <button type="button" class="download"></button>
+                            <div class="pagebox">
+                                   <button class="Larrow"></button>
+                                   <p class="pagenumber">
+                                       <span>2</span>
+                                       /
+                                       <span>5</span>
+                                   </p>
+                                   <button class="Rarrow"></button>
+                           </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="../assets/js/common.js"></script>
+<!--    2020.05.19 스크립트 수정 ~13230 -->
     <script>
         $(function() { 
                 $.datepicker.setDefaults({
@@ -13173,7 +13164,7 @@
             $(this).addClass('active');
         });
         $('.tool-pen').on('click', function(){
-            $('.type-brush:nth-of-type(2)').trigger('touchstart');
+            $('.type-brush:nth-of-type(10)').trigger('touchstart');
         });
         $('.tool-brush').on('click', function(){
             $('.type-brush:nth-of-type(4)').trigger('touchstart');
@@ -13191,26 +13182,30 @@
             $('.type-brush:nth-of-type(5)').trigger('touchstart');
         });
         $('.backbtn').on('click', function(){
-            $('.drawr-toolbox button:nth-child(15)').trigger('touchstart');
+            $('.drawr-toolbox button:nth-child(16)').trigger('touchstart');/*2020.05.20 수정*/
         });
         //이미지저장
         function canvas_export() {
             $(".demo-canvas").drawr("export");
         }
-        //이미지불러오기
-        function canvas_load() {
-            $(".demo-canvas").drawr("load",'../assets/img/dummy_img_L.png');
-        }
+//05.26 삭제        //이미지불러오기
+//        function canvas_load() {
+//            $(".demo-canvas").drawr("load",'../assets/img/dummy_img_L.png');
+//        }
         //툴바 감추기
         function canvas_load() {
             $(".demo-canvas").drawr("destory");
         }
+        //배경이미지교체 05.26
+        $('canvas.demo-canvas.drawr-test1.active-drawr').css("background","url(../assets/img/dummy-img.png) center center no-repeat");
+        
         //선두께 슬라이드
         $('#linebar').slider({
             range:'min',
             min:2,
             max:100,
             value:2,
+            step:1,
             orientation:'horizontal',
             animate:'fast',
             change:function(e, ui){
@@ -13220,12 +13215,30 @@
                 $('#lineval').val($(this).slider('option','value'));
             }
         });
-        $(".modalClose").click(function(){
-            $(this).parents(".modal").removeClass('on');
+        //선두께 연동 2020.05.25 추가
+        $(document).on("mousedown", $('.ui-slider-handle'), function(){
+            $('.drawr-toolbox-settings').find(".slider-size").val($('#lineval').val()).trigger("input");
         });
-        $('.penchartAdd').on("click",function () {
-            $('#penchart2').addClass("on");
-        })
+        //투명도 연동 2020.05.26 추가
+        $(document).on("mousedown", $('#opacity-input'), function(){
+            $('.drawr-toolbox-settings').find(".slider-alpha").val($('#opacity-input').val()).trigger("input");
+        });
+        //색상선택 2020.05.20 추가
+        $('.colorview').click(function(){
+            $(this).find('.colorpop').toggleClass('on');
+        });
+        $(document).ready(function(){
+            $('.colorpop .colorbox').on('click', function(){
+                var i = $(this).index() + 1;
+                var color = $(this).css('background-color');
+                $('.drawr-toolbox-settings button:nth-of-type(' +i+ ')').trigger('touchstart');
+                $('.colorview').css('background-color', color);
+            });
+        });
     </script>
+<!--  2020.05.20 스크립트추가-->
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-cropper-master/dist/jquery-cropper.js"></script>
+    <script type="text/javascript" src="../assets/js/viewer.js"></script>
 </body>
 </html>

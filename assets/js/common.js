@@ -570,7 +570,8 @@ $(".reser-table tbody tr td .table-M").on("mousedown", function(e){
     if( e.which == 3 ){
         //실행내용
         $('.rcpop').remove();//기존 팝업제거
-        $(this).parents('.reser-table').append('<div class="rcpop ver2"><ul><li class="bor-b-g"><a href="#" class="editpop-btn">내원확인</a></li><li><a href="#" class="reserv-btn">예약등록</a></li><li class="bor-b-g"><a href="#" class="rc-add ">예약수정</a><ul class="top-80"><li><a href="#" class="reserved-btn">예약수정</a></li><li><a href="#">예약취소</a></li><li><a href="#">예약삭제</a></li></ul></li><li><a href="#">확인콜</a><ul class="top-120"><li><a href="#">완료</a></li><li><a href="#">부재</a></li><li><a href="#">취소</a></li></ul></li><li class="bor-b-g"><a href="#">해피콜</a><ul class="top-160"><li><a href="#">완료</a></li><li><a href="#">부재</a></li><li><a href="#">취소</a></li></ul></li><li><a href="#" class="msg-btn">문자발송</a></li><li class="bor-b-g"><a href="#">고객이동</a></li><li><a href="#">예약복사</a></li><li><a href="#">예약이동</a></li></ul></div>');
+        // 05.19 8:00 수정
+        $(this).parents('.reser-table').append('<div class="rcpop ver2"><ul><li class="bor-b-g"><a href="#" class="editpop-btn">내원확인</a></li><li><a href="#" class="reserv-btn">예약등록</a></li><li class="bor-b-g"><a href="#" class="rc-add R-arr">예약수정</a><ul class="top-80"><li><a href="#" class="reserved-btn">예약수정</a></li><li><a href="#">예약취소</a></li><li><a href="#">예약삭제</a></li></ul></li><li><a href="#" class="R-arr">확인콜</a><ul class="top-120"><li><a href="#">완료</a></li><li><a href="#">부재</a></li><li><a href="#">취소</a></li></ul></li><li class="bor-b-g"><a href="#" class="R-arr">해피콜</a><ul class="top-160"><li><a href="#">완료</a></li><li><a href="#">부재</a></li><li><a href="#">취소</a></li></ul></li><li><a href="#" class="msg-btn">문자발송</a></li><li class="bor-b-g"><a href="#">고객이동</a></li><li><a href="#">예약복사</a></li><li><a href="#">예약이동</a></li></ul></div>');
           //메뉴보이기+위치
         //   
             var tp = $(this).parents('.table-in');
@@ -678,7 +679,18 @@ $('.reserv-con .left-f .tabContent textarea').focusout(function(){
         $(".reserv-con .left-f .tabContent textarea").css('height',"460px");
         txt_btn = true;
 });
-
+// 05.25 가로보기 메모버튼
+$('.r-memo .d-memo').focusin(function(){
+    $(this).next().css('display','block');
+    $(this).css('width',"calc(100% - 51px)");
+    txt_btn = false;
+});
+$('.r-memo .d-memo').focusout(function(){
+    $(this).next().css('display','none');
+    $(this).css('width',"100%");
+    txt_btn = true;
+});
+// ~
 // 설정ul
 $(function () {
     var set_on = true
@@ -693,41 +705,81 @@ $(function () {
         }
     });
 });
+// 05.25 추가 수정
 // 셀렉트박스
 $(document).ready(function () {
     $("div.select").click(function() {
         $(this).children("ul").toggle();
-        
+        $('.select > a').toggleClass('on');
     });
-    
     $("div.select > ul > li").click(function() {
-        $(this).parent().hide().parent("div.select").children("a").text($(this).text()); 
+        var str = "";
+        $("div.select > ul > li input").each(function(){
+         if($(this).is(":checked")){
+            str += $(this).next().text() + ", ";}
+        });
+        if(str.indexOf('전체') !== -1){
+            var str = str.slice(0, 4);
+        }else{
+            var str = str.slice(0, -2);
+        }
+        $("div.select").children("a").text(str); 
+    });
+    //전체선택 클릭 시 모든 체크박스 선택
+    $("div.select #sel-ck1").click(function(){
+        if($(this).is(':checked')){$('div.select input').prop('checked',true);
+        }else{
+            $('div.select input').prop('checked',false);}
+    });
+    $("div.select input").click(function(){
+        if($("div.select input:checked").length !== $("div.select input").length){
+            $("#sel-ck1").prop('checked',false);
+        }
+    });
+    $("div.select-mem").click(function() { 
+        $(this).children('a').toggleClass('on');
+    });
+    $("div.select-mem > ul > li").click(function() {
+        $(this).parents(".select-mem").children("a").text($(this).text());
+        $(this).children('a').toggleClass('on');
     });
 });
 
+
+// ~
+// 05.20 수정
+var reRight_H = $('.reright-box .tabContent .table-in').height();
+var calander_h = $('.reright-box .r-calander').outerHeight(true); 
 $('.bas-view').click(function(){
     $('.hor-view').removeClass('on');
     $('.bas-view').addClass('on');
     $('.con-left, .tab-btn, .res-f, .res-t').removeClass('on');
-
+    $('.reright-box .tabContent .table-in').height(reRight_H);
 });
 $('.hor-view').click(function(){
     $('.bas-view').removeClass('on');
     $('.hor-view').addClass('on');
     $('.con-left, .tab-btn, .res-f, .res-t').addClass('on');
+    $('.reright-box .tabContent .table-in').height(reRight_H - calander_h - 40);
 });
+// ~
+// 05.22 일자,예약 버튼수정 20.06.12 재수정
 
-// 일자,예약 버튼
 $(document).ready(function(){
     $('.tab-btn button').click(function(){
-        var gray_id = $(this).attr('data-id');
-        $('.tab-btn button').removeClass('on');
-        $('.r-reser').removeClass('on');
-        $('.r-memo').removeClass('on');
-        $(this).addClass('on');
-        $("#"+gray_id).addClass('on');
+        if($(this).hasClass('on')){
+            $('.tab-btn button, .r-reser, .r-memo').removeClass('on');
+            $('.res-t.on .fc-view-container').css('margin-top', '68px');
+        }else{
+            $('.tab-btn button, .r-reser, .r-memo').removeClass('on');
+            var gray_id = $(this).attr('data-id');
+            $(this).addClass('on');
+            $("#"+gray_id).addClass('on');
+            $('.res-t.on .fc-view-container').css('margin-top', '220px');
+        }
     });
 });
+// ~
  //day,week,month
 $(document).ready(function(){
     $('.ul-tab-box>ul>li').click(function(){
@@ -749,7 +801,18 @@ $(document).ready(function(){
         }
     });
 });
-
+// 05.25 달력클릭 추가
+$(document).ready(function(){
+    $('.reserv-con .releft-t tbody td').click(function(){
+        $('.reserv-con .releft-t tbody td span').removeClass('click-on');
+        $(this).children('span').addClass('click-on');
+    });
+    $('.r-calander tbody td').click(function(){
+        $('.r-calander tbody td').removeClass('click-on');
+        $(this).addClass('click-on');
+    });
+});
+// ~
 //모달창
 $(".reser-table tbody tr td").on("dblclick", function(){
     if($(this).hasClass('table-M')){
@@ -767,6 +830,7 @@ $(document).on('click', '.reserv-btn', function(){
 });
 $(document).on('click', '.reserved-btn', function(){
     $('#reserv-edit').addClass('on');
+    $('.rcpop').remove();//20.06.11 추가
 });
 $(document).on('click', '.memo-btn', function(){
     $('#mo-memo').addClass('on');
@@ -805,4 +869,414 @@ $(document).on('click', '.penchart1-btn', function(){
 $(document).on('click', '.chartlist>div', function(){
     $('.modal:not(#penchart2)').removeClass('on');
     $('#penchart2').addClass('on');
+});
+//05.22 중복전화번호 모달 추가
+$(document).on('click', '.dupnum-btn', function(){
+    $('#dupnum').addClass('on');
+});
+// ~
+// 05.20 리콜관리
+$(function () {
+    var scr_on = true
+    var recallS_Hei = $('.re-Src-b').height();
+    var recallC_Hei = $('.re-con-b .table-in').height();
+    $('.btn-src').click(function(){
+        if(scr_on){
+            $('.re-Src-b').addClass('on');
+            $('.re-con-b .table-in').height(recallC_Hei - recallS_Hei);
+            scr_on = false;
+        }
+        else{
+            $('.re-Src-b').removeClass('on');
+            $('.re-con-b .table-in').height(recallC_Hei);
+            scr_on = true;
+        }
+    });
+});
+$('#recall-all-ck').click(function(){
+    var chk = $(this).is(':checked');//.attr('checked');
+     if(chk) $('.re-con-b input').prop('checked',true);
+     else $('.re-con-b input').prop('checked',false);
+ });
+
+ $(".re-con-b tbody tr td").on("dblclick", function(){
+    $('#info').addClass('on');
+});
+
+// 경영관리
+//탭
+$('.tabUl li').click(function(){
+    var tab_id = $(this).attr('data-id');
+    $(this).siblings('li').removeClass('on'); 
+    $(this).closest('.op-tabwrap').siblings('.op-wrap').removeClass('on');
+    $(this).addClass('on');
+    $("#"+tab_id).addClass('on');
+});
+// 설정관리 20.05.29 추가
+$('.drug-ul button').click(function(){
+    $('.drug-ul button').removeClass('on');
+    $(this).addClass('on');
+});
+
+$(".no-btn").click(function(){
+    $(this).parents(".modal").removeClass('on');
+    $('body').css('overflow', 'auto');
+});
+$('.ms-doc li').click(function(e){
+    e.preventDefault();
+     $(this).siblings('li').children('a').removeClass('on');
+     $(this).children('a').addClass('on');
+ });
+ //20.06.08 추가
+ $('.ms-doc li .ms-T').click(function(e){
+    e.preventDefault();
+    var tab_id = $(this).attr('data-id4');
+    $('.ms-out .ms-out-tab').removeClass('on');
+    $(this).addClass('on');
+    $("#"+tab_id).addClass('on');
+ });// ~
+ //20.06.08 추가
+//  $('.ms-select').change(function(e){
+//     var tab_id = $(this).attr('data-id5');
+//     $('.ms-tabout > div').removeClass('on');
+//     $(this).addClass('on');
+//     $("#"+tab_id).addClass('on');
+//  });
+ $(".ms-select").on( "change", function() {
+    var tab_id = $(this).val();
+    $('.ms-tabout > div').removeClass('on');
+    $(this).addClass('on');
+    $("#"+tab_id).addClass('on');
+});
+ 
+ 
+ // ~
+//모달버튼
+$('button').click(function(){
+    if($(this).attr('class').indexOf('mdbtn') != -1){
+        var str = $(this).attr('class').split(' ').filter(function(n){
+           return n.includes('mdbtn'); 
+        });
+        var str2 = str.join();
+        var idname = str2.slice(0,-6);
+        $('#' + idname).addClass('on');
+    }
+});
+$('.clk-tr tr').click(function(){
+    $(this).toggleClass('on');
+});
+$('.clk-td td').click(function(){
+    $(this).toggleClass('on');
+});
+// 20.06.04 추가
+$('.color-cell td:last-child').click(function(e){
+     $('#color-M').addClass('on');
+ });
+ $('#set5-all').click(function(){
+    var chk = $(this).is(':checked');//.attr('checked');
+     if(chk) $('.sky-body input').prop('checked',true);
+     else $('.sky-body input').prop('checked',false);
+ });
+$(document).ready(function(){
+    var set6_H = $('.set6-H').height();
+    var set6_inH = $('.set-tbOut').height();
+    $('.href-Sb button').click(function(){
+        if($(this).hasClass('on')){
+            $('.href-Sb button, .set-tbOut').removeClass('on');
+            $('.table-wrap .set6-H').height(set6_H);
+        }else{
+            $('.set-tbOut').addClass('on');
+            $(this).addClass('on');
+            $('.table-wrap .set6-H').height(set6_H - set6_inH);
+        }
+    });
+    $('.com-i').sortable({
+        update: function(event, ui){
+            $(this).children().each(function(index){
+                $(this).find('td').first().html(index + 1);
+            });
+        }
+    });
+});
+//우클릭메뉴
+$(".set7-list > div").on("mousedown", function(e){
+    //우클릭 기본메뉴 제거
+    $(".set7-list > div").on("contextmenu", function() {
+      return false;
+    });
+    //if 오른쪽클릭일경우
+    if( e.which == 3 ){
+        $('.rcpop').remove();//기존 팝업제거
+        $(this).parents('.set7-list').append('<div class="rcpop"><ul><li><a href="#" class="del-btn">삭제</a></li><li><a href="#" class="move-num-btn">이동</a></li><li><a href="#" class="">수정</a></li></ul></div>');
+            //메뉴보이기+위치
+            var tp = $(this).parents('.set7-list');
+            //Get pointer position:
+            var MposX = e.pageX - tp.offset().left;
+            var MposY = e.pageY - tp.offset().top;
+            posLeft = MposX + 1 + "px";
+            posTop = MposY + 1 + "px";
+            //Display menu:
+            $('.rcpop').css({
+               "left": posLeft,
+               "top": posTop
+            }).addClass('on');
+        //수정,삭제 기능
+        var thisTR = $(this);
+        $(document).on('click', '.rcpop .del-btn', function(){
+            $(thisTR).remove();
+            $('.rcpop').remove();
+        });
+        //Prevent browser default contextmenu.
+        return false;
+    }
+});
+$('body').on('click', function(e){
+    var $tgPoint = $(e.target);
+    var $popArea = $tgPoint.parents().hasClass('rcpop');
+    if ( !$popArea ){
+        $('.rcpop').remove();
+    }
+});
+$(document).on('click', '.move-num-input', function(){
+    $('#move-num').addClass('on');
+});
+$(document).on('click', '.set7-list div div', function(){
+    $('#imgView').addClass('on');
+});
+$('.Drug-M button').click(function(){
+    $('.Drug-M button').removeClass('on');
+    $(this).addClass('on');
+});
+//업무관리 20.06.05 추가
+$(document).on('click', '.date-radio button', function(){
+    $('.date-radio button').removeClass('on');
+     $(this).addClass('on');
+ });
+ // 대시보드 20.06.08 추가
+ $("div.select-mem.YN-sel > ul > li:first-child").click(function() {
+     $(this).parents().parents("tr").removeClass('cell-g');
+ });
+ $("div.select-mem.YN-sel > ul > li:last-child").click(function() {
+     $(this).parents().parents("tr").addClass('cell-g');
+ });
+ $(document).on('click', '.move-num-btn', function(){
+     $('#move-num').addClass('on');
+ });
+ //탭
+ $('.dash-tab button').click(function(){
+     var tab_id = $(this).attr('data-id3');
+     $('.dash-tab button').removeClass('on');
+     $('.board-tab .tabbox').removeClass('on');
+     $(this).addClass('on');
+     $("#"+tab_id).addClass('on');
+ });
+// 순서변경 20.06.08 
+$(document).ready(function(){
+    $('.com-i').sortable({
+    });
+});
+// 20.06.11 추가
+$( function() {
+    $( "#datepicker" ).datepicker({
+      showOn: "button",
+      buttonImage: "../assets/img/Icon-Event-Filled.png",
+      buttonImageOnly: true
+    });
+  });
+  $('.Bgck-tr tr').click(function(){
+    $(this).toggleClass('on');
+});
+$(document).ready(function(){
+    $('.front-Tbtn button').click(function(){
+        if($(this).hasClass('on')){
+            $('.front-Tbtn button, .front-wrap2, .front-wrap3').removeClass('on');
+            $('.front-wrap1').addClass('on');
+        }else{
+            $('.front-Tbtn button,.front-wrap1, .front-wrap2, .front-wrap3').removeClass('on');
+            var gray_id = $(this).attr('front-id');
+            $(this).addClass('on');
+            $("#"+gray_id).addClass('on');
+        }
+    });
+});
+$(".in-Mdate").datepicker(); 
+
+$('.sk-position').click(function(){
+    if($('.in-modal').hasClass('on')){
+        $('.sk-position').css('overflow', 'hidden');
+    }
+});
+$(".clinic-re-btn").click(function(){
+    $("#clinic-re").addClass('on');
+});
+$(".mouse-sk1 tbody tr").on("mousedown", function(e){
+    //우클릭 기본메뉴 제거
+    var thison = $(this);
+    $(".mouse-sk1 tbody tr").on('contextmenu', function() {
+    return false;
+    });
+    //if 오른쪽클릭일경우
+    if( e.which == 3 ){
+        $('.mouse-sk1 tbody tr').removeClass('here');//20.06.12 추가
+        $(this).addClass('here');//20.06.12 추가
+        $('.rcpop').remove();//기존 팝업제거
+        $(this).parents('.mouse-skout').append('<div class="rcpop"><button type="button" class="today-on-btn"><i class="warning-I"></i></button><button type="button" class="inM-ann-btn"><i class="edit-I"></i></button><button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button><button type="button" class="complet-on-btn"><i class="yesin-I"></i></button></div>');
+            //메뉴보이기+위치
+            var tp = $(this).parents('.mouse-skout');
+            //Get pointer position:
+            var MposX = e.pageX - tp.offset().left;
+            var MposY = e.pageY - tp.offset().top;
+            posLeft = MposX + "px";
+            posTop = MposY + 3 + "px";
+            //Display menu:
+            $('.rcpop').css({
+            "left": posLeft,
+            "top": posTop
+            }).addClass('on');
+        //20.06.12 삭제, 기존 1137 ~ 1145
+        return false;
+    }
+});
+$(".mouse-sk2 tbody tr").on("mousedown", function(e){
+    //우클릭 기본메뉴 제거
+    $(".mouse-sk2 tbody tr").on('contextmenu', function() {
+    return false;
+    });
+    //if 오른쪽클릭일경우
+    if( e.which == 3 ){
+        $('.rcpop').remove();//기존 팝업제거
+        $(this).parents('.mouse-skout').append('<div class="rcpop in-rcW"><button type="button"><i class="warning-I"></i></button><button type="button" class="inM-ann2-btn"><i class="edit-I"></i></button><button type="button" class="inM-del2-btn"><i class="cancel-d-I"></i></button></div>');
+            //메뉴보이기+위치
+            var tp = $(this).parents('.mouse-skout');
+            //Get pointer position:
+            var MposX = e.pageX - tp.offset().left;
+            var MposY = e.pageY - tp.offset().top;
+            posLeft = MposX + "px";
+            posTop = MposY + 3 + "px";
+            //Display menu:
+            $('.rcpop').css({
+            "left": posLeft,
+            "top": posTop
+            }).addClass('on');
+        return false;
+    }
+});
+$(".mouse-sk3 tbody tr").on("mousedown", function(e){
+    //우클릭 기본메뉴 제거
+    $(".mouse-sk3 tbody tr").on('contextmenu', function() {
+    return false;
+    });
+    //if 오른쪽클릭일경우
+    if( e.which == 3 ){
+        $('.rcpop').remove();//기존 팝업제거
+        $(this).parents('.mouse-skout').append('<div class="rcpop in-rcW"><button type="button"><i class="yesin-I"></i></button><button type="button" class="reserved-btn"><i class="edit-I"></i></button><button type="button" class="msg-btn"><i class="Messages-I"></i></button></div>');
+            //메뉴보이기+위치
+            var tp = $(this).parents('.mouse-skout');
+            //Get pointer position:
+            var MposX = e.pageX - tp.offset().left;
+            var MposY = e.pageY - tp.offset().top;
+            posLeft = MposX + "px";
+            posTop = MposY + 3 + "px";
+            //Display menu:
+            $('.rcpop').css({
+            "left": posLeft,
+            "top": posTop
+            }).addClass('on');
+        //Prevent browser default contextmenu.
+        return false;
+    }
+});
+$(document).on('click', '.inM-ann-btn', function(){/*20.06.12 수정 ~ 1204*/
+    $('.rcpop').remove();
+    $('.sk-main').css('overflow', 'hidden');
+    $('#inM-ann').addClass('on');
+});
+$(document).on('click', '.inM-del-btn', function(){
+    $('.rcpop').remove();
+    $('.sk-main').css('overflow', 'hidden');
+    $('#inM-del').addClass('on');
+});
+$(document).on('click', '.inM-ann2-btn', function(){
+    $('.rcpop').remove();
+    $('.sk-main').css('overflow', 'hidden');
+    $('#inM-ann2').addClass('on');
+});
+$(document).on('click', '.inM-del2-btn', function(){
+    $('.rcpop').remove();
+    $('.sk-main').css('overflow', 'hidden');
+    $('#inM-del2').addClass('on');
+});
+$(document).on('click', '.msg-btn', function(){
+    $('.rcpop').remove();
+    $('#msg').addClass('on');
+});
+$(".modalClose").click(function(){
+    $(".in-modal").removeClass('on');
+    $('.sk-main').css('overflow', 'auto');
+});
+$(document).on('click', '.cancel-btn', function(){
+    $('.in-modal').removeClass('on');
+    $('.sk-main').css('overflow', 'auto');
+});
+$('body').on('click', function(e){
+    var $tgPoint = $(e.target);
+    var $popArea = $tgPoint.parents().hasClass('rcpop');
+    if ( !$popArea ){
+        $('.rcpop').remove();
+    }
+});
+
+$(function () {
+    $('.dbclick-a tr').dblclick(function () {
+        $(this).attr('../sub/member.html');
+    }).click(function(){
+    return false;
+    });
+});
+
+//고객상세 20.06.12 추가
+$('.tabUl li').click(function(){
+    var tab_id = $(this).attr('data-id');
+
+    $(this).siblings('li').removeClass('on');
+    $(this).closest('.tabUl').next('.tabContent2').children('.tabbox2').removeClass('on');
+    $(this).addClass('on');
+    $("#"+tab_id).addClass('on');
+});
+
+//주의 및 전달사항 우클릭 메뉴
+//우클릭 기본메뉴 제거
+$(".Rmenu-rel .ps-wrap").on('contextmenu', function() {
+    return false;
+});
+$(".Rmenu-rel .ps-wrap").on("mousedown", function(e){
+    //if 오른쪽클릭일경우
+    if( e.which == 3 ){
+        $('.rcpop').remove();//기존 팝업제거
+        $('.Rmenu-rel .ps-wrap').removeClass('here');
+        $(this).addClass('here');
+        $(this).parents('.Rmenu').append('<div class="rcpop"><button type="button" class="today-on-btn"><i class="warning-I"></i></button><button type="button" class="inM-ann-btn"><i class="edit-I"></i></button><button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button><button type="button" class="complet-on-btn"><i class="yesin-I"></i></button></div>');
+            //메뉴보이기+위치
+            var tp = $(this).parents('.Rmenu');
+            //Get pointer position:
+            var MposX = e.pageX - tp.offset().left;
+            var MposY = e.pageY - tp.offset().top;
+            posLeft = MposX + "px";
+            posTop = MposY + 3 + "px";
+            //Display menu:
+            $('.rcpop').css({
+            "left": posLeft,
+            "top": posTop
+            }).addClass('on');
+        return false;
+    }
+    
+});
+$(document).on('click', '.rcpop .today-on-btn', function(){
+    $('.here').toggleClass('today-on');
+    $('.today-on').removeClass('here');
+    $('.rcpop').remove();
+});
+$(".reserv-edit-btn").click(function(){
+    $("#reserv-edit").addClass('on');
 });
