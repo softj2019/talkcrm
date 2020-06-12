@@ -126,6 +126,6 @@
     height: 25px;
     margin: 0 auto;
 }
-a.fc-more {
-    display: none;
+.fc-more-cell {
+    line-height: 18px;
 }

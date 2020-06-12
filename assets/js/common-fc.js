@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dayGridMonth: {
                 type: 'dayGridMonth',
                 buttonText: 'Month',
-                eventLimit:8
+                eventLimit:7
             }
         },
 
