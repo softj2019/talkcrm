@@ -1,0 +1,54 @@
+추가파일
+assets/css/jquery-cropper.css
+asstes/js/viewer.js
+asstes/plugins/jquery-cropper-master
+
+
+수정사항
+
+member.html:18 ~ 19
+<!-- 2020.05.20 추가 뷰어-->
+
+member.html:12763 ~ 12764
+<!--    2020.05.20 MaterialDesign-Webfont 추가-->
+
+member.html:13041
+<!--2020.05.20 채우기 삭제-->
+
+member.html:13072
+<!--2020.05.20 id, style 추가-->
+
+member.html:13182
+/*2020.05.20 수정*/
+
+member.html:13211 ~ 13222
+//색상선택 2020.05.20 추가
+
+member.html:13224 ~ 13230
+//2020.05.20 삭제
+
+member.html:13232 ~ 13235
+<!--  2020.05.20 스크립트추가-->
+
+
+penchart.css:75
+/*2020.05.20 추가*/
+
+penchart.css:216
+/*2020.05.20 수정*/
+
+penchart.css:219
+/*2020.05.20 추가*/
+
+penchart.css:268 ~ 287
+/*2020.05.20 추가*/
+
+
+jquery.drawr.combined.js:47 ~ 60
+2020.05.20 수정 브러시위치
+
+jquery.drawr.combined.js:334 ~ 342
+//2020.05.20 z-index, top,left 수정
+
+jquery.drawr.combined.js:681
+var colors = /*2020.05.20 수정

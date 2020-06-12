@@ -1,0 +1,26 @@
+[추가파일]
+sub/recall.html ~ recall7p.html
+sub/operation.html
+assets/img/icon-move.png
+assets/img/Messages.png
+
+[수정파일]
+asstes/css/common.css
+asstes/js/common.js
+
+
+
+[수정사항]
+
+common.css:3995 ~ 4483
+/* 2020.05.22 추가 */
+
+
+common.js:572
+//2020.05.22 예약관리 우클릭메뉴 수정
+
+common.js:707 ~ 721
+// 2020.05.22 예약관리 테이블 높이 수정
+
+common.js:812 ~ 847
+//2020.05.22 리콜관리,경영관리 추가

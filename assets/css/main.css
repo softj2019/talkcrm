@@ -1,0 +1,131 @@
+.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {
+    float: left;
+    font-size: 14px;
+}
+.fc-row.fc-rigid .fc-content-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 20px;
+}
+.fc-widget-header {
+    border-right: none !important;
+}
+.fc-widget-header:first-child {
+    border-left: none !important;
+}
+.fc-view-container {
+    position: relative;
+    overflow: auto;
+}
+.fc-view, .fc-view > table {
+    position: relative;
+    z-index: 1;
+    min-width: 1500px;
+}
+.fc-event, .fc-event:hover {
+    color: #856404;
+    text-decoration: none;
+}
+.fc-event, .fc-event-dot {
+    background-color: #FFF3CD;
+}
+.fc-event {
+    position: relative;
+    display: block;
+    font-size: 0.85em;
+    line-height: 1.4;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+    border-left: 3px solid #FFC107;
+}
+.fc-time-grid-event-inset {
+    -webkit-box-shadow: 0px 0px 0px 0px #fff;
+    box-shadow: 0px 0px 0px 0px #fff;
+}
+/* 20.06.12 수정47 ~ 79*/
+.fc-dayGrid-view .fc-body .fc-row {
+    min-height: 10.5em;
+}
+.fc-time-grid-event .fc-time span::before{
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: -4px;
+    background: url(../img/N-1.png) center center / contain no-repeat;
+}
+.fc-time-grid-event .fc-time {
+    font-size: 1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* display: -webkit-box; */
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.fc-unthemed td {
+    height: 0;
+    border-color: #ccc;
+}
+.fc-unthemed .fc-row .fc-day-number {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+    line-height: normal;
+    padding: 5px;
+}
+/* ~ */
+.fc-event {
+    position: relative;
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+    border-left: 3px solid #FFC107;
+}
+/* 데이터피커 */
+.ui-datepicker {
+    width: 15em;
+    height: 260px;
+    padding: .2em .2em 0;
+    display: none;
+    border: none;
+}
+.ui-datepicker-calendar thead{
+    display: none;
+}
+.reserv-con .releft-t tbody td {
+    position: relative;
+    padding: 5px 0px;
+    cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+}
+/* .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    display: none;
+} */
+.ui-datepicker .ui-datepicker-next {
+    right: 2px;
+    background: url(../img/calendar_arrow_R_grey.png)no-repeat center / 10px;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    width: 25px;
+    border-radius: 50px;
+    background: #2bc8ad;
+    color: #fff;
+    font-weight: 400;
+    height: 25px;
+    margin: 0 auto;
+}
+a.fc-more {
+    display: none;
+}

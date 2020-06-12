@@ -1,0 +1,204 @@
+[추가파일]
+
+assets > img > arrow_g_doown.png
+assets > img > arrow_doown.png
+assets > img > arrow_up.png
+
+
+
+[수정파일]
+
+sub/reservation.html
+sub/member.html
+sub/recall.html
+sub/operation.html
+
+asstes/css/common.css
+asstes/css/header.css
+
+asstes/js/common.js
+asstes/plugins/jquery-drawr/jquery.drawr.combined.js
+
+
+
+[수정사항]
+예약관리, 리콜관리, 경영관리 QC
+펜차트 텍스트좌표, 선두께 수정
+
+
+recall.html:304~350
+<!-- 05.22 class src-tit 추가 -->
+
+
+
+reservation.html: 205 ~ 250
+<!-- 05.21 수정 ~245-->
+
+reservation.html: 317
+<!-- 05.21 클래스추가 in-table-2 -->
+
+reservation.html: 624~658
+<!-- 05.21 클래스 수정,추가 -->
+
+reservation.html: 1882~2057
+<!-- 05.21 유입경로 추가 -->
+
+reservation.html: 3536~3545
+<!-- 05.21 체크박스 항목 수정  -->
+
+reservation.html: 3878~3883
+<!-- 05.21 공백수정 취소버튼 클래스 추가  -->
+
+reservation.html: 665~1416
+<!-- 05.22 테이블 수정 -->
+
+reservation.html: 3584
+<!-- 05.22 dupnum-btn 클래스 추가  -->
+
+reservation.html: 3325~3499
+<!-- 05.22 data-id 수정-->
+
+reservation.html: 150 ~ 156
+<!-- 05.25 전체 checked -->
+
+reservation.html: 560~582
+<!-- 05.25 넓이 수정 메모버튼 추가 input수정-->
+
+
+
+-----------------------------------
+
+member.html:121 ~ 135
+<!--05.25 form-box 전체 수정-->
+
+member.html:13215~13218
+//펜차트 선두께 연동 2020.05.25 추가
+
+member.html:12765
+<!--    2020.05.25 삭제 <script src="../assets/js/common.js"></script>-->
+
+-----------------------------------
+
+
+common.css: 114~121
+/* 05.21 높이추가 */
+
+common.css: 210
+/* 05.25 background 수정 */
+
+common.css: 221
+/*05.25 수정*/
+
+common.css: 2152~2237
+/* 05.22  전체수정 */
+
+common.css: 2238~2242
+/* 05.21 수정 */
+
+common.css: 2272
+/* 05.25  삭제 */
+
+common.css: 2273
+/* 05.25  삭제 */
+
+common.css: 3111~3118
+/* 05.21 수정*/
+
+common.css: 3130~3133
+/* 05.21 삭제 */
+
+common.css: 3217~3235
+/* 05.21 수정 */
+
+common.css: 3248~3252
+/* 05.21 수정 */
+
+common.css: 3329~3332
+/* 05.21 수정 */
+
+common.css: 3446~3467
+/* 05.21 수정 */
+
+common.css: 3474~3528
+/* 05.21 수정 삭제*/
+
+common.css: 3550
+/* 05.21 수정 */
+
+common.css: 3899~3905
+/* 05.22  수정 */
+
+common.css: 3929
+/* 05.21 높이수정 */
+
+common.css: 4512 ~ 4515
+/*05.25 추가*/
+
+common.css: 4520
+/*05.25 경영관리 수정*/
+
+common.css: 4532
+/*05.25 경영관리 테이블 가로길이 수정*/
+
+common.css: 4578 ~ 4580
+/*05.25 경영관리 추가*/
+
+
+-----------------------------------
+
+
+header.css: 23~36
+/* 05.21  수정 */
+
+header.css: 186~189
+/* 05.25  삭제 */
+
+header.css: 232~236
+/* 05.25  수정 */
+
+header.css: 250~266
+/* 05.25  추가 수정 */
+
+header.css: 364
+/* 05.25  height 수정 */
+
+header.css: 424~436
+/* 05.25  png로 수정 */
+
+header.css: 554~681
+/* 05.25  전체 수정 */
+
+header.css: 653 ~ 655
+/*05.25 추가 ~ 655 */
+
+
+
+-----------------------------------
+
+
+
+common.js:856~859
+//05.22 중복전화번호 모달  추가
+
+common.js:682~692
+// 05.25 가로보기 메모버튼
+
+common.js:708~748
+// 05.25 추가 수정 
+
+common.js:766~781
+// 05.25 일자,예약 버튼수정 
+
+common.js:804~814
+// 05.25 달력클릭 추가
+
+
+
+-----------------------------------
+
+
+jquery.drawr.combined.js:615
+//2020.05.25 undo max 수정
+
+jquery.drawr.combined.js:1642 ~ 1644
+/*2020.05.25 left,top 수정*/
