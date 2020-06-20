@@ -49,7 +49,78 @@
 
         window.addEventListener('keydown', handleFirstTab);
     </script>
-    
+    <style>
+        .board-tab{
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-bottom:0;
+        }
+        .half>div:last-child [class*="board-wrap"]{
+            margin-bottom:0;
+        }
+        #dashT2 h3 .small{
+            line-height: 17px;
+        }
+        .board-w-outer{
+            width:100%;
+            background:#fff;
+        }
+        .chartjs-legend{
+            height:40px;
+            padding:15px;
+            font-size: 10px;
+        }
+        .chartjs-legend>ul{
+            float: right;
+        }
+        .chartjs-legend li {
+            float: left;
+            position: relative;
+        }
+        .chartjs-legend li::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background: #333;
+            vertical-align: middle;
+            margin: 0 5px 0 20px;
+        }
+        #chart-legends1 li:first-child::after {
+                content: '';
+                display: inline-block;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: #2996f6;
+                position: absolute;
+                top: 7px;
+                left: 33px;
+        }
+        #chart-legends1 li:first-child::before {
+            background: #2996F6;
+        }
+        #chart-legends1 li:nth-child(2)::before{
+            background:#273957;
+        }
+        #chart-legends1 li:nth-child(3)::before{
+            background:#CCCCCC;
+        }
+        #chart-legends2 li:nth-child(1)::before{
+            background:#F9CD92;
+        }
+        #chart-legends2 li:nth-child(2)::before{
+            background:#C7CED9;
+        }
+        #chart-legends4 li:nth-child(1)::before{
+            background:#F9CD92;
+        }
+        #chart-legends4 li:nth-child(2)::before{
+            background:#C7CED9;
+        }
+        
+    </style>
 </head>
 <body class="min1600">
    <div class="main-wrap">
@@ -288,8 +359,11 @@
                                         <h3><img src="../assets/img/baricon.svg" alt="">최근 한달 실적</h3>
                                     </div>
                                 </div>
-                                <div class="board-wrapbtm">
-                                    <canvas id="myChart"></canvas>
+                                <div class="board-w-outer">
+                                    <div id="chart-legends1" class="chartjs-legend"></div>
+                                    <div class="board-wrapbtm">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -432,8 +506,11 @@
                                         <h3><img src="../assets/img/baricon.svg" alt="">내원건수 월별추이</h3>
                                     </div>
                                 </div>
-                                <div class="board-wrapbtm">
-                                    <canvas id="myChart2"></canvas>
+                                <div class="board-w-outer">
+                                     <div id="chart-legends2" class="chartjs-legend"></div>
+                                    <div class="board-wrapbtm">
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -553,8 +630,11 @@
                                         <h3><img src="../assets/img/baricon.svg" alt="">최근 1개월 이내</h3>
                                     </div>
                                 </div>
+                                <div class="board-w-outer">
+                                <div id="chart-legends3" class="chartjs-legend"></div>
                                 <div class="board-wrapbtm">
                                     <canvas id="myChart3"></canvas>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -670,9 +750,14 @@
                                         <h3><img src="../assets/img/baricon.svg" alt="">월별추이<span class="small">(단위:백만원)</span></h3>
                                     </div>
                                 </div>
-                                <div class="board-wrapbtm">
-                                    <canvas id="myChart4"></canvas>
+                                <div class="board-w-outer">
+                                   <div id="chart-legends4" class="chartjs-legend"></div>
+                                    <div class="board-wrapbtm">
+                                       
+                                        <canvas id="myChart4"></canvas>
+                                    </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -5110,6 +5195,16 @@
         data: {
             labels: ['3월 1일', '3월 2일', '3월 3일', '3월 4일', '3월 5일', '3월 6일', '3월 7일', '3월 8일', '3월 9일', '3월 10일', '3월 11일', '3월 12일', '3월 13일', '3월 14일', '3월 15일', '3월 16일', '3월 17일', '3월 18일', '3월 19일', '3월 20일', '3월 21일', '3월 22일', '3월 23일', '3월 24일', '3월 25일', '3월 26일', '3월 27일', '3월 28일', '3월 29일', '3월 30일', '3월 31일'],
             datasets: [{
+                label: '내원건수',
+                backgroundColor: 'transparent',
+                borderColor: '#2996F6',
+                borderWidth: 1,
+                pointBackgroundColor:'#2996F6',
+                pointRadius:2,
+                lineTension:0,
+                data: [87, 60, 65, 52, 60, 80, 97, 90, 82, 86, 72, 78, 77, 74, 65, 67, 85, 84, 75, 90, 95, 94, 84, 65, 67, 64, 82, 77, 85, 76, 99],
+                yAxisID: 'y-axis-left'
+            },{
                 label: '취소건수',
                 backgroundColor: '#273957',
                 borderColor: '#273957',
@@ -5129,16 +5224,6 @@
                 data: [1, 10, 15, 4, 14, 0, 4,2,2,3,4,12,2,14,12,19,9,16,8,6,12,13,4,2,12,16,7,8,17,9,10],
                 type:'bar',
                 yAxisID: 'y-axis-right'
-            },{
-                label: '내원건수',
-                backgroundColor: 'transparent',
-                borderColor: '#2996F6',
-                borderWidth: 1,
-                pointBackgroundColor:'#2996F6',
-                pointRadius:2,
-                lineTension:0,
-                data: [87, 60, 65, 52, 60, 80, 97, 90, 82, 86, 72, 78, 77, 74, 65, 67, 85, 84, 75, 90, 95, 94, 84, 65, 67, 64, 82, 77, 85, 76, 99],
-                yAxisID: 'y-axis-left'
             }]
         },
         // Configuration options go here
@@ -5146,7 +5231,7 @@
             maintainAspectRatio: false,
             cutoutPercentage: 50,
             legend: {
-                 display: true,
+                 display: false,
                  position: 'top',
                  align:'end',
                  labels: {
@@ -5155,6 +5240,21 @@
                          fontColor: '#000000'
                         }
                 },
+            legendCallback: function(chart) { 
+                var text = []; 
+                text.push('<ul class="' + chart.id + '-legend">'); 
+                for (var i = 0; i < chart.data.datasets.length; i++) { 
+                    text.push('<li><span style="background-color:' + 
+                               chart.data.datasets[i].backgroundColor + 
+                               '"></span>'); 
+                    if (chart.data.datasets[i].label) { 
+                        text.push(chart.data.datasets[i].label); 
+                    } 
+                    text.push('</li>'); 
+                } 
+                text.push('</ul>'); 
+                return text.join(''); 
+            },
             scales: {
                 xAxes:[{
                     gridLines: {
@@ -5183,6 +5283,7 @@
             }
             }
         });
+        document.getElementById('chart-legends1').innerHTML = chart.generateLegend();
         var ctx = document.getElementById('myChart2').getContext('2d');
         var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -5216,7 +5317,7 @@
             maintainAspectRatio: false,
             cutoutPercentage: 50,
             legend: {
-                 display: true,
+                 display: false,
                  position: 'top',
                  align:'end',
                  labels: {
@@ -5224,6 +5325,21 @@
                          fontFamily: 'sans-serif',
                          fontColor: '#000000'
                     }
+            },
+            legendCallback: function(chart) { 
+                var text = []; 
+                text.push('<ul class="' + chart.id + '-legend">'); 
+                for (var i = 0; i < chart.data.datasets.length; i++) { 
+                    text.push('<li><span style="background-color:' + 
+                               chart.data.datasets[i].backgroundColor + 
+                               '"></span>'); 
+                    if (chart.data.datasets[i].label) { 
+                        text.push(chart.data.datasets[i].label); 
+                    } 
+                    text.push('</li>'); 
+                } 
+                text.push('</ul>'); 
+                return text.join(''); 
             },
             scales: {
                 xAxes:[{
@@ -5251,6 +5367,7 @@
             ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
             ctx.textAlign = 'center';
             ctx.textBaseline = 'bottom';
+            ctx.fillStyle = '#5A667B';
 
             this.data.datasets.forEach(function(dataset, i) {
               var meta = chartInstance.controller.getDatasetMeta(i);
@@ -5262,7 +5379,8 @@
           }
         }}   
     });
-        var ctx = document.getElementById('myChart3').getContext('2d');
+        document.getElementById('chart-legends2').innerHTML = chart.generateLegend();
+    var ctx = document.getElementById('myChart3').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'line',
@@ -5288,6 +5406,21 @@
             legend: {
                  display: false
                 },
+//            legendCallback: function(chart) { 
+//                var text = []; 
+//                text.push('<ul class="' + chart.id + '-legend">'); 
+//                for (var i = 0; i < chart.data.datasets.length; i++) { 
+//                    text.push('<li><span style="background-color:' + 
+//                               chart.data.datasets[i].backgroundColor + 
+//                               '"></span>'); 
+//                    if (chart.data.datasets[i].label) { 
+//                        text.push(chart.data.datasets[i].label); 
+//                    } 
+//                    text.push('</li>'); 
+//                } 
+//                text.push('</ul>'); 
+//                return text.join(''); 
+//            },
             scales: {
                 xAxes:[{
                     gridLines: {
@@ -5307,6 +5440,7 @@
             }
             }
         });
+//        document.getElementById('chart-legends3').innerHTML = chart.generateLegend();
         var ctx = document.getElementById('myChart4').getContext('2d');
         var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -5340,7 +5474,7 @@
             maintainAspectRatio: false,
             cutoutPercentage: 50,
             legend: {
-                 display: true,
+                 display: false,
                  position: 'top',
                  align:'end',
                  labels: {
@@ -5348,6 +5482,21 @@
                          fontFamily: 'sans-serif',
                          fontColor: '#000000'
                     }
+            },
+            legendCallback: function(chart) { 
+                var text = []; 
+                text.push('<ul class="' + chart.id + '-legend">'); 
+                for (var i = 0; i < chart.data.datasets.length; i++) { 
+                    text.push('<li><span style="background-color:' + 
+                               chart.data.datasets[i].backgroundColor + 
+                               '"></span>'); 
+                    if (chart.data.datasets[i].label) { 
+                        text.push(chart.data.datasets[i].label); 
+                    } 
+                    text.push('</li>'); 
+                } 
+                text.push('</ul>'); 
+                return text.join(''); 
             },
             scales: {
                 xAxes:[{
@@ -5386,6 +5535,8 @@
           }
         }}   
     });
+    document.getElementById('chart-legends4').innerHTML = chart.generateLegend();
+
     </script>
 </body>
 </html>

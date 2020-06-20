@@ -49,7 +49,7 @@
 <body>
     <div class="main-wrap">
        <!--2020.05.19 navigation 수정 추가-->
-        <nav class="main-navi">
+        <nav class="main-navi sm">
             <ul>
                  <li class="h1title">
                     <a href="#"><h1>TalkCRM</h1></a>
@@ -62,6 +62,7 @@
                  </li>
                 <li><a href="#"><i class="navfront"></i><span>Front</span></a></li>
                 <li class="on"><a href="#"><i class="navcust"></i><span>고객관리</span></a></li>
+                <li><a href="#" class="nav-aP"><i class="mem"></i><span>고객상세</span></a></li><!-- 20.06.08 추가-->
                 <li class="hassub">
                     <a href="#"><i class="navrecall"></i><span>리콜관리</span></a>
                     <button type="button" class="down-arrow"></button>
@@ -118,7 +119,7 @@
                         <div class="head-tit">
                             <h1>고객관리</h1>
                         </div>
-                        <div class="form-box clearfix"><!--05.25 form-box 전체 수정-->
+                        <div class="form-box clearfix">
                             <form>
                                 <div class="select-mem">
                                     <a href="#">고객명</a>
@@ -166,7 +167,7 @@
                     
                 </div>
             </header>
-            <div class="content clearfix">
+            <div class="content clearfix memT"><!-- 20.06.17 클래스 추가 -->
                 <div class="con-left">
                     <div class="left-head clearfix">
                         <div class="tit">
@@ -293,582 +294,572 @@
                             <li data-id="top-tab3">처방전</li>
                             <li data-id="top-tab4">소개고객</li>
                         </ul>
-                        <div class="tabContent">
+                        <div class="tabContent"><!-- 20.06.17 테이블전체 수정 -->
                             <div class="tabbox on clearfix" id="top-tab1">
                                 <button type="button" class="consult-btn"><img src="../assets/img/plusicon.svg" alt="">신규</button>
-                                <div class="table-in">
-<!--                                  div.hoverpop 추가-->
-                                    <div class="hoverpop">
-                                       <ul>
-                                           <li>
-                                               <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">상담사</span> : <span class="popTd">김진수</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">상담결과</span> : <span class="popTd">성공</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">희망일자</span> : <span class="popTd"></span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
-                                           </li>
-                                       </ul>
-                                   </div>
-<!--                                   hoverpopList 클래스 추가-->
-                                    <table class="hoverpopList">
-                                        <colgroup>
-                                            <col style="width: 8%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 20%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 14%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>상담일</th>
-                                                <th>상담결과</th>
-                                                <th>진료서비스</th>
-                                                <th>진료견적</th>
-                                                <th>지정의</th>
-                                                <th>상담사</th>
-                                                <th>상담분류</th>
-                                                <th>유입경로</th>
-                                                <th>진료일</th>
-                                                <th>메모</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="consult-table">
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <td>수락</td>
-                                                <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td class="t-txt-right">900,000</td>
-                                                <td>차명일</td>
-                                                <td>차명일</td>
-                                                <td></td>
-                                                <td>네이버 블로그</td>
-                                                <td>2020-03-24</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <td>수락</td>
-                                                <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td class="t-txt-right">1,900,000</td>
-                                                <td>차명일</td>
-                                                <td>차명일</td>
-                                                <td></td>
-                                                <td>굿닥</td>
-                                                <td>2020-03-24</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="hoverpop">
+                                    <ul>
+                                        <li>
+                                            <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">상담사</span> : <span class="popTd">김진수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">상담결과</span> : <span class="popTd">성공</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">희망일자</span> : <span class="popTd"></span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="t-hd-width">
+                                        <div class="Mtable-header-bg"></div>
+                                        <div class="table-in">
+                                            <table class="hoverpopList">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 8%;"><div class="th-text">상담일</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">상담결과</div></th>
+                                                        <th style="width: 20%;"><div class="th-text">진료서비스</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">진료견적</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">지정의</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">상담사</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">상담분류</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">유입경로</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">진료일</div></th>
+                                                        <th style="width: 14%;"><div class="th-text">메모</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="consult-table">
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <td>수락</td>
+                                                        <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                        <td class="t-txt-right">900,000</td>
+                                                        <td>차명일</td>
+                                                        <td>차명일</td>
+                                                        <td></td>
+                                                        <td>네이버 블로그</td>
+                                                        <td>2020-03-24</td>
+                                                        <td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <td>수락</td>
+                                                        <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                        <td class="t-txt-right">1,900,000</td>
+                                                        <td>차명일</td>
+                                                        <td>차명일</td>
+                                                        <td></td>
+                                                        <td>굿닥</td>
+                                                        <td>2020-03-24</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tabbox" id="top-tab2">
                                 <button type="button" class="package-add-btn"><img src="../assets/img/plusicon.svg" alt="">신규</button>
-                                <div class="table-in">
-<!--                                  div.hoverpop 추가-->
-                                   <div class="hoverpop">
-                                       <ul>
-                                           <li>
-                                               <span class="popTh">등록일</span> : <span class="popTd">2020-03-04 수</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">상담사</span> : <span class="popTd">김진수</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">구분</span> : <span class="popTd">비만</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">패키지명</span> : <span class="popTd">비만패키지</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>
-                                           </li>
+                                <div class="hoverpop">
+                                    <ul>
+                                        <li>
+                                            <span class="popTh">등록일</span> : <span class="popTd">2020-03-04 수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">상담사</span> : <span class="popTd">김진수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">구분</span> : <span class="popTd">비만</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">패키지명</span> : <span class="popTd">비만패키지</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>
+                                        </li>
                                             <li>
-                                               <span class="popTh">회차</span> : <span class="popTd">1/10</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">최근사용일</span> : 2020-03-10<span class="popTd"></span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
-                                           </li>
-                                       </ul>
-                                   </div>
-<!--                                   hoverpopList 클래스 추가-->
-                                    <table class="package-edit-btn hoverpopList">
-                                        <colgroup>
-                                            <col style="width: 9%;">
-                                            <col style="width: 8%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 6%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 20%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>등록일</th>
-                                                <th>구분</th>
-                                                <th>패키지명</th>
-                                                <th>회차</th>
-                                                <th>최근사용일</th>
-                                                <th>표준금액</th>
-                                                <th>견적금액</th>
-                                                <th>할인금액</th>
-                                                <th>상담사</th>
-                                                <th>메모</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <td class="t-txt-left">비만</td>
-                                                <td class="t-txt-left">비만패키지</td>
-                                                <td>1/10</td>
-                                                <td>2020-03-24</td>
-                                                <td class="t-txt-right">1,000,000</td>
-                                                <td class="t-txt-right">500,000</td>
-                                                <td class="t-txt-right">500,000</td>
-                                                <td>김승진</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <td class="t-txt-left">피부관리</td>
-                                                <td class="t-txt-left">피부관리패키지</td>
-                                                <td>10/10</td>
-                                                <td>2020-03-24</td>
-                                                <td class="t-txt-right">1,000,000</td>
-                                                <td class="t-txt-right">500,000</td>
-                                                <td class="t-txt-right">500,000</td>
-                                                <td>김승진</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
-                                                    상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                            <span class="popTh">회차</span> : <span class="popTd">1/10</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">최근사용일</span> : 2020-03-10<span class="popTd"></span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                                
+                                <div class="table-wrap">
+                                    <div class="t-hd-width">
+                                        <div class="Mtable-header-bg"></div>
+                                        <div class="table-in">
+                                            <table class="package-edit-btn hoverpopList">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 9%;"><div class="th-text">등록일</div></th>
+                                                        <th style="width: 8%;"><div class="th-text">구분</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">패키지명</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">회차</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">최근사용일</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">표준금액</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">견적금액</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">할인금액</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">상담사</div></th>
+                                                        <th style="width: 20%;"><div class="th-text">메모</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <td class="t-txt-left">비만</td>
+                                                        <td class="t-txt-left">비만패키지</td>
+                                                        <td>1/10</td>
+                                                        <td>2020-03-24</td>
+                                                        <td class="t-txt-right">1,000,000</td>
+                                                        <td class="t-txt-right">500,000</td>
+                                                        <td class="t-txt-right">500,000</td>
+                                                        <td>김승진</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <td class="t-txt-left">피부관리</td>
+                                                        <td class="t-txt-left">피부관리패키지</td>
+                                                        <td>10/10</td>
+                                                        <td>2020-03-24</td>
+                                                        <td class="t-txt-right">1,000,000</td>
+                                                        <td class="t-txt-right">500,000</td>
+                                                        <td class="t-txt-right">500,000</td>
+                                                        <td>김승진</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.
+                                                            상담메모를 기입하고 있습니다. 상담메모를 기입하고 있습니다.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td class="t-txt-right"></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tabbox" id="top-tab3">
                                 <button type="button" class="prescription-edit-btn"><img src="../assets/img/icon_modify.svg" alt="" class="ver-a">수정</button>
                                 <button type="button" class="prescription-edit-btn"><img src="../assets/img/plusicon.svg" alt="">신규</button>
-                                <div class="table-in">
-<!--                                  div.hoverpop 추가-->
-                                   <div class="hoverpop">
-                                       <ul>
-                                           <li>
-                                               <span class="popTh">고객명</span> : <span class="popTd">김태희</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">교부번호</span> : <span class="popTd">2020-04-20-0001</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">처방전구분</span> : <span class="popTd">기타</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">처방전묶음</span> : <span class="popTd">새로운 묶음처방</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">처방약현황</span> : <span class="popTd">652601070_토팜정25밀리그람(토피라메이트)_(25mg/1정)(1, 1, 1) 051700020_엔유린오디프스산 0.2밀리그램(데스모프레신아세트산염)(1, 1, 1)644102390_</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">주사제현황</span> : <span class="popTd">050500012_애드베이트주(혈액응고인자 VIII, 유전자재조합)_(500I.U/1병)(1, 1, 1)</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">시간</span> : <span class="popTd">20-04-20 10:13</span>
-                                           </li>
-                                       </ul>
-                                   </div>
-<!--                                   hoverpopList 클래스 추가-->
-                                    <table class="hoverpopList">
-                                        <colgroup>
-                                            <col style="width: 10%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 22%;">
-                                            <col style="width: 7%;">
-                                            <col style="width: 6%;">
-                                            <col style="width: 17%;">
-                                            <col style="width: 7%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>처방전번호</th>
-                                                <th>발행구분</th>
-                                                <th>처방의</th>
-                                                <th>고객명</th>
-                                                <th>묶음처방명</th>
-                                                <th>처방내역</th>
-                                                <th>상태</th>
-                                                <th>인쇄부수</th>
-                                                <th>인쇄일시</th>
-                                                <th>등록자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>20200415-01</td>
-                                                <td>기타()</td>
-                                                <td>박재성</td>
-                                                <td>아리엘</td>
-                                                <td>묶음처방명1</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">엔피렌에스정엔피렌에스정 외3건 묶음처방</p></td>
-                                                <td>인쇄완료</td>
-                                                <td>1</td>
-                                                <td>2020-04-15 11:38:34</td>
-                                                <td>김지수</td>
-                                            </tr>
-                                            <tr>
-                                                <td>20200415-01</td>
-                                                <td>기타()</td>
-                                                <td>박재성</td>
-                                                <td>아리엘</td>
-                                                <!--2020.05.13 수정--><td>묶음처방명2</td>
-                                                <td class="t-txt-left"><p class="memo-t">엔피렌에스정엔피렌에스정 외3건 묶음처방</p></td>
-                                                <td>인쇄대기</td>
-                                                <td>10</td>
-                                                <td>2020-04-15 11:38:34</td>
-                                                <td>김지수</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="hoverpop">
+                                    <ul>
+                                        <li>
+                                            <span class="popTh">등록일</span> : <span class="popTd">2020-03-04 수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">상담사</span> : <span class="popTd">김진수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">구분</span> : <span class="popTd">비만</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">패키지명</span> : <span class="popTd">비만패키지</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>
+                                        </li>
+                                            <li>
+                                            <span class="popTh">회차</span> : <span class="popTd">1/10</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">최근사용일</span> : 2020-03-10<span class="popTd"></span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                                
+                                <div class="table-wrap">
+                                    <div class="t-hd-width">
+                                        <div class="Mtable-header-bg"></div>
+                                        <div class="table-in">
+                                            <table class="hoverpopList">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 10%;"><div class="th-text">처방전번호</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">발행구분</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">처방의</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">고객명</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">묶음처방명</div></th>
+                                                        <th style="width: 22%;"><div class="th-text">처방내역</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">상태</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">인쇄부수</div></th>
+                                                        <th style="width: 17%;"><div class="th-text">인쇄일시</div></th>
+                                                        <th style="width: 7%;"><div class="th-text">등록자</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>20200415-01</td>
+                                                        <td>기타()</td>
+                                                        <td>박재성</td>
+                                                        <td>아리엘</td>
+                                                        <td>묶음처방명1</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">엔피렌에스정엔피렌에스정 외3건 묶음처방</p></td>
+                                                        <td>인쇄완료</td>
+                                                        <td>1</td>
+                                                        <td>2020-04-15 11:38:34</td>
+                                                        <td>김지수</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>20200415-01</td>
+                                                        <td>기타()</td>
+                                                        <td>박재성</td>
+                                                        <td>아리엘</td>
+                                                        <!--2020.05.13 수정--><td>묶음처방명2</td>
+                                                        <td class="t-txt-left"><p class="memo-t">엔피렌에스정엔피렌에스정 외3건 묶음처방</p></td>
+                                                        <td>인쇄대기</td>
+                                                        <td>10</td>
+                                                        <td>2020-04-15 11:38:34</td>
+                                                        <td>김지수</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tabbox" id="top-tab4">
-                                <div class="table-in">
-                                    <table>
-                                        <colgroup>
-                                            <col style="width: 12%;">
-                                            <col style="width: 12%;">
-                                            <col style="width: 14%;">
-                                            <col style="width: 12%;">
-                                            <col style="width: 12%;">
-                                            <col style="width: 12%;">
-                                            <col style="width: 12%;">
-                                            <col style="width: 14%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>고객명</th>
-                                                <th>고객번호</th>
-                                                <th>주민번호</th>
-                                                <th>휴대폰번호</th>
-                                                <th>등록일자</th>
-                                                <th>내원일자</th>
-                                                <th>첫결제일자</th>
-                                                <th>총결제금액</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>오진수</td>
-                                                <td>13131313</td>
-                                                <td>981212-2</td>
-                                                <td>010-1234-1234</td>
-                                                <td>2020-2-1</td>
-                                                <td>2020-2-8</td>
-                                                <td>2020-2-15</td>
-                                                <td>40,000,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>오진수</td>
-                                                <td>13131313</td>
-                                                <td>981212-2</td>
-                                                <td>010-1234-1234</td>
-                                                <td>2020-2-1</td>
-                                                <td>2020-2-8</td>
-                                                <td>2020-2-15</td>
-                                                <td>40,000,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="table-wrap">
+                                    <div class="t-hd-width">
+                                        <div class="Mtable-header-bg"></div>
+                                        <div class="table-in">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 12%;"><div class="th-text">고객명</div></th>
+                                                        <th style="width: 12%;"><div class="th-text">고객번호</div></th>
+                                                        <th style="width: 14%;"><div class="th-text">주민번호</div></th>
+                                                        <th style="width: 12%;"><div class="th-text">휴대폰번호</div></th>
+                                                        <th style="width: 12%;"><div class="th-text">등록일자</div></th>
+                                                        <th style="width: 12%;"><div class="th-text">내원일자</div></th>
+                                                        <th style="width: 12%;"><div class="th-text">첫결제일자</div></th>
+                                                        <th style="width: 14%;"><div class="th-text">총결제금액</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>오진수</td>
+                                                        <td>13131313</td>
+                                                        <td>981212-2</td>
+                                                        <td>010-1234-1234</td>
+                                                        <td>2020-2-1</td>
+                                                        <td>2020-2-8</td>
+                                                        <td>2020-2-15</td>
+                                                        <td>40,000,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>오진수</td>
+                                                        <td>13131313</td>
+                                                        <td>981212-2</td>
+                                                        <td>010-1234-1234</td>
+                                                        <td>2020-2-1</td>
+                                                        <td>2020-2-8</td>
+                                                        <td>2020-2-15</td>
+                                                        <td>40,000,000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                
                             </div>
-                        </div>
+                        </div><!-- ~ -->
                     </div>
                     <div class="tab-box2">
                         <ul class="tabUl">
@@ -881,383 +872,367 @@
                             <li data-id="bot-tab7">쿠폰</li>
                             <li data-id="bot-tab8">선불금액</li>
                         </ul>
-                        <div class="tabContent clearfix">
+                        <div class="tabContent clearfix"><!-- 20.06.17 테이블전체 수정 -->
                             <div class="tabbox on clearfix" id="bot-tab1">
                                 <button type="button" class="tab3-btn reserv-btn"><img src="../assets/img/plusicon.svg" alt=""> 예약등록</button>
-                                <div class="table-in tab-mar">
-<!--                                    div.hoverpop 추가-->
-                                    <div class="hoverpop">
-                                       <ul>
-                                           <li>
-                                               <span class="popTh">예약상태</span> : <span class="popTd">예약</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">예약일자</span> : <span class="popTd">2020-04-01 수</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">시작시간</span> : <span class="popTd">15:00</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">소요시간</span> : <span class="popTd">30분</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">예약항목</span> : <span class="popTd">상담</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">등록자</span> : <span class="popTd">이수진</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">등록일자</span> : <span class="popTd">2020-04-20-목</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">진료서비스</span> : <span class="popTd">1) 제모 ▶ 겨드랑이<br>2) 2003_전지점 ▶ 슈링크 300샷</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
-                                           </li>
-                                       </ul>
-                                   </div>
-<!--                                   hoverpopList 클래스 추가-->
-                                    <table class="hoverpopList">
-                                        <colgroup>
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 30%;">
-                                            <col style="width: 10%;">
-                                            <col style="width: 10%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>예약상태</th>
-                                                <th>예약일자</th>
-                                                <th>시작시간</th>
-                                                <th>소요시간</th>
-                                                <th>예약항목</th>
-                                                <th>진료서비스</th>
-                                                <th>등록일자</th>
-                                                <th>등록자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>내원</td>
-                                                <td>2020-03-24</td>
-                                                <td>10:50</td>
-                                                <td>30</td>
-                                                <td>상담</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td>2020-03-24</td>
-                                                <td>이수지</td>
-                                            </tr>
-                                            <tr>
-                                                <td>내원</td>
-                                                <td>2020-03-24</td>
-                                                <td>10:50</td>
-                                                <td>30</td>
-                                                <td>상담</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td>2020-03-24</td>
-                                                <td>이수지</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="hoverpop">
+                                    <ul>
+                                        <li>
+                                            <span class="popTh">예약상태</span> : <span class="popTd">예약</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">예약일자</span> : <span class="popTd">2020-04-01 수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">시작시간</span> : <span class="popTd">15:00</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">소요시간</span> : <span class="popTd">30분</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">예약항목</span> : <span class="popTd">상담</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">등록자</span> : <span class="popTd">이수진</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">등록일자</span> : <span class="popTd">2020-04-20-목</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">진료서비스</span> : <span class="popTd">1) 제모 ▶ 겨드랑이<br>2) 2003_전지점 ▶ 슈링크 300샷</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                                
+                                <div class="table-wrap">
+                                    <div class="t-hd-width tab-mar" >
+                                        <div class="Mtable-header-bg"></div>
+                                        <div class="table-in">
+                                            <table class="hoverpopList">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 10%;"><div class="th-text">예약상태</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">예약일자</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">시작시간</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">소요시간</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">예약항목</div></th>
+                                                        <th style="width: 30%;"><div class="th-text">진료서비스</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">등록일자</div></th>
+                                                        <th style="width: 10%;"><div class="th-text">등록자</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>내원</td>
+                                                        <td>2020-03-24</td>
+                                                        <td>10:50</td>
+                                                        <td>30</td>
+                                                        <td>상담</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                        <td>2020-03-24</td>
+                                                        <td>이수지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>내원</td>
+                                                        <td>2020-03-24</td>
+                                                        <td>10:50</td>
+                                                        <td>30</td>
+                                                        <td>상담</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                        <td>2020-03-24</td>
+                                                        <td>이수지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tabbox" id="bot-tab2">
-                                <div class="p-box clearfix">
-                                    <p>총결제 : <span class="t-bold">2,000,000</span></p>
-                                    <span></span>
-                                    <p>총미수금 : <span class="t-bold t-col-R">100,000</span></p>
-                                    <span></span>
-                                    <p>총수납금액 : <span class="t-bold">2,000,000</span></p>
-                                    <span></span>
-                                    <p>예약금 : <span class="t-bold">2,000,000</span></p>
-                                    <span></span>
-                                    <p>쿠폰 : <span class="t-bold">300,000</span></p>
-                                    <button type="button" class="payment-btn"><img src="../assets/img/plusicon.svg" alt=""> 신규</button>
-                                </div>
-                                <div class="table-in">
-<!--                                  div.hoverpop 추가-->
-                                   <div class="hoverpop type2 on">
-                                       <ul>
-                                       <table>
-                                           <tr>
-                                               <th>결제일자</th>
-                                               <td>2020-03-31</td>
-                                               <th>수납금액</th>
-                                               <td>0</td>
-                                           </tr>
-                                           <tr>
-                                               <th>표준금액</th>
-                                               <td>1,200,000</td>
-                                               <th>미수금액</th>
-                                               <td>1,000,000</td>
-                                           </tr>
-                                           <tr>
-                                               <th>할인금액</th>
-                                               <td>200,000</td>
-                                               <th>환불금액</th>
-                                               <td>0</td>
-                                           </tr>
-                                           <tr>
-                                               <th>결제금액</th>
-                                               <td>1,00,000</td>
-                                               <th>마일리지</th>
-                                               <td>0</td>
-                                           </tr>
-                                           <tr>
-                                               <th>등록자</th>
-                                               <td colspan="3">이수진</td>
-                                           </tr>
-                                       </table>
-                                       <div class="memowrap">
-                                           <p>고객에 대한 기타 사항을 메모할 수 있는 칸입니다. 수정을 원한다면 오른쪽 상단에 위치한 수정버튼을 눌러주세요.</p>
-                                       </div>
-                                       </ul>
-                                   </div>
-<!--                                   hoverpopList 클래스 추가-->
-                                    <table class="hoverpopList">
-                                        <colgroup>
-                                            <col style="width: 8%;">
-                                            <col style="width: 18%;">
-                                            <col style="width: 8%;">
-                                            <col style="width: 8%;">
-                                            <col style="width: 8%;">
-                                            <col style="width: 30%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>결제일</th>
-                                                <th>진료서비스</th>
-                                                <th>진료견적</th>
-                                                <th>수납금액</th>
-                                                <th>미수금액</th>
-                                                <th>메모</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2020-03-20</td>
-                                                <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td class="t-txt-right">50,000<br>250,000</td>
-                                                <td class="t-txt-right">200,000</td>
-                                                <td class="t-txt-right">100,000</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-20</td>
-                                                <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td class="t-txt-right">50,000<br>250,000</td>
-                                                <td class="t-txt-right">200,000</td>
-                                                <td class="t-txt-right">100,000</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-20</td>
-                                                <td class="t-txt-left">비만클리닉/기능의학/임플란트</td>
-                                                <td class="t-txt-right">250,000</td>
-                                                <td class="t-txt-right">0</td>
-                                                <td class="t-txt-right">0</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-20</td>
-                                                <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td class="t-txt-right">50,000<br>250,000</td>
-                                                <td class="t-txt-right">200,000</td>
-                                                <td class="t-txt-right">100,000</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-20</td>
-                                                <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td class="t-txt-right">50,000<br>250,000</td>
-                                                <td class="t-txt-right">200,000</td>
-                                                <td class="t-txt-right">100,000</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-20</td>
-                                                <td class="t-txt-left">비만클리닉/기능의학/임플란트</td>
-                                                <td class="t-txt-right">250,000</td>
-                                                <td class="t-txt-right">0</td>
-                                                <td class="t-txt-right">0</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td class="t-txt-left"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <td class="t-txt-right"></td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
-                                            </tr>
-                                        </tbody>
+                                
+                                <div class="hoverpop type2 on">
+                                    <ul>
+                                    <table>
+                                        <tr>
+                                            <th>결제일자</th>
+                                            <td>2020-03-31</td>
+                                            <th>수납금액</th>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <th>표준금액</th>
+                                            <td>1,200,000</td>
+                                            <th>미수금액</th>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>할인금액</th>
+                                            <td>200,000</td>
+                                            <th>환불금액</th>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <th>결제금액</th>
+                                            <td>1,00,000</td>
+                                            <th>마일리지</th>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <th>등록자</th>
+                                            <td colspan="3">이수진</td>
+                                        </tr>
                                     </table>
+                                    <div class="memowrap">
+                                        <p>고객에 대한 기타 사항을 메모할 수 있는 칸입니다. 수정을 원한다면 오른쪽 상단에 위치한 수정버튼을 눌러주세요.</p>
+                                    </div>
+                                    </ul>
                                 </div>
+                                <div class="wrap-pT">
+                                    <div class="p-box clearfix">
+                                        <p>총결제 : <span class="t-bold">2,000,000</span></p>
+                                        <span></span>
+                                        <p>총미수금 : <span class="t-bold t-col-R">100,000</span></p>
+                                        <span></span>
+                                        <p>총수납금액 : <span class="t-bold">2,000,000</span></p>
+                                        <span></span>
+                                        <p>예약금 : <span class="t-bold">2,000,000</span></p>
+                                        <span></span>
+                                        <p>쿠폰 : <span class="t-bold">300,000</span></p>
+                                        <button type="button" class="payment-btn"><img src="../assets/img/plusicon.svg" alt=""> 신규</button>
+                                    </div>
+                                    <div class="table-wrap">
+                                        <div class="t-hd-width">
+                                            <div class="Mtable-header-bg"></div>
+                                            <div class="table-in">
+                                                <table class="hoverpopList">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 12%;"><div class="th-text">결제일</div></th>
+                                                            <th style="width: 22%;"><div class="th-text">진료서비스</div></th>
+                                                            <th style="width: 12%;"><div class="th-text">진료견적</div></th>
+                                                            <th style="width: 12%;"><div class="th-text">수납금액</div></th>
+                                                            <th style="width: 12%;"><div class="th-text">미수금액</div></th>
+                                                            <th style="width: 32%;"><div class="th-text">메모</div></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>2020-03-20</td>
+                                                            <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                            <td class="t-txt-right">50,000<br>250,000</td>
+                                                            <td class="t-txt-right">200,000</td>
+                                                            <td class="t-txt-right">100,000</td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2020-03-20</td>
+                                                            <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                            <td class="t-txt-right">50,000<br>250,000</td>
+                                                            <td class="t-txt-right">200,000</td>
+                                                            <td class="t-txt-right">100,000</td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2020-03-20</td>
+                                                            <td class="t-txt-left">비만클리닉/기능의학/임플란트</td>
+                                                            <td class="t-txt-right">250,000</td>
+                                                            <td class="t-txt-right">0</td>
+                                                            <td class="t-txt-right">0</td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="t-txt-left"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="t-txt-left"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2020-03-20</td>
+                                                            <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                            <td class="t-txt-right">50,000<br>250,000</td>
+                                                            <td class="t-txt-right">200,000</td>
+                                                            <td class="t-txt-right">100,000</td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2020-03-20</td>
+                                                            <td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                            <td class="t-txt-right">50,000<br>250,000</td>
+                                                            <td class="t-txt-right">200,000</td>
+                                                            <td class="t-txt-right">100,000</td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2020-03-20</td>
+                                                            <td class="t-txt-left">비만클리닉/기능의학/임플란트</td>
+                                                            <td class="t-txt-right">250,000</td>
+                                                            <td class="t-txt-right">0</td>
+                                                            <td class="t-txt-right">0</td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="t-txt-left"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="t-txt-left"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <td class="t-txt-right"></td>
+                                                            <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t"></p></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 
                             </div>
                             <div class="tabbox" id="bot-tab3">
                                 <button type="button" class="tab3-btn chart-btn"><img src="../assets/img/plusicon.svg" alt=""> 신규</button>
-                                <div class="table-in tab-mar">
-<!--                                  div.hoverpop 추가-->
-                                   <div class="hoverpop">
-                                       <ul>
-                                           <li>
-                                               <span class="popTh">예약일</span> : <span class="popTd">2020-04-01 수</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">상담사</span> : <span class="popTd">이수진</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">진료결과</span> : <span class="popTd">성공</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">잔여회차</span> : <span class="popTd">0</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">등록자</span> : <span class="popTd">이수진</span>
-                                           </li>
-                                           <li>
-                                               <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
-                                           </li>
-                                       </ul>
-                                   </div>
-<!--                                   hoverpopList 클래스 추가-->
-                                    <table class="hoverpopList">
-                                        <colgroup>
-                                            <col style="width: 8%;">
-                                            <col style="width: 27%;">
-                                            <col style="width: 6%;">
-                                            <col style="width: 6%;">
-                                            <col style="width: 6%;">
-                                            <col style="width: 6%;">
-                                            <col style="width: 35%;">
-                                            <col style="width: 6%;">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th>진료일자</th>
-                                                <th>진료서비스</th>
-                                                <th>진료의</th>
-                                                <th>잔여회차</th>
-                                                <th>진료결과</th>
-                                                <th>상담사</th>
-                                                <th>진료메모</th>
-                                                <th>등록자</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td>이진수<br>홍진아</td>
-                                                <td>0</td>
-                                                <td>완료</td>
-                                                <td>홍진수</td>
-                                                <td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
-                                                <td>이수지</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
-                                                <td>이진수<br>홍진아</td>
-                                                <td>0</td>
-                                                <td>완료</td>
-                                                <td>홍진수</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
-                                                <td>이수지</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-03-24</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left">비만클리닉/기능의학/임플란트</td>
-                                                <td>이진수</td>
-                                                <td>0</td>
-                                                <td>완료</td>
-                                                <td>홍진수</td>
-                                                <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
-                                                <td>이수지</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="hoverpop">
+                                    <ul>
+                                        <li>
+                                            <span class="popTh">예약일</span> : <span class="popTd">2020-04-01 수</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">상담사</span> : <span class="popTd">이수진</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">진료결과</span> : <span class="popTd">성공</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">잔여회차</span> : <span class="popTd">0</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">등록자</span> : <span class="popTd">이수진</span>
+                                        </li>
+                                        <li>
+                                            <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="t-hd-width tab-mar">
+                                        <div class="Mtable-header-bg"></div>
+                                        <div class="table-in">
+                                            <table class="hoverpopList">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 8%;"><div class="th-text">진료일자</div></th>
+                                                        <th style="width: 27%;"><div class="th-text">진료서비스</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">진료의</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">잔여회차</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">진료결과</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">상담사</div></th>
+                                                        <th style="width: 35%;"><div class="th-text">진료메모</div></th>
+                                                        <th style="width: 6%;"><div class="th-text">등록자</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                        <td>이진수<br>홍진아</td>
+                                                        <td>0</td>
+                                                        <td>완료</td>
+                                                        <td>홍진수</td>
+                                                        <td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
+                                                        <td>이수지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left">제모 ▶ 겨드랑이<br>2003_전지점 ▶ 슈링크 300샷</td>
+                                                        <td>이진수<br>홍진아</td>
+                                                        <td>0</td>
+                                                        <td>완료</td>
+                                                        <td>홍진수</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
+                                                        <td>이수지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020-03-24</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left">비만클리닉/기능의학/임플란트</td>
+                                                        <td>이진수</td>
+                                                        <td>0</td>
+                                                        <td>완료</td>
+                                                        <td>홍진수</td>
+                                                        <!--2020.05.13 수정--><td class="t-txt-left"><p class="memo-t">메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.메모 내용이 보입니다.</p></td>
+                                                        <td>이수지</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tabbox" id="bot-tab4">
@@ -1397,253 +1372,250 @@
                                             <p>사용기한폐기 : <span class="t-bold">0</span></p>
                                             <button type="button" class="mileage-btn"><img src="../assets/img/plusicon.svg" alt=""> 수동등록</button>
                                         </div>
-                                        <div class="table-in tab2-in-2">
-                                            <table>
-                                                <colgroup>
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                </colgroup>
-                                                <thead>
-                                                    <tr>
-                                                        <th>등록일자</th>
-                                                        <th>구분</th>
-                                                        <th>등록사유</th>
-                                                        <th>등록직원</th>
-                                                        <th>적립마일리지</th>
-                                                        <th>잔여마일리지</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>수동등록</td>
-                                                        <td>고객서비스 지원</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>사용</td>
-                                                        <td>수납결제</td>
-                                                        <td>이진주</td>
-                                                        <td>-100,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2020-03-20</td>
-                                                        <td>자동등록</td>
-                                                        <td>결제금액 5%</td>
-                                                        <td>이진주</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,900,000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="table-wrap">
+                                            <div class="t-hd-width">
+                                                <div class="Mtable-header-bg"></div>
+                                                <div class="table-in tab2-in-2">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 16%;"><div class="th-text">등록일자</div></th>
+                                                                <th style="width: 16%;"><div class="th-text">구분</div></th>
+                                                                <th style="width: 17%;"><div class="th-text">등록사유</div></th>
+                                                                <th style="width: 17%;"><div class="th-text">등록직원</div></th>
+                                                                <th style="width: 17%;"><div class="th-text">적립마일리지</div></th>
+                                                                <th style="width: 17%;"><div class="th-text">잔여마일리지</div></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>수동등록</td>
+                                                                <td>고객서비스 지원</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>사용</td>
+                                                                <td>수납결제</td>
+                                                                <td>이진주</td>
+                                                                <td>-100,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2020-03-20</td>
+                                                                <td>자동등록</td>
+                                                                <td>결제금액 5%</td>
+                                                                <td>이진주</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,900,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-r">
@@ -1665,69 +1637,64 @@
                                             <p>사용기한폐기 : <span class="t-bold">0</span></p>
                                             <button type="button" class="coupon-btn"><img src="../assets/img/plusicon.svg" alt=""> 수동등록</button>
                                         </div>
-                                        
-                                        <div class="table-in tab2-in-2">
-                                            <table>
-                                                <colgroup>
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                </colgroup>
-                                                <thead>
-                                                    <tr>
-                                                        <th>사용상태</th>
-                                                        <th>등록일자</th>
-                                                        <th>시작일자</th>
-                                                        <th>종료일자</th>
-                                                        <th>사용일자</th>
-                                                        <th>쿠폰구분</th>
-                                                        <th>쿠폰명</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>미사용</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>2020-03-20</td>
-                                                        <td></td>
-                                                        <td>할인쿠폰</td>
-                                                        <td>4월이벤트 50%할인</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>미사용</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>2020-03-20</td>
-                                                        <td></td>
-                                                        <td>할인쿠폰</td>
-                                                        <td>4월이벤트 50%할인</td>
-                                                    </tr>
-<!--                                                    tab7-active 클래스 추가-->
-                                                    <tr class="tab7-active">
-                                                        <td>사용</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>2020-03-20</td>
-                                                        <td></td>
-                                                        <td>무료쿠폰</td>
-                                                        <td>스킨 무료증정</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="table-wrap">
+                                            <div class="t-hd-width">
+                                                <div class="Mtable-header-bg"></div>
+                                                <div class="table-in tab2-in-2">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 14%;"><div class="th-text">사용상태</div></th>
+                                                                <th style="width: 14%;"><div class="th-text">등록일자</div></th>
+                                                                <th style="width: 14%;"><div class="th-text">시작일자</div></th>
+                                                                <th style="width: 14%;"><div class="th-text">종료일자</div></th>
+                                                                <th style="width: 14%;"><div class="th-text">사용일자</div></th>
+                                                                <th style="width: 14%;"><div class="th-text">쿠폰구분</div></th>
+                                                                <th style="width: 16%;"><div class="th-text">쿠폰명</div></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>미사용</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>2020-03-20</td>
+                                                                <td></td>
+                                                                <td>할인쿠폰</td>
+                                                                <td>4월이벤트 50%할인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>미사용</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>2020-03-20</td>
+                                                                <td></td>
+                                                                <td>할인쿠폰</td>
+                                                                <td>4월이벤트 50%할인</td>
+                                                            </tr>
+        <!--                                                    tab7-active 클래스 추가-->
+                                                            <tr class="tab7-active">
+                                                                <td>사용</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>2020-03-20</td>
+                                                                <td></td>
+                                                                <td>무료쿠폰</td>
+                                                                <td>스킨 무료증정</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="tab-r">
@@ -1735,7 +1702,6 @@
                                         <textarea name="" id="" cols="30" rows="10"></textarea>
                                     </div>
                                 </div>
-                                
                             </div>
                             <div class="tabbox tab-ov" id="bot-tab8">
                                 <div class="tab-ov-in">
@@ -1748,60 +1714,54 @@
                                             <p>총사용 : <span class="t-bold">2,000,000</span></p>
                                             <button type="button" class="prepayment-btn"><img src="../assets/img/plusicon.svg" alt=""> 이체</button>
                                         </div>
-                                        
-                                        <div class="table-in tab2-in-2">
-                                            <table>
-                                                <colgroup>
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                    <col style="width: 10%;">
-                                                </colgroup>
-                                                <thead>
-                                                    <tr>
-                                                        <th>구분</th>
-                                                        <th>등록일자</th>
-                                                        <th>적립금액</th>
-                                                        <th>잔여금액</th>
-                                                        <th>비고</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>등록</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>1,000,000</td>
-                                                        <td>1,000,000</td>
-                                                        <td>구매</td>
-                                                    </tr>
-<!--                                                    tab8-active클래스 추가-->
-                                                    <tr class="tab8-active">
-                                                        <td>사용</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>-1,000,000</td>
-                                                        <td>0</td>
-                                                        <td>사용</td>
-                                                    </tr>
-                                                    <!--                                                    tab8-active클래스 추가-->
-                                                    <tr class="tab8-active">
-                                                        <td>사용</td>
-                                                        <td>2020-03-20</td>
-                                                        <td>-1,000,000</td>
-                                                        <td>0</td>
-                                                        <td>홍기준(13131313)</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td> 
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="table-wrap">
+                                            <div class="t-hd-width">
+                                                <div class="Mtable-header-bg"></div>
+                                                <div class="table-in tab2-in-2">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 20%;"><div class="th-text">구분</div></th>
+                                                                <th style="width: 20%;"><div class="th-text">등록일자</div></th>
+                                                                <th style="width: 20%;"><div class="th-text">적립금액</div></th>
+                                                                <th style="width: 20%;"><div class="th-text">잔여금액</div></th>
+                                                                <th style="width: 20%;"><div class="th-text">비고</div></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>등록</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>1,000,000</td>
+                                                                <td>1,000,000</td>
+                                                                <td>구매</td>
+                                                            </tr>
+                                                            <tr class="tab8-active">
+                                                                <td>사용</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>-1,000,000</td>
+                                                                <td>0</td>
+                                                                <td>사용</td>
+                                                            </tr>
+                                                            <tr class="tab8-active">
+                                                                <td>사용</td>
+                                                                <td>2020-03-20</td>
+                                                                <td>-1,000,000</td>
+                                                                <td>0</td>
+                                                                <td>홍기준(13131313)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td> 
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
-                                        
                                     </div>
                                     <div class="tab-r">
                                         <button type="button"><img src="../assets/img/Checkbox.svg" alt=""> 메모저장</button>
@@ -1809,7 +1769,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- ~ -->
                     </div>
                 </div>
             </div>
@@ -13125,28 +13085,6 @@
         });
 
         $(".demo-canvas").drawr("start");
-
-        //add custom save button.
-        // var buttoncollection = $("#drawr-container .demo-canvas").drawr("button", {
-        //     "icon":"mdi mdi-folder-open mdi-24px"
-        // }).on("touchstart mousedown",function(){
-        //     //alert("demo of a custom button with your own functionality!");
-        //     $("#file-picker").click();
-        // });
-        //툴바 이미지 저장 버튼 추가
-        // var buttoncollection = $("#drawr-container .demo-canvas").drawr("button", {
-        //     "icon":"mdi mdi-content-save mdi-24px"
-        // }).on("touchstart mousedown",function(){
-        //     //버튼 이미지 지정
-        //     var imagedata = $("#drawr-container .demo-canvas").drawr("export",'');
-        //     var element = document.createElement('a');
-        //     element.setAttribute('href', imagedata);// 'data:text/plain;charset=utf-8,' + encodeURIComponent("sillytext"));
-        //     element.setAttribute('download', "test.jpg");
-        //     element.style.display = 'block';
-        //     document.body.appendChild(element);
-        //     element.click();
-        //     document.body.removeChild(element);
-        // });
         $("#file-picker")[0].onchange = function(){
             var file = $("#file-picker")[0].files[0];
             if (!file.type.startsWith('image/')){ return }
@@ -13235,10 +13173,18 @@
                 $('.colorview').css('background-color', color);
             });
         });
+        //member body 너비 유지 20.06.17 추가
+        $(document).on('click', '.h1title .left-arrow', function(){
+            $('body').css('min-width', '1280px');
+        });
+        $(document).on('click', '.main-navi.sm .h1title', function(){
+            $('body').css('min-width', '1410px');
+        });
     </script>
 <!--  2020.05.20 스크립트추가-->
     <script src="https://unpkg.com/cropperjs/dist/cropper.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../assets/plugins/jquery-cropper-master/dist/jquery-cropper.js"></script>
     <script type="text/javascript" src="../assets/js/viewer.js"></script>
+    <script src="../assets/js/jquery.drawr.combined.js"></script>
 </body>
 </html>

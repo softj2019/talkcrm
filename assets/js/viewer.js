@@ -32,6 +32,27 @@ $(document).on('click', '.p-chart>div', function(){
         dbclick = false;
     },500);
 });
+$(document).on('click', '.set7-list > div > div', function(){
+    setTimeout(function(){
+        
+            $('#penchart3').addClass('on');
+            $image.cropper({
+                aspectRatio: 4 / 3,
+                mouseWheelZoom: false,
+                crop: function(event) {
+                    console.log(event.detail.x);
+                    console.log(event.detail.y);
+                    console.log(event.detail.width);
+                    console.log(event.detail.height);
+                    console.log(event.detail.rotate);
+                    console.log(event.detail.scaleX);
+                    console.log(event.detail.scaleY);
+                }
+            });
+            cropper= $image.data('cropper');
+        
+    },300);
+});
 //줌인
 $('.glass-pl').on('click',function () {
     cropper.zoom(0.2)

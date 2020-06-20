@@ -1,5 +1,8 @@
-.fc-center{
+.fc-center{/*20.06.17 추가*/
     display: inline-flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .popper,
@@ -160,19 +163,4 @@
     top:100px;
     left:100px;
 }
-/*일자공지*/
-.res-f{
-    position:absolute;
-    top:52px;
-}
-.res-t.on .fc-view-container {
-    margin-top: 68px;
-}
-.r-calander td{
-    height:40px!important;
-    vertical-align: inherit!important;
-}
-.ul-tab-box, .tab-btn{
-    position: relative;
-    z-index: 2;
-}
+/*20.06.17 main.css로 이동 163 ~*/

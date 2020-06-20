@@ -46,8 +46,11 @@
 
         window.addEventListener('keydown', handleFirstTab);
     </script>
+    <style type="text/css">
+        
+    </style>
 </head>
-<body class="min1600">
+<body>
    <div class="main-wrap">
         <nav class="main-navi sm">
             <ul>
@@ -62,8 +65,7 @@
                 </li>
                 <li><a href="#"><i class="navfront"></i><span>Front</span></a></li>
                 <li><a href="#"><i class="navcust"></i><span>고객관리</span></a></li>
-                <li><a href="#" class="nav-aP"><i class="mem"></i><span>고객상세</span></a></li><!-- 20.06.15 추가-->
-                <li class="hassub">
+                <li class="hassub on">
                     <a href="../sub/recall.html"><i class="navrecall"></i><span>리콜관리</span></a>
                     <button type="button" class="down-arrow"></button>
                     <ul class="dp2">
@@ -79,7 +81,7 @@
                 <li><a href="#"><i class="navCTI"></i><span>CTI</span></a></li>
                 <li><a href="#"><i class="navtask"></i><span>업무관리</span></a></li>
                 <li><a href="#"><i class="navop"></i><span>경영관리</span></a></li>
-                <li class="hassub  on">
+                <li class="hassub">
                     <a href="#"><i class="navset"></i><span>설정관리</span></a>
                     <button type="button" class="down-arrow"></button>
                     <ul class="dp2">
@@ -118,10 +120,45 @@
                 <div id="space_around">
                     <div class="around-in">
                         <div class="head-tit">
-                            <h1>직원설정</h1>
+                            <h1>설정관리</h1>
                         </div>
+                        <!-- <div class="form-box clearfix">
+                            <form>
+                                <select>
+                                    <option>고객명</option>
+                                    <option>전화번호</option>
+                                    <option>주민번호</option>
+                                    <option>고객번호</option>
+                                </select>
+                                <input type="text" placeholder="고객검색" class="custSrc-btn ">
+                                <input type="submit" value="검색" class="">
+    
+                                <input type="text" placeholder="" class="reseSrc-btn">
+                                <input type="submit" value="예약검색" class="">
+                            </form>
+                        </div>
+                        <div class="btn2 clearfix">
+                            <button type="button" class="ex-btn">엑셀저장</button>
+                            <button type="button" class="board-b customerl-btn">
+                                <img src="../assets/img/Profile_green.svg">
+                                <span>고객등록</span>
+                            </button>
+                            <div class="select">
+                                <a href="#">전체</a>
+                                <ul>
+                                    <li><input type="checkbox" id="sel-ck1" checked><label for="sel-ck1"><span></span>전체선택</label></li>
+                                    <li><input type="checkbox" id="sel-ck2"><label for="sel-ck2"><span></span>상담</label></li>
+                                    <li><input type="checkbox" id="sel-ck3"><label for="sel-ck3"><span></span>수술</label></li>
+                                    <li><input type="checkbox" id="sel-ck4"><label for="sel-ck4"><span></span>시술</label></li>
+                                    <li><input type="checkbox" id="sel-ck5"><label for="sel-ck5"><span></span>치료</label></li>
+                                </ul>
+                            </div>
+                        </div> -->
                     </div>
                     <div class="btn3 clearfix">
+                        <!-- <button type="button" class="bas-view on"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.999" viewBox="0 0 20 19.999"><defs></defs><path class="bas" d="M-9943,20V4h13V20Zm-7,0V4h5V20Zm0-18V0h20V2Z" transform="translate(9950.001)"/></svg>기본보기</button>
+                        <button type="button"  class="hor-view"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19.999" viewbox="0 0 20 19.999"><defs></defs><path class="hor" d="M-9950,20V9h20V20Zm0-13V4h20V7Zm0-5V0h20V2Z" transform="translate(9950.001)"/></svg>가로보기</button>
+                        <span>|</span> -->
                         <button type="button" class="board-b board-btn"><img src="../assets/img/icon_borad.svg" alt=""><span class="bell"></span></button>
                         <span>|</span>
                         <button type="button" class="advice-b help-btn"><img src="../assets/img/icon_advice.svg" alt=""></button>
@@ -135,845 +172,17 @@
                                 <li>예약시간</li>
                             </ul>
                         </div>
+                        
                     </div>
+                    
                 </div>
             </header>
-            <div class="flexwrap">
-                <div class="w100">
-                    <div class="left-head mb10">
-                        <div class="tit-btn">
-                            <h3><img src="../assets/img/baricon.svg" alt="">직원설정</h3>
-                            <div class="i-mar">
-                                <button type="button" class="plus-M"><i></i>신규</button>
-                                <button type="button" class="yesB-i"><i></i>저장</button>
-                                <button type="button" class="cancel-R-i"><i></i>삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrap-set set4-T2">
-                        <div class="mb10 T2-inBg">
-                            <table class="T2-tBg">
-                                <colgroup>
-                                    <col style="width: 8%;">
-                                    <col style="width: 17%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 17%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 17%;">
-                                    <col style="width: 8%;">
-                                    <col style="width: 17%;">
-                                </colgroup>
-                                <tbody class="top-tb">
-                                    <tr>
-                                        <td class="table-tit blue">직원아이디</td>
-                                        <td>
-                                            <input type="text">
-                                        </td>
-                                        <td class="table-tit blue">직원명</td>
-                                        <td class=" name-input">
-                                            <input type="text">
-                                            <input type="text" placeholder="이니셜">
-                                        </td>
-                                        <td class="table-tit blue">직원아이디</td>
-                                        <td class=" select-href">
-                                            <select name="" id="">
-                                                <option value="">부서선택</option>
-                                                <option value="">부서선택</option>
-                                            </select>
-                                            <select name="" id="">
-                                                <option value="">직급선택</option>
-                                                <option value="">직급선택</option>
-                                            </select>
-                                        </td>
-                                        <td class="table-tit blue">연락처</td>
-                                        <td>
-                                            <input type="text">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="table-tit blue">입사일/퇴사일</td>
-                                        <td class="td-date">
-                                            <div >
-                                                <input type="text" id="from_date" class="date_pick"> 
-                                                <i class="cal1"></i>
-                                            </div>
-                                            <p> ~ </p>
-                                            <div>
-                                                <input type="text" id="to_date" class="date_pick"> 
-                                                <i class="cal2"></i>  
-                                            </div>
-                                        </td>
-                                        <td class="table-tit blue">근무상태</td>
-                                        <td class="t-txt-left">
-                                            <select name="" id="" class="selectW1">
-                                                <option value="">근무</option>
-                                                <option value="">근무</option>
-                                            </select>
-                                        </td>
-                                        <td class="table-tit blue">구분색상</td>
-                                        <td>
-                                            <select name="" id="">
-                                                <option value="">white</option>
-                                                <option value="">white</option>
-                                            </select>
-                                        </td>
-                                        <td class="table-tit blue">권한설정</td>
-                                        <td class=" href-Sb">
-                                            <select name="" id="">
-                                                <option value="">실무자</option>
-                                                <option value="">실무자</option>
-                                            </select>
-                                            <button type="button" class="btn-Bmint">세부권한설정 보기</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="set-tbOut">
-                                <table class="set-tb">
-                                    <colgroup>
-                                        <col style="width: 6%;">
-                                        <col style="width: 25%;">
-                                        <col style="width: 6%;">
-                                        <col style="width: 29%;">
-                                        <col style="width: 6%;">
-                                        <col style="width: 27%;">
-                                    </colgroup>
-                                    <tbody class="border-LR"><!-- 20.06.15 클래스 추가 -->
-                                        <tr>
-                                            <td rowspan="2" class="table-tit blue">세부권한설정</td>
-                                            <td rowspan="2" class="td-calW">
-                                                <input type="checkbox" id="set6-ck1"><label for="set6-ck1">고객관리</label>
-                                                <input type="checkbox" id="set6-ck2"><label for="set6-ck2">공지사항</label>
-                                                <input type="checkbox" id="set6-ck3"><label for="set6-ck3">암호미확인</label><br>
-                                                <input type="checkbox" id="set6-ck4"><label for="set6-ck4">휴진설정</label>
-                                                <input type="checkbox" id="set6-ck5"><label for="set6-ck5">예약삭제</label>
-                                                <input type="checkbox" id="set6-ck6"><label for="set6-ck6">엑셀저장</label><br>
-                                                <input type="checkbox" id="set6-ck7"><label for="set6-ck7">상담정보입력</label>
-                                                <input type="checkbox" id="set6-ck8"><label for="set6-ck8">결제등록</label>
-                                            </td>
-                                            <td class="table-tit blue">보기권한</td>
-                                            <td>
-                                                <input type="checkbox" id="set6-ck2-1"><label for="set6-ck2-1">전체</label>
-                                                <input type="checkbox" id="set6-ck2-2"><label for="set6-ck2-2">상담정보</label>
-                                                <input type="checkbox" id="set6-ck2-3"><label for="set6-ck2-3">수납정보</label>
-                                                <input type="checkbox" id="set6-ck2-4"><label for="set6-ck2-4">진료차트</label>
-                                                <input type="checkbox" id="set6-ck2-5"><label for="set6-ck2-5">마일리지/쿠폰</label>
-                                            </td>
-                                            <td class="table-tit blue">펜차트,이미지</td>
-                                            <td>
-                                                <input type="checkbox" id="set6-ck3-1"><label for="set6-ck3-1">보기</label>
-                                                <input type="checkbox" id="set6-ck3-2"><label for="set6-ck3-2">업로드</label>
-                                                <input type="checkbox" id="set6-ck3-3"><label for="set6-ck3-3">다운로드</label>
-                                                <input type="checkbox" id="set6-ck3-4"><label for="set6-ck3-4">삭제</label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="table-tit blue"><input type="checkbox" id="set6-ck4-1"><label for="set6-ck4-1">설정관리</label></td>
-                                            <td>
-                                                <input type="radio" id="set6-rd"><label for="set6-rd">보기</label>
-                                            </td>
-                                            <td class="table-tit blue"><input type="checkbox" id="set6-ck5-1"><label for="set6-ck5-1">통계관리</label></td>
-                                            <td>
-                                                <input type="radio" name="set6-rd1" id="set6-rd1-1"><label for="set6-rd1-1">전체</label>
-                                                <input type="radio" name="set6-rd1" id="set6-rd1-2"><label for="set6-rd1-2">업무관리</label>
-                                                <input type="radio" name="set6-rd1" id="set6-rd1-3"><label for="set6-rd1-3">경영관리</label>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                        </div>
-                        <ul class="tabUl UI-w">
-                            <li data-id="set4-tab1" class="on">직원검색</li>
-                            <li data-id="set4-tab2">직원등록, 수정 이력</li>
-                        </ul>
-                        <div class="tabContent">
-                            <div class="tabbox on bg-W" id="set4-tab1">
-                                <div class="form-out">
-                                    <form action="" class="flexwrap">
-                                        <div>
-                                            <span>부서</span>
-                                            <select name="" id="">
-                                                <option value="">전체</option>
-                                                <option value="">전체</option>
-                                            </select>
-                                            <span>직급</span>
-                                            <select name="" id="">
-                                                <option value="">전체</option>
-                                                <option value="">전체</option>
-                                            </select>
-                                            <span>근무상태</span>
-                                            <select name="" id="">
-                                                <option value="">전체</option>
-                                                <option value="">전체</option>
-                                            </select>
-                                            <span>직원명</span>
-                                            <input type="text">
-                                        </div>
-                                        <button class="btn-grey">검색</button>
-                                    </form>
-                                </div>
-                                <div class="table-wrap sky-wrap">
-                                    <div class="t-hd-width">
-                                        <div class="table-header-bg"></div>
-                                        <div class="table-in set6-H">
-                                            <table class="sky-tb">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 5%"><div class="th-text">NO.</div></th>
-                                                        <th style="width: 7%"><div class="th-text">직원아이디</div></th>
-                                                        <th style="width: 7%"><div class="th-text">직원명</div></th>
-                                                        <th style="width: 7%"><div class="th-text">부서</div></th>
-                                                        <th style="width: 7%"><div class="th-text">직급</div></th>
-                                                        <th style="width: 7%"><div class="th-text">근무상태</div></th>
-                                                        <th style="width: 7%"><div class="th-text">입사일</div></th>
-                                                        <th style="width: 7%"><div class="th-text">퇴사일</div></th>
-                                                        <th style="width: 7%"><div class="th-text">연락처</div></th>
-                                                        <th style="width: 7%"><div class="th-text">이니셜</div></th>
-                                                        <th style="width: 7%"><div class="th-text">구분색상</div></th>
-                                                        <th style="width: 7%"><div class="th-text">권한설정</div></th>
-                                                        <th style="width: 18%"><div class="th-text">상세항목</div></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="sky-body">
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>10</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>11</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>12</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>13</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>14</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>15</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr class="resign-bg">
-                                                        <td>16</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>퇴사</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>2020-05-30</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr class="resign-bg">
-                                                        <td>17</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>퇴사</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>2020-05-30</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr class="resign-bg">
-                                                        <td>18</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>퇴사</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>2020-05-30</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td> 
-                                                    </tr>
-                                                    <tr>
-                                                        <td>19</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tabbox bg-W" id="set4-tab2">
-                                <div class="form-out">
-                                    <form action="" class="flexwrap">
-                                        <div>
-                                            <span>부서</span>
-                                            <select name="" id="">
-                                                <option value="">전체</option>
-                                                <option value="">전체</option>
-                                            </select>
-                                            <span>직급</span>
-                                            <select name="" id="">
-                                                <option value="">전체</option>
-                                                <option value="">전체</option>
-                                            </select>
-                                            <span>근무상태</span>
-                                            <select name="" id="">
-                                                <option value="">전체</option>
-                                                <option value="">전체</option>
-                                            </select>
-                                            <span>직원명</span>
-                                            <input type="text">
-                                        </div>
-                                        <button class="btn-grey">검색</button>
-                                    </form>
-                                </div>
-                                <div class="table-wrap sky-wrap">
-                                    <div class="t-hd-width">
-                                        <div class="table-header-bg"></div>
-                                        <div class="table-in set6-H">
-                                            <table class="sky-tb">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 5%"><div class="th-text">NO.</div></th>
-                                                        <th style="width: 7%"><div class="th-text">직원아이디</div></th>
-                                                        <th style="width: 7%"><div class="th-text">직원명</div></th>
-                                                        <th style="width: 7%"><div class="th-text">부서</div></th>
-                                                        <th style="width: 7%"><div class="th-text">직급</div></th>
-                                                        <th style="width: 7%"><div class="th-text">근무상태</div></th>
-                                                        <th style="width: 7%"><div class="th-text">입사일</div></th>
-                                                        <th style="width: 7%"><div class="th-text">퇴사일</div></th>
-                                                        <th style="width: 7%"><div class="th-text">연락처</div></th>
-                                                        <th style="width: 7%"><div class="th-text">이니셜</div></th>
-                                                        <th style="width: 7%"><div class="th-text">구분색상</div></th>
-                                                        <th style="width: 7%"><div class="th-text">권한설정</div></th>
-                                                        <th style="width: 18%"><div class="th-text">상세항목</div></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="sky-body">
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>7</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>8</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>9</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>10</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>11</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>12</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>13</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>14</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>15</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>근무</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>-</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr class="resign-bg">
-                                                        <td>16</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>퇴사</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>2020-05-30</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr class="resign-bg">
-                                                        <td>17</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>퇴사</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>2020-05-30</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td>
-                                                    </tr>
-                                                    <tr class="resign-bg">
-                                                        <td>18</td>
-                                                        <td>doctor1</td>
-                                                        <td>김의사</td>
-                                                        <td>경영기획</td>
-                                                        <td>이사</td>
-                                                        <td>퇴사</td>
-                                                        <td>2020-03-24</td>
-                                                        <td>2020-05-30</td>
-                                                        <td>010-1234-1234</td>
-                                                        <td>cha</td>
-                                                        <td>doctor1</td>
-                                                        <td>실무자</td>
-                                                        <td>고객관리,공지사항,엑셀저장</td> 
-                                                    </tr>
-                                                    <tr>
-                                                        <td>19</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="content clearfix">
+                
             </div>
         </div>
     </div>
-    <div class="modal " id="info">
+    <div class="modal on" id="info">
         <div class="modal-bg"></div>
         <div class="modalContent sm">
             <header class="modalHd">
@@ -1146,7 +355,7 @@
             </div>
         </div>
     </div>
-    <div class="modal " id="msg">
+    <div class="modal on" id="msg">
         <div class="modal-bg"></div>
         <div class="modalContent">
             <header class="modalHd">
@@ -5074,7 +4283,7 @@
             </div>
         </div>
     </div>
-    <div class="modal " id="board-list">
+    <div class="modal on" id="board-list">
         <div class="modal-bg"></div>
         <div class="modalContent md">
             <header class="modalHd">
@@ -5161,7 +4370,7 @@
             </div>
         </div>
     </div>
-    <div class="modal " id="board-view">
+    <div class="modal on" id="board-view">
         <div class="modal-bg"></div>
         <div class="modalContent md board-con">
             <header class="modalHd ">
@@ -5186,7 +4395,7 @@
             </div>
         </div>
     </div>
-    <div class="modal " id="board-write">
+    <div class="modal on" id="board-write">
         <div class="modal-bg"></div>
         <div class="modalContent md board-con">
             <header class="modalHd">
@@ -5212,7 +4421,7 @@
             </div>
         </div>
     </div>
-    <div class="modal " id="help">
+    <div class="modal on" id="help">
         <div class="modal-bg"></div>
         <div class="modalContent md">
             <header class="modalHd">
@@ -5354,7 +4563,7 @@
             </div>
         </div>
     </div>
-    <div class="modal " id="help-view">
+    <div class="modal on" id="help-view">
         <div class="modal-bg"></div>
         <div class="modalContent md board-con">
             <header class="modalHd ">
@@ -5378,8 +4587,963 @@
             </div>
         </div>
     </div>
+    <!-- 예약창 -->
+    <div class="modal on" id="color-M">
+        <div class="modal-bg"></div>
+        <div class="modalContent md coupon-bd">
+            <header class="modalHd">
+                <h3>예약 상태 색상 관리</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <table class="color-pick">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>상담</th>
+                            <th>기타</th>
+                            <th>초진</th>
+                            <th>수술</th>
+                            <th>진료</th>
+                            <th>경과</th>
+                            <th>시술</th>
+                            <th>추가</th>
+                            <th>치료</th>
+                            <th>수술1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>예약</td>
+                            <td><span class="color-1"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-1"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-1"></span></td>
+                            <td><span class="color-1"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                        <tr>
+                            <td>메모</td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                            <td><span class="color-2"></span></td>
+                        </tr>
+                        <tr>
+                            <td>접수</td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                        </tr>
+                        <tr>
+                            <td>수술준비중</td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                            <td><span class="color-4"></span></td>
+                        </tr>
+                        <tr>
+                            <td>수납</td>
+                            <td><span class="color-5"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-5"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-5"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-5"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-5"></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                        <tr>
+                            <td>취소</td>
+                            <td><span class="color-6"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-6"></span></td>
+                            <td><span class="color-6"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-6"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-6"></span></td>
+                            <td><span class="color-6"></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                        <tr>
+                            <td>진료중</td>
+                            <td><span class="color-7"></span></td>
+                            <td><span class="color-7"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-7"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-7"></span></td>
+                            <td><span class="color-7"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-7"></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                        <tr>
+                            <td>진료대기중</td>
+                            <td><span class="color-8"></span></td>
+                            <td><span class="color-8"></span></td>
+                            <td><span class="color-8"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-8"></span></td>
+                            <td><span class="color-8"></span></td>
+                            <td><span class="color-8"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                        <tr>
+                            <td>수술중</td>
+                            <td><span class="color-9"></span></td>
+                            <td><span class="color-9"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-9"></span></td>
+                            <td><span class="color-9"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-9"></span></td>
+                            <td><span class="color-9"></span></td>
+                        </tr>
+                        <tr>
+                            <td>귀가</td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class="color-10"></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                        <tr>
+                            <td>접수취소</td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class=""></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class="color-3"></span></td>
+                            <td><span class=""></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flexEnd mt10">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="data-reset">
+        <div class="modal-bg"></div>
+        <div class="modalContent xs coupon-bd">
+            <header class="modalHd">
+                <h3>데이터 초기화</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody bgGrey">
+                <div class="mo-numIn">
+                    <p class="mb20">모든 데이터가 삭제됩니다. 초기화 하겠습니까?</p>
+                    <div class="flexwrap">
+                        <button type="button" class="btn-white no-btn">아니오</button>
+                        <button type="button" class="btn-grey">확인</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- 진료 -->
+    <div class="modal on" id="prescription-edit">
+        <div class="modal-bg"></div>
+        <div class="modalContent">
+            <header class="modalHd">
+                <h3>처방전 등록</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="flexwrap mb10">
+                    <div class="preshalf dc-mo">
+                        <div class="flexwrap blue mar-b-5">
+                            <div class="blueHd"><span>의사정보</span></div>
+                            <div class="formwrap3">
+                                <select name="" id="" class="dc-select">
+                                    <option value="">의사선택</option>
+                                    <option value="">의사선택</option>
+                                    <option value="">의사선택</option>
+                                </select>
+                                <label for="CSdate">처방의</label>
+                                <input type="text" class="input3" id="CSdate" value="김지수" readonly>
+                                <label for="">면허종별</label>
+                                <input type="text" class="input3" id="" value="의사면허 1" readonly>
+                                <label for="">면허번호</label>
+                                <input type="text" class="input3" id="" value="123456" readonly>
+                            </div>
+                        </div>
+                        <div class="flexwrap-out">
+                            <div class="flexwrap blue">
+                                <div class="blueHd"><span>고객정보</span></div>
+                                <div class="formwrap3">
+                                    <label for="">고객명</label>
+                                    <input type="text" class="input3" id="" value="김태희">
+                                    <label for="">할인금액</label>
+                                    <input type="text" class="input3" id="" value="2020-04-20-0001">
+                                    <label for="">할인금액</label>
+                                    <input type="text" class="input3" id="" value="871212-1110111">
+                                </div>
+                            </div>
+                            <div class="flexwrap blue">
+                                <div class="blueHd"><span>묶음처방 목록</span></div>
+                                <div class="formwrap3">
+                                    <select name="" id="" class="dc-select">
+                                        <option value="">처방전 묶음 선택</option>
+                                        <option value="">처방전 묶음 선택</option>
+                                        <option value="">처방전 묶음 선택</option>
+                                    </select>
+                                    <button type="button"><img src="../assets/img/reicon.svg" alt=""> 갱신</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tit">
+                    <h3><img src="../assets/img/baricon.svg" alt="">고객정보</h3>
+                </div>
+                <div class="flexwrap blue back-w">
+                    <div class="grayHd"><span>처방의약품</span></div>
+                    <div class="formwrap3">
+                        <input type="radio" name="insurance" id="insurance-ck1">
+                        <label for="insurance-ck1">의료보험</label><span></span>
+                        <input type="radio" name="insurance" id="insurance-ck2">
+                        <label for="insurance-ck2">의료보험</label><span></span>
+                        <input type="radio" name="insurance" id="insurance-ck3">
+                        <label for="insurance-ck3">산재보험</label><span></span>
+                        <input type="radio" name="insurance" id="insurance-ck4">
+                        <label for="insurance-ck4">자동차보험</label><span></span>
+                        <input type="radio" name="insurance" id="insurance-ck5">
+                        <label for="insurance-ck5">기타</label>
+                        <input type="text" class="input3" placeholder="기타 사유를 입력해주세요.">
+                        <label for="">사용기간</label>
+                        <input type="text" class="input4" id="" value="7" >일
+                    </div>
+                </div>
+                <div class="flexwrap mar-20">
+                    <h3 class="mb4"><i class="sq-dot"></i>처방의약품</h3>
+                    <div class="btn-me">
+                        <button type="button"><i class="p-icon"></i> 의약품 추가</button>
+                        <button type="button"><i class="d-icon"></i> 의약품 삭제</button>
+                    </div>
+                </div>
+                <table class="tablewrap">
+                    <colgroup>
+                        <col style="width: 4%;">
+                        <col style="width: 10%;">
+                        <col style="width: 37%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <td><input type="checkbox" id="m-all-ck"><label for="m-all-ck"></label></td>
+                            <td>코드</td>
+                            <td>명칭</td>
+                            <td>1회 투약량</td>
+                            <td>1회 투여횟수</td>
+                            <td>총 투약 일수</td>
+                            <td>용법</td>
+                        </tr>
+                    </thead>
+<!--                        mo-body-t 클래스 추가-->
+                    <tbody class="mo-body-t">
+                        <tr>
+                            <td><input type="checkbox" id="m-all-ck1"><label for="m-all-ck1"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="m-all-ck2"><label for="m-all-ck2"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="m-all-ck3"><label for="m-all-ck3"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="m-all-ck4"><label for="m-all-ck4"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flexwrap mar-20">
+                    <h3 class="mb4"><i class="sq-dot"></i>주사제 처방내역</h3>
+                    <div class="input-box">
+                        <input type="radio" name="inj-rd" id="inj-rd1">
+                        <label for="inj-rd1" class="pad-0">원내제조</label><span></span>
+                        <input type="radio" name="inj-rd" id="inj-rd2">
+                        <label for="inj-rd2" class="pad-0">원외처방</label>
+                    </div>
+                    <div class="btn-me">
+                        <button type="button"><i class="p-icon"></i>주사제 추가</button>
+                        <button type="button"><i class="d-icon"></i>주사제 삭제</button>
+                    </div>
+                </div>
+                <table class="tablewrap">
+                    <colgroup>
+                        <col style="width: 4%;">
+                        <col style="width: 10%;">
+                        <col style="width: 37%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 8%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <td><input type="checkbox" id="m-all1-ck"><label for="m-all1-ck"></label></td>
+                            <td>코드</td>
+                            <td>명칭</td>
+                            <td>1회 투약량</td>
+                            <td>1회 투여횟수</td>
+                            <td>총 투약 일수</td>
+                            <td>용법</td>
+                        </tr>
+                    </thead>
+                    <tbody class="mo-body-t2">
+                        <tr>
+                            <td><input type="checkbox" id="m-all1-ck1"><label for="m-all1-ck1"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="m-all1-ck2"><label for="m-all1-ck2"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="m-all1-ck3"><label for="m-all1-ck3"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="m-all1-ck4"><label for="m-all1-ck4"></label></td>
+                            <td>652604070</td>
+                            <td>토팜정25밀리그람(토피라메이트)_(35mg/1정)</td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value="1"></td>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="flexwrap mar-20 mb20">
+                    <div class="footer-1">
+                        <button type="button" class="btn-white">전체인쇄(제출용,보관용)</button>
+                        <button type="button" class="btn-white">제출용 인쇄</button>
+                        <button type="button" class="btn-white" target="_blank" onclick="window.open('member-pop.html','','width=1000, height=1200, toolbar=no, menubar=no, scrollbars=yes, resizable=yes');return false;">보관용 인쇄</button>
+                    </div>
+                    <div class="footer-2">
+                        <button type="button"><i class="d-icon"></i>삭제</button><span></span>
+                        <button type="button">전체초기화</button>
+                        <button type="button" class="btn-white w-40">임시저장</button>
+                        <button type="button" class="btn-grey w-40">저장</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="bun-prescription">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6 coupon-bd">
+            <header class="modalHd">
+                <h3>묶음처방 추가</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>묶음처방명</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="비만 1">
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot blue-la">
+                    <div class="blueHd"><span>사용여부</span></div>
+                    <div class="formwrap3">
+                        <input type="radio" name="bun-p-rd" class="" id="bun-p-rd1">
+                        <label for="bun-p-rd1">사용</label>
+                        <input type="radio" name="bun-p-rd" class="" id="bun-p-rd2">
+                        <label for="bun-p-rd2">사용안함</label>
+                    </div>
+                </div>
+                <div class="flexEnd mt10">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="coupon-name">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6 coupon-bd">
+            <header class="modalHd">
+                <h3>쿠폰구분 추가</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>쿠폰구분명</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="할인쿠폰">
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot blue-la">
+                    <div class="blueHd"><span>사용여부</span></div>
+                    <div class="formwrap3">
+                        <input type="radio" name="cou-rd" class="" id="cou-rd1">
+                        <label for="cou-rd1">사용</label>
+                        <input type="radio" name="cou-rd" class="" id="cou-rd2">
+                        <label for="cou-rd2">사용안함</label>
+                    </div>
+                </div>
+                <div class="flexEnd mt10">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="coupon-reg">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6 coupon-bd">
+            <header class="modalHd">
+                <h3>쿠폰 등록</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>쿠폰구분</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="할인쿠폰" readonly>
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>쿠폰명</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexwrap blue date-pi">
+                    <div class="blueHd"><span>시작일자</span></div>
+                    <div class="formwrap3">
+                        <input type="text" id="from_date" class="date_pick input6"> 
+                        <i class="cal1"></i>
+                    </div>
+                </div>
+                <div class="flexwrap blue date-pi">
+                    <div class="blueHd"><span>종료일자</span></div>
+                    <div class="formwrap3">
+                        <input type="text" id="to_date" class="date_pick input6"> 
+                        <i class="cal2"></i>
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>상품명</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot">
+                    <div class="blueHd"><span>설명</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexEnd mt10">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="drug-reg">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6 coupon-bd">
+            <header class="modalHd">
+                <h3>약품 등록</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div>
+                    <ul class="drug-ul clearfix">
+                        <li>투여구분</li>
+                        <li><button class="btn-gray on">전체</button></li>
+                        <li><button class="btn-gray">내복</button></li>
+                        <li><button class="btn-gray">외용</button></li>
+                        <li><button class="btn-gray">기타</button></li>
+                        <li><button class="btn-gray">주사제</button></li>
+                    </ul>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>약품코드</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="">
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>약품명</span> <span class="red-t"> *</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>용량</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6">
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>제약사</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6">
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>비고</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot blue-la">
+                    <div class="blueHd"><span>사용유무</span></div>
+                    <div class="formwrap3">
+                        <input type="radio" name="drug-p-rd" class="" id="drug-p-rd1">
+                        <label for="drug-p-rd1">사용</label>
+                        <input type="radio" name="drug-p-rd" class="" id="drug-p-rd2">
+                        <label for="drug-p-rd2">사용안함</label>
+                    </div>
+                </div>
+                <div class="flexEnd mt10">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="excel-upload">
+        <div class="modal-bg"></div>
+        <div class="modalContent md">
+            <header class="modalHd">
+                <h3>진료구분 엑셀 업로드</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody clearfix">
+                <div class="href-l">
+                    <p class="p-tit">일반진료명 / 진료구분 엑셀업로드</p>
+                    <div class="href-in">
+                        <p>하기와 같이 엑셀필드명 순서를 맞추어주세요<br>노란색 필드는 필수입니다.<br><span class="span-gray">(회차에 정보가 없으면 1입니다.)</span></p>
+                        <table class="h-in-table">
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>진료명</th>
+                                    <th>진료구분</th>
+                                    <th>견적</th>
+                                    <th>회차</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn-white w100">일반 진료구분 엑셀파일 업로드</button>
+                        <p class="foot-p">1. 동일한 진료명이 있으면 해당 진료명에 진료구분이 삽입됩니다.<br>2. 동일한 진료명과 진료구분이 있으면 업데이트 됩니다.(견적,회차)</p>
+                    </div>
+                </div>
+                <div class="href-r">
+                    <p class="p-tit">패키지 / 진료구분 엑셀업로드</p>
+                    <div class="href-in">
+                        <p>하기와 같이 엑셀필드명 순서를 맞추어주세요<br>노란색 필드는 필수입니다.<br><span class="span-gray">(회차에 정보가 없으면 1입니다.)</span></p>
+                        <table class="h-in-table">
+                            <colgroup>
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                                <col style="width: 20%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>진료명</th>
+                                    <th>진료구분</th>
+                                    <th>패키지항목</th>
+                                    <th>용량</th>
+                                    <th>수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn-white w100">패키지 / 진료구분 엑셀파일 업로드</button>
+                        <p class="foot-p">1. 동일한 진료명이 있으면 해당 진료명에 진료구분이 삽입됩니다.<br>2. 동일한 진료명, 진료구분, 패키지항목이 있으면 용량, 수량이 업데이트 된다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal on" id="set-package-add">
+        <div class="modal-bg"></div>
+        <div class="modalContent">
+            <header class="modalHd">
+                <h3>패키지 추가</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody clearfix">
+                <div class="pac-href-l">
+                    <div class="pac-tit bg-blue">
+                        <p>진료명 설정</p>
+                    </div>
+                    <div class="href-in table-wrap">
+                        <div class="t-hd-width">
+                            <div class="table-header-bg"></div>
+                            <div class="table-in reser-table">
+                                <table class="pac-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%"><div class="th-text">순서</div> </th>
+                                            <th style="width: 60%"><div class="th-text">진료명</div></th>
+                                            <th style="width: 20%"><div class="th-text">사용</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="com-i"></i>1</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>2</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>3</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>4</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>5</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>6</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>7</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>8</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>9</td>
+                                            <td>비만</td>
+                                            <td>Y</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pac-href-m">
+                    <div class="pac-tit  bg-blue">
+                        <p>진료구분 설정</p>
+                        <button type="button" class="pac-add"><i></i>패키지에 추가</button>
+                    </div>
+                    <div class="href-in table-wrap">
+                        <div class="t-hd-width">
+                            <div class="table-header-bg"></div>
+                            <div class="table-in reser-table">
+                                <table class="pac-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%"><div class="th-text">순서</div> </th>
+                                            <th style="width: 80%"><div class="th-text">진료구분</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="com-i"></i>1</td>
+                                            <td>골드인레인</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>2</td>
+                                            <td>레진인레인</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>3</td>
+                                            <td>크라운</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>4</td>
+                                            <td>브릿지</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>5</td>
+                                            <td>틀니</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>6</td>
+                                            <td>라미네이트</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>7</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr> 
+                                            <td><i class="com-i"></i>8</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>9</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pac-href-r">
+                    <div class="pac-tit bgMint">
+                        <p>패키지 항목</p>
+                        <button type="button" class="pac-del"><i></i>패키지에서 삭제</button>
+                    </div>
+                    <div class="href-in table-wrap">
+                        <div class="t-hd-width">
+                            <div class="table-header-bg"></div>
+                            <div class="table-in reser-table">
+                                <table class="pac-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%"><div class="th-text">순서</div> </th>
+                                            <th style="width: 50%"><div class="th-text">패키지 항목</div></th>
+                                            <th style="width: 15%"><div class="th-text">용량</div></th>
+                                            <th style="width: 15%"><div class="th-text">수량</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="com-i"></i>1</td>
+                                            <td>보톡스</td>
+                                            <td>50ml</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>2</td>
+                                            <td>필러</td>
+                                            <td>200ml</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>3</td>
+                                            <td>레진인레인</td>
+                                            <td>3ml</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>4</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>5</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>6</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>7</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>8</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="com-i"></i>9</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-indi">저장</button>
+            </div>
+        </div>
+    </div>
+    <!-- 문자 -->
+    <div class="modal on" id="msg-class">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6 coupon-bd">
+            <header class="modalHd">
+                <h3>문자분류</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>명칭</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot blue-la">
+                    <div class="blueHd"><span>사용</span></div>
+                    <div class="formwrap3">
+                        <input type="radio" name="msgC-rd" class="" id="msgC-rd1">
+                        <label for="msgC-rd1">사용</label>
+                        <input type="radio" name="msgC-rd" class="" id="msgC-rd2">
+                        <label for="msgC-rd2">사용안함</label>
+                    </div>
+                </div>
+                <div class="flexEnd mt10">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 병원 -->
-    <div class="modal" id="doctor-M">
+    <div class="modal on" id="doctor-M">
         <div class="modal-bg"></div>
         <div class="modalContent sm-6 coupon-bd">
             <header class="modalHd">
@@ -5411,6 +5575,105 @@
                 </div>
             </div>
         </div>
+    </div> 
+    <!-- 펜차트 -->
+    <div class="modal on" id="chart-reg">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6 coupon-bd">
+            <header class="modalHd">
+                <h3>차트등록</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>차트분류</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="">
+                    </div>
+                </div>
+                <div class="flexwrap blue">
+                    <div class="blueHd"><span>차트명</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6" id="" value="">
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot">
+                    <div class="blueHd"><span>순서</span></div>
+                    <div class="formwrap3">
+                        <input type="text" class="input6"> 
+                    </div>
+                </div>
+                <div class="flexwrap blue blue-bot">
+                    <div class="blueHd"><span>이미지</span></div>
+                    <div class="formwrap3 fileBox">
+                        <input type="text" class="fileName" id="fileName" name="fileName" readonly="readonly">
+                        <label for="uploadBtn" class="btn_file">파일선택</label>
+                        <input type="file" id="uploadBtn" name="uploadBtn" class="uploadBtn">
+                    </div>
+                </div>
+                <div class="mt10 flexEnd">
+                    <button class="btn-grey w80px">저장</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="modal on" id="move-num">
+        <div class="modal-bg"></div>
+        <div class="modalContent xs coupon-bd">
+            <header class="modalHd">
+                <h3>이동순서</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody">
+                <div class="mo-numIn">
+                    <input type="text" value="18"><button type="button" class="btn-grey">확인</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="modal on" id="imgView">
+        <div class="modal-bg"></div>
+        <div class="modalContent sm-6">
+            <header class="modalHd">
+                <h3>이미지 보기</h3>
+                <button class="modalClose"></button>
+            </header>
+            <div class="modalBody clearfix pad-0">
+                <div class="pad-20">
+                    <div class="I-viewHd">
+                        <p><span>08</span>수술기획서</p>
+                        <button type="button" class="btn-white">이미지교체</button>
+                    </div>
+                    <div class="iv I-imgwrap">
+                        <img src="../assets/img/img-view.png" alt="">
+                    </div>
+                </div>
+                <div class="iv iv-edit clearfix">
+                    <div class="left">
+                        <button type="button" class="glass-pl"></button>
+                        <button type="button" class="glass-mn"></button>
+                        <button type="button" class="view100"></button>
+                        <button type="button" class="rotate90"></button>
+                        <button type="button" class="rotate180"></button>
+                        <button type="button" class="flip-hor"></button>
+                        <button type="button" class="flip-ver"></button>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="delete"></button>
+                        <button type="button" class="download"></button>
+                        <div class="pagebox">
+                            <button class="Larrow"></button>
+                            <p class="pagenumber">
+                                <span>2</span>
+                                /
+                                <span>5</span>
+                            </p>
+                            <button class="Rarrow"></button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="../assets/js/common.js"></script>
@@ -5426,6 +5689,8 @@
                 });
                 $(".date_pick").datepicker();                    
             });
+
+        
     </script>
 </body>
 </html>

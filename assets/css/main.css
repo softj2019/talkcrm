@@ -1,7 +1,11 @@
-.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {
+.fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number {/*20.06.19 수정 ~*/
     float: left;
     font-size: 14px;
-}
+    display: block;
+    overflow: hidden;
+    width: 10px;
+    height: 20px;
+}/* ~ */
 .fc-row.fc-rigid .fc-content-skeleton {
     position: absolute;
     top: 0;
@@ -83,26 +87,28 @@
     font-size: 12px;
     line-height: 1.4;
     border-radius: 0px;
-    border: 1px solid #ccc;
-    border-left: 3px solid #FFC107;
+    border-top: 1px solid #ccc !important;/*20.06.19 수정~*/
+    border-right: 1px solid #ccc !important;
+    border-bottom: 1px solid #ccc !important;
+    border-left: 4px solid #FFC107;/*~*/
 }
-/* 데이터피커 */
-.ui-datepicker {
+/* 20.06.17 수정 데이터피커 */ 
+.releft-t .ui-datepicker {
     width: 15em;
-    height: 260px;
+    height: 240px;
     padding: .2em .2em 0;
     display: none;
     border: none;
 }
-.ui-datepicker-calendar thead{
+.releft-t .ui-datepicker-calendar thead{
     display: none;
 }
-.reserv-con .releft-t tbody td {
+.releft-t .reserv-con .releft-t tbody td {
     position: relative;
     padding: 5px 0px;
     cursor: pointer;
 }
-.ui-datepicker .ui-datepicker-title {
+.releft-t .ui-datepicker .ui-datepicker-title {
     margin: 0 2.3em;
     line-height: 1.8em;
     text-align: center;
@@ -113,11 +119,14 @@
 /* .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
     display: none;
 } */
+
+/*20.06.17 
 .ui-datepicker .ui-datepicker-next {
     right: 2px;
     background: url(../img/calendar_arrow_R_grey.png)no-repeat center / 10px;
 }
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+*/
+.releft-t .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
     width: 25px;
     border-radius: 50px;
     background: #2bc8ad;
@@ -128,4 +137,179 @@
 }
 .fc-more-cell {
     line-height: 18px;
+}
+/*일자공지*/
+.res-f{
+    position:absolute;
+    top:52px;
+}
+.res-t.on .fc-view-container {
+    margin-top: 68px;
+}
+.r-calander td{
+    height:40px!important;
+    vertical-align: inherit!important;
+}
+.ul-tab-box, .tab-btn{
+    position: relative;
+    z-index: 2;
+}
+
+/*left-con datepicker*/
+.releft-t .ui-state-active,
+.releft-t .ui-widget-content .ui-state-active,
+.releft-t .ui-widget-header .ui-state-active{
+    line-height:18px;
+    padding-right:4px;
+    width:25px;
+}
+.reserv-con .releft-t tbody td{
+    width:32px;
+}
+.releft-t .ui-datepicker-today a::before{
+    content:'';
+    display:block;
+    position: absolute;
+    left: 14px;
+    top: 3px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: red;
+}
+
+.releft-t .ui-datepicker .ui-datepicker-prev span{
+    background: url(../img/calendar_arrow_L_navy.png) no-repeat center / contain;
+}
+.releft-t .ui-datepicker .ui-datepicker-next span {
+    background: url(../img/calendar_arrow_R_navy.png) no-repeat center / contain;
+}
+.releft-t .ui-datepicker .ui-datepicker-prev,
+.releft-t .ui-datepicker .ui-datepicker-next{
+    height:35px
+}
+.releft-t .ui-datepicker-week-end:nth-of-type(1) a{
+    color:red;
+}
+.releft-t .ui-datepicker-week-end:nth-of-type(1).ui-datepicker-current-day a{
+    color:#ffffff;
+}
+.releft-t .ui-datepicker .ui-datepicker-header{
+    margin:6px 0;
+}
+.fc-icon-chevron-left:before, .fc-icon-chevron-right:before{
+    width:20px;
+}
+.r-calander .ui-datepicker-calendar{
+    margin:0 32px;
+    width:calc(100% - 64px);
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.r-calander .ui-datepicker-header{
+    position: absolute;
+    width: 100%;
+    padding: 0;
+}
+.r-calander .ui-widget-header a.ui-corner-all{
+    position: absolute;
+    top:0;
+    width: 32px;
+    height: 41px;
+    border: 1px solid #ccc;
+    opacity: 1;
+    border-radius: 0;
+}
+.r-calander .ui-widget-header a.ui-corner-all:first-child{
+    border-right:0px;
+}
+.r-calander .ui-widget-header a.ui-corner-all span{
+    display:none;
+}
+.r-calander .ui-widget-header .ui-datepicker-prev{
+    left:0;
+    background: #f0f0f0 url(../img/calendar_arrow_L_grey.png) no-repeat center / 10px;
+}
+.r-calander .ui-widget-header .ui-datepicker-next{
+    right:0;
+    background:#f0f0f0 url(../img/calendar_arrow_R_grey.png) no-repeat center / 10px;
+}
+.r-calander .ui-widget-header .ui-datepicker-title{
+    display:none;
+}
+.r-calander .ui-datepicker-calendar tr {
+    float: left;
+}
+.r-calander td:not(.ui-datepicker-other-month) {
+/*            width: calc((1440px / 30) )!important;*/
+    border-top:0;
+    border-bottom:0;
+    border-right:0;
+}
+.r-calander td:last-child:not(.ui-datepicker-other-month){
+    border-right:0;
+}
+.r-calander .ui-datepicker{
+    border:none;
+    padding:0;
+    width:100%;
+}
+.r-calander table thead{
+    display: none;
+}
+.r-calander>table{
+    display:none;
+}
+.r-calander .ui-datepicker-other-month{
+    display:none;
+}
+.r-calander .ui-state-active{
+    padding:0;
+}
+.r-calander .ui-datepicker-week-end a{
+    color:#E85B5B;
+}
+.r-calander .ui-datepicker-week-end:nth-child(7n) a{
+    color:#5B8AE8;
+}
+.r-calander .ui-datepicker-current-day{
+    background:#2bc8ad;
+    border-color:#2bc8ad;
+}
+.r-calander .ui-datepicker-today a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 45%;
+    top: 3px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #E85B5B;
+}
+/*표높이*/
+.res-t.on .fc-time-grid-container, .res-t.on .fc-day-grid-container{
+    height:662px!important;
+}
+.res-t.on .fc-view-container.on .fc-time-grid-container,
+.res-t.on .fc-view-container.on .fc-day-grid-container{
+    height:510px!important;
+}
+.res-t.on .fc-view-container{
+    margin-top:68px;
+}
+.res-t.on .fc-view-container.on{
+    margin-top:220px;
+}
+/* 20.06.19 추가 */
+.fc-day-top.fc-sun .fc-day-number,.fc-day-header.fc-sun span{
+    color: #E85B5B;
+}
+.fc-day-top.fc-sat .fc-day-number,.fc-day-header.fc-sat span {
+    color: #5B8AE8;
+}
+.fc-day-header.fc-sun.fc-past span, .fc-day-header.fc-sat.fc-future span{
+    color: #333;
 }

@@ -1265,7 +1265,8 @@ div.doc{
 .tab-box1 .tabContent {
     background: #e5f4fc;
     border: 1px solid #548BC7;
-    padding: 5px
+    padding: 5px;
+    height: 379px;/*20.06.17 추가*/
 }
 .tab-box1 ul.tabUl li.on {
     position: relative;
@@ -1326,17 +1327,18 @@ div.doc{
     text-align: center;
     table-layout: fixed;
 }
-.con-right .tabContent table{
+/* .con-right .tabContent table{20.06.17 삭제
     min-width: 1020px;
-}
+} */
 
-.tab-box1 .tabContent .tabbox .table-in {
+.tab-box1 .tabContent .tabbox .table-in {/* 20.06.17 수정*/
     display: flex;
-    overflow: auto;
-    padding: 5px;
-    background: #fafdfe;
-    height: 357px;
-}
+    /* overflow: auto; */
+    /* padding: 5px; */
+    /* background: #fafdfe; */
+    height: 293px;
+    min-width: 1010px;
+}/* ~ */
 .tab-box2 .tabContent .tabbox .payment-btn {
     width: auto;
     position: absolute;
@@ -1346,7 +1348,10 @@ div.doc{
     color: #666666;
 }
 .tabContent .tabbox table thead tr{
-    height: 40px;
+    /* height: 40px; *//* 20.06.17 삭제*/
+}
+.board-tab.tabContent .tabbox table thead tr{
+    height: 40px; /*20.06.18 추가*/
 }
 .tab-box1 .tabContent .tabbox table tbody tr{
     height: 53px;
@@ -1354,17 +1359,20 @@ div.doc{
 .tab-box1 .tabContent .tabbox:nth-child(3) table tbody tr{
     height: 45px;
 }
-.tab-box1 .tabContent .tabbox table th {
-    padding: 0px 5px;
-    background: #E9F0F8;
+.tab-box1 .tabContent .tabbox table th {/*20.06.17 수정*/
+    height: 0;
+    /* padding: 0px 5px; */
+    /* background: #E9F0F8;
     border: 1px solid #CCCCCC;
-    border-top: 1px solid #548BC7;
+    border-top: 1px solid #548BC7; */
     font-size: 12px;
+    font-weight: 500;
     color: #225184;
-}
+}/* ~*/
 .tab-box1 .tabContent .tabbox table td{
     padding: 10px 5px;
     border: 1px solid #CCCCCC;
+    border-top: none;/* 20.06.17 추가*/
 }
 .t-txt-left{
     text-align: left;
@@ -1390,37 +1398,39 @@ div.doc{
 .tab-box2 ul.tabUl li{
     width:80px;
 }
-.tab-box2 .tabContent .tabbox table th {
-    padding: 0px 5px;
+.tab-box2 .tabContent .tabbox table th {/*20.06.17 수정*/
+    /* padding: 0px 5px;
     background: #f0f0f0;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #CCCCCC; */
+    font-weight: 500;
     font-size: 12px;
     color: #666666;
 }
 .tab-box2 .tabContent .tabbox table td{
     padding: 10px 5px;
     border: 1px solid #CCCCCC;
+    border-top: none;
 }
 .tab-box2 .tabContent table tbody tr{
     height: 45px;
 }
 .tab-box2 .tabContent .tabbox .table-in{
-/*    2020.05.14 삭제 display: flex;*/
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 0px;
     background: #fff;
-    height: 327px;
-    overflow:auto;
-}
+    height: 270px;
+    /* overflow:auto; */
+}/*~*/
 .tab-box2 .tabContent .tabbox .p-chart,
 .tab-box2 .tabContent .tabbox .img-chart {
     height: 359px;
+    overflow-y:auto;
 }
 .tabbox .img-chart{
     display:block;
 }
 .tab-box2 .tabContent .tabbox .tab2-in-2{
-    height: 320px;
+    height: 265px;/*20.06.17 수정*/
     min-width: 100% !important;
 }
 .p-box {
@@ -1551,7 +1561,7 @@ div .day-t {
     height:371px;
 }
 .tab-ov .tab-ov-in{
-    min-width:1113px;
+    min-width:1114px;/*2020.06.17 수정*/
     overflow: hidden;
 }
 .tab-ov .tab-ov-in > div{
@@ -1572,15 +1582,15 @@ div .day-t {
     width: 30%;
 }
 .tabbox .tab-r > button{
-    top: 9px !important;
+    top: 0px !important;/*20.06.17 수정 ~*/
 }
-.tab-r textarea {
-    margin-top: 41px;
+.tab-r textarea {/*20.06.17 수정 ~*/
+    margin-top: 35px;
     width: 95%;
-    height: 310px;
+    height: 305px;
     margin-left: 10px;
     overflow-y: auto;
-}
+}/*~*/
 .right-tab {
     width: 50px;
     height: 800px;
@@ -2703,9 +2713,9 @@ div.blue.blue.bottom-n{
 .tab-box2 #bot-tab8 .tab8-active {
     background: #f9cd92;
 }
-.tab-box2 .tabContent .tabbox .tab-mar {
+/* .tab-box2 .tabContent .tabbox .tab-mar { 20.06.17 삭제
     margin-top: 35px;
-}
+} */
 #prescription-edit .modalBody{
     height: 700px;
     overflow: auto;
@@ -3486,12 +3496,14 @@ div.blue.blue.bottom-n{
     position: relative;
     cursor: pointer;
 }
+/* 20.06.17 삭제
 .r-calander td:first-child{
     background: #f0f0f0 url(../img/calendar_arrow_L_grey.png) no-repeat center / 10px;
 }
 .r-calander td:last-child{
     background: #f0f0f0 url(../img/calendar_arrow_R_grey.png) no-repeat center / 10px;
 }
+*/
 .r-calander td .red-dot{
     position: absolute;
     left: 50%;
@@ -4968,7 +4980,6 @@ th:not(:first-child) .th-text{
 .color-8{background: #FDD9D7;}
 .color-9{background: #DBEFDC;}
 .color-10{background: #CCD6E3;}
-
 /*설정관리-기본설정*/
 .tabUl.btn li{
     width:100px;
@@ -5110,11 +5121,11 @@ th:not(:first-child) .th-text{
     width: 20%;
 }
 .set-R .wrap-set{
-    height: 793px;/*20.06.08 수정*/
+    height: 775px;/*20.06.15 QC 수정*/
 }
 .tabContent .tabbox .set-L thead tr{height: 0;}
 .set-inH {
-    height: 699px;/*20.06.08 높이수정*/
+    height: 686px;/*20.06.15 QC 높이수정*/
     padding: 10px;
     background: #f0f0f0;
 }
@@ -5147,7 +5158,7 @@ th:not(:first-child) .th-text{
     border-top: 1px solid #ccc;
 }
 .set-inH .table-in{
-    height: 639px;/*20.06.08 높이수정*/
+    height: 626px;/* 20.06.15 QC 높이수정*/
 }
 .set-inH .th-text{
     height:40px;
@@ -5304,6 +5315,7 @@ th:not(:first-child) .th-text{
 }
 .ms-doc.link-m {
     max-width: 110px;
+    height: 368px;/*0.06.15 QC 높이추가*/
 }
 .ms-doc:nth-of-type(2){
     margin: 0 10px;
@@ -5448,7 +5460,8 @@ th:not(:first-child) .th-text{
     vertical-align: -2px;
 }
 .pac-table tbody tr {
-    cursor: pointer;;
+    cursor: pointer;
+    background: #fff;/*20.06.16 추가*/
 }
 .blue-hover tbody tr:hover{
     background:rgba(106, 177, 255, 0.21);
@@ -5471,12 +5484,12 @@ th:not(:first-child) .th-text{
 .href-in.pd10{
     padding:10px!important;
 }
-/* 20.06.08 높이수정~ */
+/* 20.06.16 QC 높이수정~ */
 [class*='d-name'] .href-in{
-    height:711px
+    height:695px
 }
 [class*='d-name'] .table-in{
-    height:648px;
+    height:635px;
     overflow-y: auto;
 }/* ~ */
 [class*='clk'] .on{/*20.06.04 수정 클래스명*/
@@ -5484,16 +5497,16 @@ th:not(:first-child) .th-text{
     color: #225184;
 }
 tr.pack{
-    background:#F9CD92;
+    background:#F9CD92 !important;/* 20.06.16 수정*/
 }
 tr.pre{
-    background:#C9F1EA;
+    background:#C9F1EA !important;/* 20.06.16 수정*/
 }
 .set3-wrap .set-inH{
-    height: 756px;/* 20.06.08 높이수정*/
+    height: 740px;/* 20.06.16 높이수정*/
 }
 .set3-wrap .set-inH .table-in {
-    height: 696px;/* 20.06.08 높이수정*/
+    height: 680px;/* 20.06.16 높이수정*/
 }
 
 /*2020.06.03 수정 ~ 5482*/
@@ -5572,16 +5585,16 @@ tr.pre{
     border-top: 1px solid #ccc;
 }
 .set3-inH .table-in{
-    height: 730px;/* 20.06.08 높이수정*/
+    height: 725px;/* 20.06.16 높이수정 */
 }
 .setR-H-O{
-    height: 722px;/* 20.06.08 높이수정*/
+    height: 706px;/* 20.06.16 QC 높이수정*/
 }
 .setR-H-O .set3-inH{
     height: 759px;/* 20.06.08 높이수정*/
 }
 .setR-H-O .set3-inH .table-in{
-    height: 661px;/* 20.06.08 높이수정*/
+    height: 645px;/* 20.06.16 높이수정*/
 }
 .set3-inH .th-text{
     height:40px;
@@ -5646,10 +5659,10 @@ tr.pre{
     line-height: 35px;
 }
 .set-4p-2 .set-inH{
-    height:566px!important;/*20.06.08 높이수정*/
+    height:549px!important;/*20.06.16 높이수정*/
 }
 .set-4p-2 .set-inH .table-in{
-    height:506px!important;/*20.06.08 높이수정*/
+    height:489px!important;/*20.06.16 높이수정*/
 }
 .set4-tb tr {
     height: 40px;
@@ -5768,7 +5781,7 @@ tr.pre{
     border-bottom: 1px solid #ccc;
 }
 .sky-H {
-    height: 787px;
+    height: 771px;/* QC 20.06.16 수정*/
 }
 .sky-tb {
     width: 100%;
@@ -5860,7 +5873,7 @@ tbody.sky-hover tr:hover{
 .top-tb td {
     padding: 0 5px;
 }
-/* 20.06.08 추가~ */
+/* 20.06.15 QC 추가~ */
 .top-tb td:first-child,.border-LR td:first-child{
     border-left: none;
 }
@@ -5969,7 +5982,7 @@ button.btn-Bmint{
     width: 150px !important;
 }
 .set6-H {
-    height: 568px;
+    height: 551px;/*QC 20.06.15 높이수정*/
 }
 .resign-bg {
     background: #f0f0f0;
@@ -6003,7 +6016,7 @@ button.btn-Bmint{
     padding:10px;
 }
 .chartlist2.set7-list{
-    height: 790px;/*20.06.08 높이수정*/
+    height: 774px;/*20.06.15 QC 높이수정*/
     position: relative;
 }
 .chartlist2.set7-list > div {
@@ -6133,14 +6146,14 @@ button.btn-Gwhite {
     width:125px!important;
     height:40px;
 }
-.date_pick + i{
-    display:block;
-    position:absolute;
-    right: 15px;
-    top:9px;
-    width:20px;
-    height:20px;
-    background:url(../img/i-calendar.png) no-repeat center / 20px;
+.date_pick + i {
+    display: block;
+    position: absolute;
+    right: 5px;/*20.06.15 QC수정*/
+    top: 5px;/*20.06.15 QC수정*/
+    width: 20px;
+    height: 20px;
+    background: url(../img/i-calendar.png) no-repeat center / 20px;
 }
 .task-buttonwrap .date_pick + .cal1{
     left:100px;
@@ -6478,7 +6491,7 @@ h3 .small{
     width: auto;
     height: 30px;
     padding: 0;
-    margin-right: 5px;
+    margin-right: 10px;/* 20.06.16 간격수정*/
     overflow: hidden;
 }
 .top-hd select {
@@ -6730,12 +6743,13 @@ i.print-I{
 }
 .complet-on *{
     color: #ccc !important;
+    background: #fff; /*20.06.16 추가*/
 }
 .today-on {
     background: #FEF5E9;
 }
 [class*='Bgck'] .on{
-    background: #D4E2F1;
+    background: #D4E2F1 !important;
 }
 .front-wrap1,.front-wrap2, .front-wrap3{
     display: none;
@@ -7161,19 +7175,22 @@ i.print-I{
     background: #ccc;
 }
 .wrap-set2-H1{
-    height: 827px;
+    height: 810px;
 }
 .wrap-set2-H1 .set-inH{
-    height: 743px;
+    height: 726px;
 }
 .wrap-set2-H2{
-    height: 783px;
+    height: 766px;
 }
 .wrap-set3-H1 {
-    height: 792px;
+    height: 776px;/* 20.06.15 QC 높이수정*/
 }
 .wrap-set7-H1 {
-    height: 882px;
+    height: 865px;/*20.06.15 QC 높이수정*/
+}
+.in-set3-H2 {/*20.06.15 QC 높이추가*/
+    height: 715px !important;
 }
 /* cell color */
 .color-11{
@@ -7181,7 +7198,7 @@ i.print-I{
 }
 .cell-color-box .cellview{
     height:24px;
-    background-color: #fff;
+    /* background-color: #fff; */
     margin-top:5px;
     position:relative;
     cursor: pointer;
@@ -7382,16 +7399,28 @@ ul.ulBar li:before{
 .ps-date{
     color:#666666;
 }
-.memowrap2>textarea{
+.memowrap2>textarea{/*20.06.17 QC 삭제 수정 ~*/
     height:50px!important;
     display:block;
     border-left:none!important;
     border-right:none!important;
 }
+/* .memowrap2 > .memow2-T button{ 20.06.17 삭제
+    width: 50px;
+    height:50px;
+    display:block;
+    line-height: normal;
+    border: 1px solid #273957;
+    padding: 0;
+    color: #333;
+    float: left;
+} */ 
 .ps-footer{
     height:40px;
     padding:3px;
-}
+    /* display: flex; 20.06.17 삭제
+    justify-content: space-between; */
+}/* ~*/
 .ps-footer select{
     width:90px;
     height:34px;
@@ -7452,19 +7481,20 @@ ul.ulBar li:before{
 .tab-box3 .tabContent .tabbox .tab-in{
     height: 806px;
     background: #ffffff;
-    overflow: auto;
+    /* overflow: auto; */ /*20.06.16 삭제*/
 }
+
 .tab-box3 .tabContent #top-tab1 .tab-in,
 .tab-box3 .tabContent #top-tab2 .tab-in{
     background-color:transparent;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */ /*20.06.16 삭제*/
 }
 .tab-box3 .tabContent #top-tab1 .tab-in-inner,
 .tab-box3 .tabContent #top-tab2 .tab-in-inner{
     background:#ffffff;
 }
 #top-tab1.tabbox .table-in{
-    padding:0;
+    /* padding:0; *//*20.06.17 삭제*/
 }
 #top-tab1.tabbox .table-in-inner, .tabbox .tab-in-inner{
     padding:10px;
@@ -7614,7 +7644,7 @@ ul.ulBar li:before{
     text-align: left;
 }
 ul.dt-minitab li{
-    width:81px;
+    width:calc(100% / 3 - 0.01px);/*20.06.16 넓이수정*/
 }
 ul.dt-minitab+.tabContent2 .tabbox2{
     display:none;
@@ -7655,7 +7685,7 @@ ul.dt-minitab+.tabContent2 .tabbox2.on{
     margin-right:3px;
 }
 .tab-box3 input[type="checkbox"]:checked +label::before {
-    background: #fff url(../assets/img/arrow-down-bk.png) no-repeat center / 10px;
+    background: #fff url(../img/arrow-down-bk.png) no-repeat center / 10px;/*20.06.16 QC 수정*/
 }
 .dtinput1{
     position:relative;
@@ -7843,5 +7873,249 @@ ul.dt-minitab+.tabContent2 .tabbox2.on{
 .memowrap2 .in-mo-bg{
     height:206px;
 }
-/*QC 시작~*/
-/*QC 수정사항은 주석에 QC라고 표시 부탁드려요!*/
+/* QC 20.06.15*/
+.sk-H5 {
+    height: 832px !important;/*20.06.16 수정*/
+}
+.ms-out-tab{
+    display: none;
+}
+.ms-out-tab.on{
+    display: block;
+}
+.ms-flex{
+    display: flex;
+}
+.textC-B {
+    color: #548BC7;
+}
+.textC-Y{
+    color: #FFCD01;
+}
+.textC-G{
+    color: #2BC8AD;
+}
+.set-inH .table-in.Sh2-in {
+    height: 666px;
+}
+.ms-tabout > div {
+    display: none;
+}
+.ms-tabout > div.on {
+    display: block;
+}
+.pd20 {
+    padding: 20px;
+}
+.pd0 {
+    padding: 0;
+}
+#penchart3 .set7-page.pagebox {
+    bottom: 8px;
+    right: -31px;
+    width: 150px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 200;
+}
+.ms-doc.link-m.link-HN {
+    height: auto !important;
+}
+/*20.06.16 QC*/
+.sk-hover tbody tr:hover {
+    background: rgb(212, 226, 241);
+}
+.date-m::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/Icon-Event-Filled.png) no-repeat center / contain;
+    vertical-align: -2px;
+    margin-right: 10px;
+}
+.mouse-skout .hoverpop2{
+    height: 30px;
+    width: 130px;
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.945);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    border-radius: 0;
+}
+.Rmenu .hoverpop2{
+    height: 30px;
+    width: 100px;
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.945);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    border-radius: 0;
+}
+.hoverpop2.on{
+    display:block;
+}
+.mouse-skout .hoverpop2.in-rcW{
+    width: 100px;
+}
+.mouse-skout .hoverpop2.in-rcW button {
+    width: calc(100% / 3 - 2px);
+}
+.Rmenu .hoverpop2.in-rcW button {
+    width: calc(100% / 3 - 2px);
+}
+.mouse-skout .hoverpop2 button {
+    padding: 0;
+    width: calc(100% / 4 - 2px);
+}
+.mouse-skout .hoverpop2 i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.mouse-skout .hoverpop2 i.edit-I {
+    width: 19px;
+    height: 19px;
+    vertical-align: -1px;
+}
+.Rmenu .hoverpop2.in-rcW  i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 !important;
+}
+.Rmenu .hoverpop2.in-rcW  i.edit-I {
+    width: 19px;
+    height: 19px;
+    vertical-align: -1px;
+}
+.dfset-wrap tbody tr td:last-child{
+    border-right: none;
+}
+[class*='clk2'] .on{
+    background: #D4E2F1;
+    color: #225184;
+}
+[class*='clk3'] .on{
+    background: #C9F1EA;
+    color: #22847D;
+}
+.ui-sortable-helper {
+    opacity: 0.7;
+}
+.fn-out{
+    display: inline;
+    position: relative;
+}
+.con-right .tabContent .tabbox .dt-fnwrap table{
+    background: none;
+    min-width: 100%;
+    width: 100% !important;
+    text-align: left;
+    table-layout: fixed; 
+}
+.con-right .tabContent .tabbox .dt-fnwrap .dp2 {
+    width: 138px;
+}
+.fnwrap.dt-fnwrap {
+    right: auto;
+    left: 0px;
+}
+/*20.06.17 추가*/
+.blue i.cal-i-po {
+    top: 14px;
+    right: 252px;
+}
+.memT .con-right .tabContent .Mtable-header-bg{
+    width: 100%;
+    min-width: 1010px;
+    height: 40px;
+    position: relative;
+    padding: 0px;
+    background: #E9F0F8;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #548BC7;
+    font-size: 12px;
+    color: #225184;
+}
+.memT .con-right .tabContent .th-text{
+    width:inherit;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    top: 5px;
+}
+.memT .con-right .t-hd-width{
+    min-width:1020px;
+    padding: 5px;
+    background: #fafdfe;
+}
+.memT .con-right .tab-box1 .tabContent .tabbox table {
+    background: none;
+}
+.memT .con-right .tab-box2 .table-wrap .tab-mar{
+    margin-top: 35px;
+}
+.memT .con-right .tab-box2 .t-hd-width {
+    padding: 0px;
+    background: none;
+}
+.memT .con-right .tab-box2 .tabContent .Mtable-header-bg {
+    padding: 0px;
+    background: #f0f0f0;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 12px;
+    color: #666666;
+}
+.memT .con-right .tab-box2 .tabContent .th-text {
+    top: 0px;
+}
+.memT .con-right .tab-box2 .tabContent .tab-ov-in .t-hd-width {
+    min-width: 779px;
+}
+.memT .con-right .tab-box2 .tabContent .tab-ov-in .Mtable-header-bg {
+    min-width: 779px;
+}
+
+.memT .tab-box2 .tabContent .tabbox .type2 table th {
+    padding: 0px 5px;
+    background: #f0f0f0;
+    border: 1px solid #CCCCCC;
+    font-size: 12px;
+    color: #666666;
+}
+
+.wrap-pT {
+    position: relative;
+    overflow-y: auto;
+}
+.wrap-pT .p-box{
+    position: relative;
+    min-width: 1020px;
+}
+.wrap-pT .table-wrap {
+    overflow: visible;
+}
+.tab-box2  .tabContent .tabbox .wrap-pT .payment-btn {
+    width: auto;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 14px;
+    color: #666666;
+}

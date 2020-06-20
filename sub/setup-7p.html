@@ -19,6 +19,7 @@
     <link href="../assets/css/common.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/penchart.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/jquery-cropper.css" rel="stylesheet" type="text/css"><!--  2020.06.15 추가-->
     <script type="text/javascript">
         window.addEventListener("load", function(){
         setTimeout(loaded, 100);
@@ -63,6 +64,7 @@
                 </li>
                 <li><a href="#"><i class="navfront"></i><span>Front</span></a></li>
                 <li><a href="#"><i class="navcust"></i><span>고객관리</span></a></li>
+                <li><a href="#" class="nav-aP"><i class="mem"></i><span>고객상세</span></a></li><!-- 20.06.15 추가-->
                 <li class="hassub">
                     <a href="../sub/recall.html"><i class="navrecall"></i><span>리콜관리</span></a>
                     <button type="button" class="down-arrow"></button>
@@ -139,7 +141,7 @@
                 </div>
             </header>
             <div class="flexwrap">
-                <div class="wrap-set set7">
+                <div class="wrap-set set7 wrap-set7-H1"><!-- 20.06.15 클래스 추가 -->
                     <div class="form-out">
                         <form action="" class="flexwrap">
                             <div>
@@ -4790,13 +4792,13 @@
                 <div class="flexwrap blue blue-bot">
                     <div class="blueHd"><span>순서</span></div>
                     <div class="formwrap3">
-                        <input type="text"class="input6 move-num-input"> 
+                        <input type="text"class="input6"> <!-- 20.06.15 클래스 삭제 -->
                     </div>
                 </div>
                 <div class="flexwrap blue blue-bot">
                     <div class="blueHd"><span>이미지</span></div>
                     <div class="formwrap3 fileBox">
-                        <input type="text" class="fileName" id="fileName" name="fileName" readonly="readonly">
+                        <input type="text" class="fileName" id="fileName" name="fileName" readonly="readonly" placeholder="이미지 선택 (JPG, PNG, BMP, JPEG 파일), 최대 10장까지 등록 가능"><!-- 20.06.15 placeholder 추가 -->
                         <label for="uploadBtn" class="btn_file">파일선택</label>
                         <input type="file" id="uploadBtn" name="uploadBtn" class="uploadBtn">
                     </div>
@@ -4820,25 +4822,25 @@
                 </div>
             </div>
         </div>
-    </div> 
-    <div class="modal" id="imgView">
+    </div>
+    <div class="modal " id="penchart3"><!-- 20.06.15 imgview삭제후 추가 -->
         <div class="modal-bg"></div>
-        <div class="modalContent sm-6">
+        <div class="modalContent sm">
             <header class="modalHd">
                 <h3>이미지 보기</h3>
                 <button class="modalClose"></button>
             </header>
-            <div class="modalBody clearfix pad-0">
-                <div class="pad-20">
+            <div class="modalBody clearfix pd0">
+                <div class="clearfix pd20 ">
                     <div class="I-viewHd">
                         <p><span>08</span>수술기획서</p>
                         <button type="button" class="btn-white">이미지교체</button>
                     </div>
-                    <div class="iv I-imgwrap">
-                        <img src="../assets/img/img-view.png" alt="">
+                    <div class="iv iv-imgwrap">
+                        <img src="../assets/img/img-view.png" alt="" id="image" style="display:none;">
                     </div>
                 </div>
-                <div class="iv iv-edit clearfix">
+                <div class="iv iv-edit">
                     <div class="left">
                         <button type="button" class="glass-pl"></button>
                         <button type="button" class="glass-mn"></button>
@@ -4851,7 +4853,7 @@
                     <div class="right">
                         <button type="button" class="delete"></button>
                         <button type="button" class="download"></button>
-                        <div class="pagebox">
+                        <div class="set7-page pagebox">
                             <button class="Larrow"></button>
                             <p class="pagenumber">
                                 <span>2</span>
@@ -4859,12 +4861,12 @@
                                 <span>5</span>
                             </p>
                             <button class="Rarrow"></button>
-                    </div>
+                       </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- ~ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
@@ -4877,8 +4879,13 @@
                     dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
                     numberOfMonths: [1,1],
                 });
-                $(".date_pick").datepicker();                    
-            });
+                $(".date_pick").datepicker();          
+                
+        });
     </script>
+    <!--  2020.06.15 스크립트추가-->
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../assets/plugins/jquery-cropper-master/dist/jquery-cropper.js"></script>
+    <script src="../assets/js/viewer.js"></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,12 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> 
     <!-- 달력 사용시 필요 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
-    <script src="../assets/js/calender.js"></script> 
+    <script src="../assets/js/function.js"></script> 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href="../assets/css/reset.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/common.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css">
-    <link href="../assets/css/calender.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/function.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
         window.addEventListener("load", function(){
         setTimeout(loaded, 100);
@@ -49,23 +48,6 @@
         window.addEventListener('keydown', handleFirstTab);
         
     </script>
-    <style type="text/css">
-        .dat-table tbody tr td{
-            padding:3px;
-        }
-        .rscell-wrap{
-            position:absolute;
-            top:0;
-            left:3px;
-            width:calc(100% - 6px);
-            height:720px;
-        }
-        .rscell-wrap .table-M{
-            position: absolute;
-            top:3px;
-            width:100%;
-        }
-    </style>
 </head>
 <body>
 <div class="main-wrap">
@@ -82,7 +64,6 @@
              </li>
             <li><a href="#"><i class="navfront"></i><span>Front</span></a></li>
             <li><a href="#"><i class="navcust"></i><span>고객관리</span></a></li>
-            <li><a href="#" class="nav-aP"><i class="mem"></i><span>고객상세</span></a></li><!-- 20.06.08 추가-->
             <li class="hassub">
                 <a href="#"><i class="navrecall"></i><span>리콜관리</span></a>
                 <button type="button" class="down-arrow"></button>
@@ -592,7 +573,7 @@
                                         </td>
                                         <td>공지사항</td>
                                         <td>
-                                            <textarea name="" id="" cols="30" rows="10" class="d-memo">해당일에 메모한 내용이 보여지는 영역입니다. 이곳에 입력하고 하단에 있는 저장 버튼을 클릭하며 저장이 되며, 초기 화면엔 저장 버튼이 노출되지 않습니다. 입력시에만 저장버튼이 활성화 된다는 점 참고하시기 바랍니다. 내용이 길어지면 해당 영역에 스크롤이 생기며, 전체적인 레이아웃은 움직이지 않고 이 박스 안에서 스크롤로 내용을 확인하도록 구성했습니다. 탭 별로 일자메모/공지/ 예약건수 확인 가능하며 첫화면에서는 일자메모가 보여지도록 구성하였습니다. 가로보기에서는 접혀져있다가 클릭하면 펼쳐지는 형태로 구성할 예정입니다</textarea>
+                                            <textarea name="" id="" cols="30" rows="10"class="d-memo">해당일에 메모한 내용이 보여지는 영역입니다. 이곳에 입력하고 하단에 있는 저장 버튼을 클릭하며 저장이 되며, 초기 화면엔 저장 버튼이 노출되지 않습니다. 입력시에만 저장버튼이 활성화 된다는 점 참고하시기 바랍니다. 내용이 길어지면 해당 영역에 스크롤이 생기며, 전체적인 레이아웃은 움직이지 않고 이 박스 안에서 스크롤로 내용을 확인하도록 구성했습니다. 탭 별로 일자메모/공지/ 예약건수 확인 가능하며 첫화면에서는 일자메모가 보여지도록 구성하였습니다. 가로보기에서는 접혀져있다가 클릭하면 펼쳐지는 형태로 구성할 예정입니다</textarea>
                                             <button type="button">저장</button>
                                         </td>
                                     </tr>
@@ -680,31 +661,31 @@
                         </div>
                     </div>
                 </div>
-                <!-- 20.06.03 테이블 수정 (tabcontent 전체) -->
+                <!-- 05.22 테이블 수정 -->
                 <div class="tabContent clearfix">
                     <div class="tabbox on clearfix table-wrap" id="res-tab1">
                         <div class="t-hd-width">
                             <div class="table-header-bg"></div>
                             <div class="table-in reser-table">
                                 <div class="hoverpop">
-                                    <ul>
-                                        <li>
-                                            <span class="popTh">고객명</span> : <span class="popTd">김태희</span>
-                                        </li>
-                                        <li>
-                                            <span class="popTh">고객번호</span> : <span class="popTd">20190101-001</span>
-                                        </li>
-                                        <li>
-                                            <span class="popTh">주민번호</span> : <span class="popTd">950505-2******</span>
-                                        </li>
-                                        <li>
-                                            <span class="popTh">생년월일</span> : <span class="popTd">1995-05-05</span>
-                                        </li>
-                                        <li>
-                                            <span class="popTh">연락처</span> : <span class="popTd">010-1234-5678</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        <ul>
+                                            <li>
+                                                <span class="popTh">고객명</span> : <span class="popTd">김태희</span>
+                                            </li>
+                                            <li>
+                                                <span class="popTh">고객번호</span> : <span class="popTd">20190101-001</span>
+                                            </li>
+                                            <li>
+                                                <span class="popTh">주민번호</span> : <span class="popTd">950505-2******</span>
+                                            </li>
+                                            <li>
+                                                <span class="popTh">생년월일</span> : <span class="popTd">1995-05-05</span>
+                                            </li>
+                                            <li>
+                                                <span class="popTh">연락처</span> : <span class="popTd">010-1234-5678</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 <table class="day-table hoverpopList-res" id="tblNeedsScrolling">
                                     <thead>
                                         <tr>
@@ -721,295 +702,55 @@
                                             <th style="width: 9%;"><div class="th-text">수술1</div></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="selectable">
-								    <tr id="day_0900" class="timeZone">
-                                            <td id="day_0900_1" class="day_0900" item-value-time="0900" item-value-area="1">09:00</td>
-                                            <td id="day_0900_2"  class="day_0900" item-value-time="0900" item-value-area="2">
-                                                <div class="rscell-wrap">
-                                                    <div class="table-M Y-memo M-w100 draggable-day" id="day_seq_01" item-value-time="0900" item-value-area="2">
-                                                        <div><i class="N-i"></i>차명일(90분)</div>
-                                                        <div>M/40</div>
-                                                        <div>접수</div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td id="day_0900_3"  class="day_0900" item-value-time="0900" item-value-area="3">
-                                                   
-								            </td>
-                                            <td id="day_0900_4"  class="day_0900" item-value-time="0900" item-value-area="4"></td>
-                                            <td id="day_0900_5"  class="day_0900" item-value-time="0900" item-value-area="5">
-                                            </td>
-                                            <td id="day_0900_6"  class="day_0900" item-value-time="0900" item-value-area="6"></td>
-                                            <td id="day_0900_7"  class="day_0900" item-value-time="0900" item-value-area="7"></td>
-                                            <td id="day_0900_8"  class="day_0900" item-value-time="0900" item-value-area="8"></td>
-                                            <td id="day_0900_9"  class="day_0900" item-value-time="0900" item-value-area="9"></td>
-                                            <td id="day_0900_10"  class="day_0900" item-value-time="0900" item-value-area="10"></td>
-                                            <td id="day_0900_11"  class="day_0900" item-value-time="0900" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_0930" class="timeZone">
-                                            <td id="day_0930_1" class="day_0930" item-value-time="0930" item-value-area="1">09:30</td>
-                                            <td id="day_0930_2" class="day_0930" item-value-time="0930" item-value-area="2"></td>
-                                            <td id="day_0930_3" class="day_0930" item-value-time="0930" item-value-area="3"></td>
-                                            <td id="day_0930_4" class="day_0930" item-value-time="0930" item-value-area="4"></td>
-                                            <td id="day_0930_5" class="day_0930" item-value-time="0930" item-value-area="5"></td>
-                                            <td id="day_0930_6" class="day_0930" item-value-time="0930" item-value-area="6"></td>
-                                            <td id="day_0930_7" class="day_0930" item-value-time="0930" item-value-area="7"></td>
-                                            <td id="day_0930_8" class="day_0930" item-value-time="0930" item-value-area="8"></td>
-                                            <td id="day_0930_9" class="day_0930" item-value-time="0930" item-value-area="9"></td>
-                                            <td id="day_0930_10" class="day_0930" item-value-time="0930" item-value-area="10"></td>
-                                            <td id="day_0930_11" class="day_0930" item-value-time="0930" item-value-area="11"></td>
-                                        </tr>
-								        <tr id="day_1000" class="timeZone">
-                                            <td id="day_1000_1" class="day_1000" item-value-time="1000" item-value-area="1">10:00</td>
-                                            <td id="day_1000_2"  class="day_1000" item-value-time="1000" item-value-area="2"></td>
-                                            <td id="day_1000_3"  class="day_1000" item-value-time="1000" item-value-area="3"></td>
-                                            <td id="day_1000_4"  class="day_1000" item-value-time="1000" item-value-area="4"></td>
-                                            <td id="day_1000_5"  class="day_1000" item-value-time="1000" item-value-area="5"></td>
-                                            <td id="day_1000_6"  class="day_1000" item-value-time="1000" item-value-area="6"></td>
-                                            <td id="day_1000_7"  class="day_1000" item-value-time="1000" item-value-area="7"></td>
-                                            <td id="day_1000_8"  class="day_1000" item-value-time="1000" item-value-area="8"></td>
-                                            <td id="day_1000_9"  class="day_1000" item-value-time="1000" item-value-area="9"></td>
-                                            <td id="day_1000_10"  class="day_1000" item-value-time="1000" item-value-area="10"></td>
-                                            <td id="day_1000_11"  class="day_1000" item-value-time="1000" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1030" class="timeZone">
-                                            <td id="day_1030_1" class="day_1030" item-value-time="1030" item-value-area="1">10:30</td>
-                                            <td id="day_1030_2" class="day_1030" item-value-time="1030" item-value-area="2"></td>
-                                            <td id="day_1030_3" class="day_1030" item-value-time="1030" item-value-area="3"></td>
-                                            <td id="day_1030_4" class="day_1030" item-value-time="1030" item-value-area="4"></td>
-                                            <td id="day_1030_5" class="day_1030" item-value-time="1030" item-value-area="5"></td>
-                                            <td id="day_1030_6" class="day_1030" item-value-time="1030" item-value-area="6"></td>
-                                            <td id="day_1030_7" class="day_1030" item-value-time="1030" item-value-area="7"></td>
-                                            <td id="day_1030_8" class="day_1030" item-value-time="1030" item-value-area="8"></td>
-                                            <td id="day_1030_9" class="day_1030" item-value-time="1030" item-value-area="9"></td>
-                                            <td id="day_1030_10" class="day_1030" item-value-time="1030" item-value-area="10"></td>
-                                            <td id="day_1030_11" class="day_1030" item-value-time="1030" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1100" class="timeZone">
-                                            <td id="day_1100_1" class="day_1100" item-value-time="1100" item-value-area="1">11:00</td>
-                                            <td id="day_1100_2"  class="day_1100" item-value-time="1100" item-value-area="2"></td>
-                                            <td id="day_1100_3"  class="day_1100" item-value-time="1100" item-value-area="3"></td>
-                                            <td id="day_1100_4"  class="day_1100" item-value-time="1100" item-value-area="4"></td>
-                                            <td id="day_1100_5"  class="day_1100" item-value-time="1100" item-value-area="5">
-                                                <div class="table-M-out table-M-100 draggable-day" id="day_seq_02" item-value-time="1100" item-value-area="5">
+                                    <tbody>
+										<?php for($i = 9;$i<18;$i++){ ?>
+                                        <tr id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" class="timeZone">
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_1" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="1"><?php echo $i < 10 ? "0".$i : $i; ?>:00</td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_2"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="2"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_3"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="3">
+												<?php if($i == 9){ ?>
+                                                <div class="table-M-out table-M-100 draggable-day" id="day_seq_01" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="3">
                                                     <div class="table-M Y-memo M-w100">
                                                         <div><i class="N-i"></i>차명일(90분)</div>
                                                         <div>M/40</div>
                                                         <div>접수</div>
                                                     </div>
                                                 </div>
-                                            </td>
-                                            <td id="day_1100_6"  class="day_1100" item-value-time="1100" item-value-area="6"></td>
-                                            <td id="day_1100_7"  class="day_1100" item-value-time="1100" item-value-area="7"></td>
-                                            <td id="day_1100_8"  class="day_1100" item-value-time="1100" item-value-area="8"></td>
-                                            <td id="day_1100_9"  class="day_1100" item-value-time="1100" item-value-area="9"></td>
-                                            <td id="day_1100_10"  class="day_1100" item-value-time="1100" item-value-area="10"></td>
-                                            <td id="day_1100_11"  class="day_1100" item-value-time="1100" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1130" class="timeZone">
-                                            <td id="day_1130_1" class="day_1130" item-value-time="1130" item-value-area="1">11:30</td>
-                                            <td id="day_1130_2" class="day_1130" item-value-time="1130" item-value-area="2"></td>
-                                            <td id="day_1130_3" class="day_1130" item-value-time="1130" item-value-area="3"></td>
-                                            <td id="day_1130_4" class="day_1130" item-value-time="1130" item-value-area="4"></td>
-                                            <td id="day_1130_5" class="day_1130" item-value-time="1130" item-value-area="5"></td>
-                                            <td id="day_1130_6" class="day_1130" item-value-time="1130" item-value-area="6"></td>
-                                            <td id="day_1130_7" class="day_1130" item-value-time="1130" item-value-area="7"></td>
-                                            <td id="day_1130_8" class="day_1130" item-value-time="1130" item-value-area="8"></td>
-                                            <td id="day_1130_9" class="day_1130" item-value-time="1130" item-value-area="9"></td>
-                                            <td id="day_1130_10" class="day_1130" item-value-time="1130" item-value-area="10"></td>
-                                            <td id="day_1130_11" class="day_1130" item-value-time="1130" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1200" class="timeZone">
-                                            <td id="day_1200_1" class="day_1200" item-value-time="1200" item-value-area="1">12:00</td>
-                                            <td id="day_1200_2"  class="day_1200" item-value-time="1200" item-value-area="2"></td>
-                                            <td id="day_1200_3"  class="day_1200" item-value-time="1200" item-value-area="3"></td>
-                                            <td id="day_1200_4"  class="day_1200" item-value-time="1200" item-value-area="4"></td>
-                                            <td id="day_1200_5"  class="day_1200" item-value-time="1200" item-value-area="5">
-                                                <div class="table-M-out table-M-100 draggable-day" id="day_seq_03" item-value-time="1100" item-value-area="5">
+												<?php } ?>
+											</td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_4"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="4"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_5"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="5">
+												<?php if($i == 11){ ?>
+                                                <div class="table-M-out table-M-100 draggable-day" id="day_seq_02" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="5">
                                                     <div class="table-M Y-memo M-w100">
                                                         <div><i class="N-i"></i>차명일(90분)</div>
                                                         <div>M/40</div>
                                                         <div>접수</div>
                                                     </div>
                                                 </div>
-                                            </td>
-                                            <td id="day_1200_6"  class="day_1200" item-value-time="1200" item-value-area="6"></td>
-                                            <td id="day_1200_7"  class="day_1200" item-value-time="1200" item-value-area="7"></td>
-                                            <td id="day_1200_8"  class="day_1200" item-value-time="1200" item-value-area="8"></td>
-                                            <td id="day_1200_9"  class="day_1200" item-value-time="1200" item-value-area="9"></td>
-                                            <td id="day_1200_10"  class="day_1200" item-value-time="1200" item-value-area="10"></td>
-                                            <td id="day_1200_11"  class="day_1200" item-value-time="1200" item-value-area="11"></td>
+												<?php } ?>
+											</td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_6"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="6"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_7"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="7"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_8"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="8"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_9"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="9"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_10"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="10"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>00_11"  class="day_<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00" item-value-area="11"></td>
                                         </tr>
-                                        <tr id="day_1230" class="timeZone">
-                                            <td id="day_1230_1" class="day_1230" item-value-time="1230" item-value-area="1">12:30</td>
-                                            <td id="day_1230_2" class="day_1230" item-value-time="1230" item-value-area="2"></td>
-                                            <td id="day_1230_3" class="day_1230" item-value-time="1230" item-value-area="3"></td>
-                                            <td id="day_1230_4" class="day_1230" item-value-time="1230" item-value-area="4"></td>
-                                            <td id="day_1230_5" class="day_1230" item-value-time="1230" item-value-area="5"></td>
-                                            <td id="day_1230_6" class="day_1230" item-value-time="1230" item-value-area="6"></td>
-                                            <td id="day_1230_7" class="day_1230" item-value-time="1230" item-value-area="7"></td>
-                                            <td id="day_1230_8" class="day_1230" item-value-time="1230" item-value-area="8"></td>
-                                            <td id="day_1230_9" class="day_1230" item-value-time="1230" item-value-area="9"></td>
-                                            <td id="day_1230_10" class="day_1230" item-value-time="1230" item-value-area="10"></td>
-                                            <td id="day_1230_11" class="day_1230" item-value-time="1230" item-value-area="11"></td>
+                                        <tr id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" class="timeZone">
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_1" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="1"><?php echo $i < 10 ? "0".$i : $i; ?>:30</td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_2" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="2"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_3" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="3"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_4" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="4"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_5" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="5"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_6" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="6"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_7" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="7"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_8" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="8"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_9" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="9"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_10" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="10"></td>
+                                            <td id="day_<?php echo $i < 10 ? "0".$i : $i; ?>30_11" class="day_<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30" item-value-area="11"></td>
                                         </tr>
-                                        <tr id="day_1300" class="timeZone">
-                                            <td id="day_1300_1" class="day_1300" item-value-time="1300" item-value-area="1">13:00</td>
-                                            <td id="day_1300_2"  class="day_1300" item-value-time="1300" item-value-area="2"></td>
-                                            <td id="day_1300_3"  class="day_1300" item-value-time="1300" item-value-area="3"></td>
-                                            <td id="day_1300_4"  class="day_1300" item-value-time="1300" item-value-area="4"></td>
-                                            <td id="day_1300_5"  class="day_1300" item-value-time="1300" item-value-area="5"></td>
-                                            <td id="day_1300_6"  class="day_1300" item-value-time="1300" item-value-area="6"></td>
-                                            <td id="day_1300_7"  class="day_1300" item-value-time="1300" item-value-area="7"></td>
-                                            <td id="day_1300_8"  class="day_1300" item-value-time="1300" item-value-area="8"></td>
-                                            <td id="day_1300_9"  class="day_1300" item-value-time="1300" item-value-area="9"></td>
-                                            <td id="day_1300_10"  class="day_1300" item-value-time="1300" item-value-area="10"></td>
-                                            <td id="day_1300_11"  class="day_1300" item-value-time="1300" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1330" class="timeZone">
-                                            <td id="day_1330_1" class="day_1330" item-value-time="1330" item-value-area="1">13:30</td>
-                                            <td id="day_1330_2" class="day_1330" item-value-time="1330" item-value-area="2"></td>
-                                            <td id="day_1330_3" class="day_1330" item-value-time="1330" item-value-area="3"></td>
-                                            <td id="day_1330_4" class="day_1330" item-value-time="1330" item-value-area="4">
-                                                <div class="table-M-out table-M-300">
-                                                    <div class="table-M B-memo M-w30">
-                                                        <div><i class="N-i"></i>차명일(90분)</div>
-                                                        <div>M/40</div>
-                                                        <div>접수</div>
-                                                    </div>
-                                                    <div class="table-M B-memo M-w30">
-                                                        <div><i class="N-i"></i>차명일(90분)</div>
-                                                        <div>M/40</div>
-                                                        <div>접수</div>
-                                                    </div>
-                                                    <div class="table-M B-memo M-w30">
-                                                        <div><i class="N-i"></i>차명일(90분)</div>
-                                                        <div>M/40</div>
-                                                        <div>접수</div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </td>
-                                            <td id="day_1330_5" class="day_1330" item-value-time="1330" item-value-area="5"></td>
-                                            <td id="day_1330_6" class="day_1330" item-value-time="1330" item-value-area="6"></td>
-                                            <td id="day_1330_7" class="day_1330" item-value-time="1330" item-value-area="7"></td>
-                                            <td id="day_1330_8" class="day_1330" item-value-time="1330" item-value-area="8"></td>
-                                            <td id="day_1330_9" class="day_1330" item-value-time="1330" item-value-area="9"></td>
-                                            <td id="day_1330_10" class="day_1330" item-value-time="1330" item-value-area="10"></td>
-                                            <td id="day_1330_11" class="day_1330" item-value-time="1330" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1400" class="timeZone">
-                                            <td id="day_1400_1" class="day_1400" item-value-time="1400" item-value-area="1">14:00</td>
-                                            <td id="day_1400_2"  class="day_1400" item-value-time="1400" item-value-area="2"></td>
-                                            <td id="day_1400_3"  class="day_1400" item-value-time="1400" item-value-area="3"></td>
-                                            <td id="day_1400_4"  class="day_1400" item-value-time="1400" item-value-area="4"></td>
-                                            <td id="day_1400_5"  class="day_1400" item-value-time="1400" item-value-area="5"></td>
-                                            <td id="day_1400_6"  class="day_1400" item-value-time="1400" item-value-area="6"></td>
-                                            <td id="day_1400_7"  class="day_1400" item-value-time="1400" item-value-area="7"></td>
-                                            <td id="day_1400_8"  class="day_1400" item-value-time="1400" item-value-area="8"></td>
-                                            <td id="day_1400_9"  class="day_1400" item-value-time="1400" item-value-area="9"></td>
-                                            <td id="day_1400_10"  class="day_1400" item-value-time="1400" item-value-area="10"></td>
-                                            <td id="day_1400_11"  class="day_1400" item-value-time="1400" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1430" class="timeZone">
-                                            <td id="day_1430_1" class="day_1430" item-value-time="1430" item-value-area="1">14:30</td>
-                                            <td id="day_1430_2" class="day_1430" item-value-time="1430" item-value-area="2"></td>
-                                            <td id="day_1430_3" class="day_1430" item-value-time="1430" item-value-area="3"></td>
-                                            <td id="day_1430_4" class="day_1430" item-value-time="1430" item-value-area="4"></td>
-                                            <td id="day_1430_5" class="day_1430" item-value-time="1430" item-value-area="5"></td>
-                                            <td id="day_1430_6" class="day_1430" item-value-time="1430" item-value-area="6"></td>
-                                            <td id="day_1430_7" class="day_1430" item-value-time="1430" item-value-area="7"></td>
-                                            <td id="day_1430_8" class="day_1430" item-value-time="1430" item-value-area="8"></td>
-                                            <td id="day_1430_9" class="day_1430" item-value-time="1430" item-value-area="9"></td>
-                                            <td id="day_1430_10" class="day_1430" item-value-time="1430" item-value-area="10"></td>
-                                            <td id="day_1430_11" class="day_1430" item-value-time="1430" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1500" class="timeZone">
-                                            <td id="day_1500_1" class="day_1500" item-value-time="1500" item-value-area="1">15:00</td>
-                                            <td id="day_1500_2"  class="day_1500" item-value-time="1500" item-value-area="2"></td>
-                                            <td id="day_1500_3"  class="day_1500" item-value-time="1500" item-value-area="3"></td>
-                                            <td id="day_1500_4"  class="day_1500" item-value-time="1500" item-value-area="4"></td>
-                                            <td id="day_1500_5"  class="day_1500" item-value-time="1500" item-value-area="5"></td>
-                                            <td id="day_1500_6"  class="day_1500" item-value-time="1500" item-value-area="6"></td>
-                                            <td id="day_1500_7"  class="day_1500" item-value-time="1500" item-value-area="7"></td>
-                                            <td id="day_1500_8"  class="day_1500" item-value-time="1500" item-value-area="8"></td>
-                                            <td id="day_1500_9"  class="day_1500" item-value-time="1500" item-value-area="9"></td>
-                                            <td id="day_1500_10"  class="day_1500" item-value-time="1500" item-value-area="10"></td>
-                                            <td id="day_1500_11"  class="day_1500" item-value-time="1500" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1530" class="timeZone">
-                                            <td id="day_1530_1" class="day_1530" item-value-time="1530" item-value-area="1">15:30</td>
-                                            <td id="day_1530_2" class="day_1530" item-value-time="1530" item-value-area="2"></td>
-                                            <td id="day_1530_3" class="day_1530" item-value-time="1530" item-value-area="3"></td>
-                                            <td id="day_1530_4" class="day_1530" item-value-time="1530" item-value-area="4"></td>
-                                            <td id="day_1530_5" class="day_1530" item-value-time="1530" item-value-area="5"></td>
-                                            <td id="day_1530_6" class="day_1530" item-value-time="1530" item-value-area="6"></td>
-                                            <td id="day_1530_7" class="day_1530" item-value-time="1530" item-value-area="7"></td>
-                                            <td id="day_1530_8" class="day_1530" item-value-time="1530" item-value-area="8"></td>
-                                            <td id="day_1530_9" class="day_1530" item-value-time="1530" item-value-area="9">
-                                                <div class="table-M-out table-M-100">
-                                                <div class="table-M GR-memo M-w100">
-                                                    <div class="M-Color">[휴진]</div>
-                                                    <div>김드림 원장님</div>
-                                                    <div>10:20 ~ 13:30</div>
-                                                </div>
-                                            </div>
-                                            </td>
-                                            <td id="day_1530_10" class="day_1530" item-value-time="1530" item-value-area="10"></td>
-                                            <td id="day_1530_11" class="day_1530" item-value-time="1530" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1600" class="timeZone">
-                                            <td id="day_1600_1" class="day_1600" item-value-time="1600" item-value-area="1">16:00</td>
-                                            <td id="day_1600_2"  class="day_1600" item-value-time="1600" item-value-area="2"></td>
-                                            <td id="day_1600_3"  class="day_1600" item-value-time="1600" item-value-area="3"></td>
-                                            <td id="day_1600_4"  class="day_1600" item-value-time="1600" item-value-area="4"></td>
-                                            <td id="day_1600_5"  class="day_1600" item-value-time="1600" item-value-area="5"></td>
-                                            <td id="day_1600_6"  class="day_1600" item-value-time="1600" item-value-area="6"></td>
-                                            <td id="day_1600_7"  class="day_1600" item-value-time="1600" item-value-area="7"></td>
-                                            <td id="day_1600_8"  class="day_1600" item-value-time="1600" item-value-area="8"></td>
-                                            <td id="day_1600_9"  class="day_1600" item-value-time="1600" item-value-area="9"></td>
-                                            <td id="day_1600_10"  class="day_1600" item-value-time="1600" item-value-area="10"></td>
-                                            <td id="day_1600_11"  class="day_1600" item-value-time="1600" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1630" class="timeZone">
-                                            <td id="day_1630_1" class="day_1630" item-value-time="1630" item-value-area="1">16:30</td>
-                                            <td id="day_1630_2" class="day_1630" item-value-time="1630" item-value-area="2"></td>
-                                            <td id="day_1630_3" class="day_1630" item-value-time="1630" item-value-area="3"></td>
-                                            <td id="day_1630_4" class="day_1630" item-value-time="1630" item-value-area="4"></td>
-                                            <td id="day_1630_5" class="day_1630" item-value-time="1630" item-value-area="5"></td>
-                                            <td id="day_1630_6" class="day_1630" item-value-time="1630" item-value-area="6"></td>
-                                            <td id="day_1630_7" class="day_1630" item-value-time="1630" item-value-area="7"></td>
-                                            <td id="day_1630_8" class="day_1630" item-value-time="1630" item-value-area="8"></td>
-                                            <td id="day_1630_9" class="day_1630" item-value-time="1630" item-value-area="9"></td>
-                                            <td id="day_1630_10" class="day_1630" item-value-time="1630" item-value-area="10"></td>
-                                            <td id="day_1630_11" class="day_1630" item-value-time="1630" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1700" class="timeZone">
-                                            <td id="day_1700_1" class="day_1700" item-value-time="1700" item-value-area="1">17:00</td>
-                                            <td id="day_1700_2"  class="day_1700" item-value-time="1700" item-value-area="2"></td>
-                                            <td id="day_1700_3"  class="day_1700" item-value-time="1700" item-value-area="3"></td>
-                                            <td id="day_1700_4"  class="day_1700" item-value-time="1700" item-value-area="4"></td>
-                                            <td id="day_1700_5"  class="day_1700" item-value-time="1700" item-value-area="5"></td>
-                                            <td id="day_1700_6"  class="day_1700" item-value-time="1700" item-value-area="6"></td>
-                                            <td id="day_1700_7"  class="day_1700" item-value-time="1700" item-value-area="7"></td>
-                                            <td id="day_1700_8"  class="day_1700" item-value-time="1700" item-value-area="8"></td>
-                                            <td id="day_1700_9"  class="day_1700" item-value-time="1700" item-value-area="9"></td>
-                                            <td id="day_1700_10"  class="day_1700" item-value-time="1700" item-value-area="10"></td>
-                                            <td id="day_1700_11"  class="day_1700" item-value-time="1700" item-value-area="11"></td>
-                                        </tr>
-                                        <tr id="day_1730" class="timeZone">
-                                            <td id="day_1730_1" class="day_1730" item-value-time="1730" item-value-area="1">17:30</td>
-                                            <td id="day_1730_2" class="day_1730" item-value-time="1730" item-value-area="2"></td>
-                                            <td id="day_1730_3" class="day_1730" item-value-time="1730" item-value-area="3"></td>
-                                            <td id="day_1730_4" class="day_1730" item-value-time="1730" item-value-area="4"></td>
-                                            <td id="day_1730_5" class="day_1730" item-value-time="1730" item-value-area="5"></td>
-                                            <td id="day_1730_6" class="day_1730" item-value-time="1730" item-value-area="6"></td>
-                                            <td id="day_1730_7" class="day_1730" item-value-time="1730" item-value-area="7"></td>
-                                            <td id="day_1730_8" class="day_1730" item-value-time="1730" item-value-area="8"></td>
-                                            <td id="day_1730_9" class="day_1730" item-value-time="1730" item-value-area="9"></td>
-                                            <td id="day_1730_10" class="day_1730" item-value-time="1730" item-value-area="10"></td>
-                                            <td id="day_1730_11" class="day_1730" item-value-time="1730" item-value-area="11"></td>
-                                        </tr>
+										<?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -1051,204 +792,40 @@
                                             <th style="width: 13%;"><div class="th-text">3월 29일, 일</div></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="selectable">
-										                                        <tr id="week_0900" class="timeZone">
-                                            <td id="week_0900_1" class="week-selector">09:00</td>
-                                            <td id="week_0900_0323"  class="week-selector" item-value-day="0323" item-value-time="0900">
-																							</td>
-                                            <td id="week_0900_0324"  class="week-selector" item-value-day="0324" item-value-time="0900"></td>
-                                            <td id="week_0900_0325"  class="week-selector" item-value-day="0325" item-value-time="0900"></td>
-                                            <td id="week_0900_0326"  class="week-selector" item-value-day="0326" item-value-time="0900"></td>
-                                            <td id="week_0900_0327"  class="week-selector" item-value-day="0327" item-value-time="0900"></td>
-                                            <td id="week_0900_0328"  class="week-selector" item-value-day="0328" item-value-time="0900"></td>
-                                            <td id="week_0900_0329"  class="week-selector" item-value-day="0329" item-value-time="0900"></td>
-                                        </tr>
-                                        <tr id="0930" class="timeZone">
-                                            <td id="week_0930_1" class="week-selector">09:30</td>
-                                            <td id="week_0930_0323" class="week-selector" item-value-day="0323" item-value-time="0930"></td>
-                                            <td id="week_0930_0324" class="week-selector" item-value-day="0324" item-value-time="0930"></td>
-                                            <td id="week_0930_0325" class="week-selector" item-value-day="0325" item-value-time="0930"></td>
-                                            <td id="week_0930_0326" class="week-selector" item-value-day="0326" item-value-time="0930"></td>
-                                            <td id="week_0930_0327" class="week-selector" item-value-day="0327" item-value-time="0930"></td>
-                                            <td id="week_0930_0328" class="week-selector" item-value-day="0328" item-value-time="0930"></td>
-                                            <td id="week_0930_0329" class="week-selector" item-value-day="0329" item-value-time="0930"></td>
-                                        </tr>
-										                                        <tr id="week_1000" class="timeZone">
-                                            <td id="week_1000_1" class="week-selector">10:00</td>
-                                            <td id="week_1000_0323"  class="week-selector" item-value-day="0323" item-value-time="1000">
-																							</td>
-                                            <td id="week_1000_0324"  class="week-selector" item-value-day="0324" item-value-time="1000"></td>
-                                            <td id="week_1000_0325"  class="week-selector" item-value-day="0325" item-value-time="1000"></td>
-                                            <td id="week_1000_0326"  class="week-selector" item-value-day="0326" item-value-time="1000"></td>
-                                            <td id="week_1000_0327"  class="week-selector" item-value-day="0327" item-value-time="1000"></td>
-                                            <td id="week_1000_0328"  class="week-selector" item-value-day="0328" item-value-time="1000"></td>
-                                            <td id="week_1000_0329"  class="week-selector" item-value-day="0329" item-value-time="1000"></td>
-                                        </tr>
-                                        <tr id="1030" class="timeZone">
-                                            <td id="week_1030_1" class="week-selector">10:30</td>
-                                            <td id="week_1030_0323" class="week-selector" item-value-day="0323" item-value-time="1030"></td>
-                                            <td id="week_1030_0324" class="week-selector" item-value-day="0324" item-value-time="1030"></td>
-                                            <td id="week_1030_0325" class="week-selector" item-value-day="0325" item-value-time="1030"></td>
-                                            <td id="week_1030_0326" class="week-selector" item-value-day="0326" item-value-time="1030"></td>
-                                            <td id="week_1030_0327" class="week-selector" item-value-day="0327" item-value-time="1030"></td>
-                                            <td id="week_1030_0328" class="week-selector" item-value-day="0328" item-value-time="1030"></td>
-                                            <td id="week_1030_0329" class="week-selector" item-value-day="0329" item-value-time="1030"></td>
-                                        </tr>
-										                                        <tr id="week_1100" class="timeZone">
-                                            <td id="week_1100_1" class="week-selector">11:00</td>
-                                            <td id="week_1100_0323"  class="week-selector" item-value-day="0323" item-value-time="1100">
-												                                                <div class="table-M-out draggable-week" id="week_seq_01" item-value-day="0323" item-value-time="1100">
+                                    <tbody>
+										<?php for($i = 9;$i<18;$i++){ ?>
+                                        <tr id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00" class="timeZone">
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_1" class="week-selector"><?php echo $i < 10 ? "0".$i : $i; ?>:00</td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0323"  class="week-selector" item-value-day="0323" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00">
+												<?php if($i == 11){ ?>
+                                                <div class="table-M-out draggable-week" id="week_seq_01" item-value-day="0323" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00">
                                                     <div class="table-M B-memo M-w20 table-M-300">
                                                         <div><i class="N-i"></i>차명일(90분)</div>
                                                         <div>M/40</div>
                                                         <div>접수</div>
                                                     </div>
 												</div>
-																							</td>
-                                            <td id="week_1100_0324"  class="week-selector" item-value-day="0324" item-value-time="1100"></td>
-                                            <td id="week_1100_0325"  class="week-selector" item-value-day="0325" item-value-time="1100"></td>
-                                            <td id="week_1100_0326"  class="week-selector" item-value-day="0326" item-value-time="1100"></td>
-                                            <td id="week_1100_0327"  class="week-selector" item-value-day="0327" item-value-time="1100"></td>
-                                            <td id="week_1100_0328"  class="week-selector" item-value-day="0328" item-value-time="1100"></td>
-                                            <td id="week_1100_0329"  class="week-selector" item-value-day="0329" item-value-time="1100"></td>
+												<?php } ?>
+											</td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0324"  class="week-selector" item-value-day="0324" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0325"  class="week-selector" item-value-day="0325" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0326"  class="week-selector" item-value-day="0326" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0327"  class="week-selector" item-value-day="0327" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0328"  class="week-selector" item-value-day="0328" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>00_0329"  class="week-selector" item-value-day="0329" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>00"></td>
                                         </tr>
-                                        <tr id="1130" class="timeZone">
-                                            <td id="week_1130_1" class="week-selector">11:30</td>
-                                            <td id="week_1130_0323" class="week-selector" item-value-day="0323" item-value-time="1130"></td>
-                                            <td id="week_1130_0324" class="week-selector" item-value-day="0324" item-value-time="1130"></td>
-                                            <td id="week_1130_0325" class="week-selector" item-value-day="0325" item-value-time="1130"></td>
-                                            <td id="week_1130_0326" class="week-selector" item-value-day="0326" item-value-time="1130"></td>
-                                            <td id="week_1130_0327" class="week-selector" item-value-day="0327" item-value-time="1130"></td>
-                                            <td id="week_1130_0328" class="week-selector" item-value-day="0328" item-value-time="1130"></td>
-                                            <td id="week_1130_0329" class="week-selector" item-value-day="0329" item-value-time="1130"></td>
+                                        <tr id="<?php echo $i < 10 ? "0".$i : $i; ?>30" class="timeZone">
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_1" class="week-selector"><?php echo $i < 10 ? "0".$i : $i; ?>:30</td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0323" class="week-selector" item-value-day="0323" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0324" class="week-selector" item-value-day="0324" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0325" class="week-selector" item-value-day="0325" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0326" class="week-selector" item-value-day="0326" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0327" class="week-selector" item-value-day="0327" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0328" class="week-selector" item-value-day="0328" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
+                                            <td id="week_<?php echo $i < 10 ? "0".$i : $i; ?>30_0329" class="week-selector" item-value-day="0329" item-value-time="<?php echo $i < 10 ? "0".$i : $i; ?>30"></td>
                                         </tr>
-										                                        <tr id="week_1200" class="timeZone">
-                                            <td id="week_1200_1" class="week-selector">12:00</td>
-                                            <td id="week_1200_0323"  class="week-selector" item-value-day="0323" item-value-time="1200">
-																							</td>
-                                            <td id="week_1200_0324"  class="week-selector" item-value-day="0324" item-value-time="1200"></td>
-                                            <td id="week_1200_0325"  class="week-selector" item-value-day="0325" item-value-time="1200"></td>
-                                            <td id="week_1200_0326"  class="week-selector" item-value-day="0326" item-value-time="1200"></td>
-                                            <td id="week_1200_0327"  class="week-selector" item-value-day="0327" item-value-time="1200"></td>
-                                            <td id="week_1200_0328"  class="week-selector" item-value-day="0328" item-value-time="1200"></td>
-                                            <td id="week_1200_0329"  class="week-selector" item-value-day="0329" item-value-time="1200"></td>
-                                        </tr>
-                                        <tr id="1230" class="timeZone">
-                                            <td id="week_1230_1" class="week-selector">12:30</td>
-                                            <td id="week_1230_0323" class="week-selector" item-value-day="0323" item-value-time="1230"></td>
-                                            <td id="week_1230_0324" class="week-selector" item-value-day="0324" item-value-time="1230"></td>
-                                            <td id="week_1230_0325" class="week-selector" item-value-day="0325" item-value-time="1230"></td>
-                                            <td id="week_1230_0326" class="week-selector" item-value-day="0326" item-value-time="1230"></td>
-                                            <td id="week_1230_0327" class="week-selector" item-value-day="0327" item-value-time="1230"></td>
-                                            <td id="week_1230_0328" class="week-selector" item-value-day="0328" item-value-time="1230"></td>
-                                            <td id="week_1230_0329" class="week-selector" item-value-day="0329" item-value-time="1230"></td>
-                                        </tr>
-										                                        <tr id="week_1300" class="timeZone">
-                                            <td id="week_1300_1" class="week-selector">13:00</td>
-                                            <td id="week_1300_0323"  class="week-selector" item-value-day="0323" item-value-time="1300">
-																							</td>
-                                            <td id="week_1300_0324"  class="week-selector" item-value-day="0324" item-value-time="1300"></td>
-                                            <td id="week_1300_0325"  class="week-selector" item-value-day="0325" item-value-time="1300"></td>
-                                            <td id="week_1300_0326"  class="week-selector" item-value-day="0326" item-value-time="1300"></td>
-                                            <td id="week_1300_0327"  class="week-selector" item-value-day="0327" item-value-time="1300"></td>
-                                            <td id="week_1300_0328"  class="week-selector" item-value-day="0328" item-value-time="1300"></td>
-                                            <td id="week_1300_0329"  class="week-selector" item-value-day="0329" item-value-time="1300"></td>
-                                        </tr>
-                                        <tr id="1330" class="timeZone">
-                                            <td id="week_1330_1" class="week-selector">13:30</td>
-                                            <td id="week_1330_0323" class="week-selector" item-value-day="0323" item-value-time="1330"></td>
-                                            <td id="week_1330_0324" class="week-selector" item-value-day="0324" item-value-time="1330"></td>
-                                            <td id="week_1330_0325" class="week-selector" item-value-day="0325" item-value-time="1330"></td>
-                                            <td id="week_1330_0326" class="week-selector" item-value-day="0326" item-value-time="1330"></td>
-                                            <td id="week_1330_0327" class="week-selector" item-value-day="0327" item-value-time="1330"></td>
-                                            <td id="week_1330_0328" class="week-selector" item-value-day="0328" item-value-time="1330"></td>
-                                            <td id="week_1330_0329" class="week-selector" item-value-day="0329" item-value-time="1330"></td>
-                                        </tr>
-										                                        <tr id="week_1400" class="timeZone">
-                                            <td id="week_1400_1" class="week-selector">14:00</td>
-                                            <td id="week_1400_0323"  class="week-selector" item-value-day="0323" item-value-time="1400">
-																							</td>
-                                            <td id="week_1400_0324"  class="week-selector" item-value-day="0324" item-value-time="1400"></td>
-                                            <td id="week_1400_0325"  class="week-selector" item-value-day="0325" item-value-time="1400"></td>
-                                            <td id="week_1400_0326"  class="week-selector" item-value-day="0326" item-value-time="1400"></td>
-                                            <td id="week_1400_0327"  class="week-selector" item-value-day="0327" item-value-time="1400"></td>
-                                            <td id="week_1400_0328"  class="week-selector" item-value-day="0328" item-value-time="1400"></td>
-                                            <td id="week_1400_0329"  class="week-selector" item-value-day="0329" item-value-time="1400"></td>
-                                        </tr>
-                                        <tr id="1430" class="timeZone">
-                                            <td id="week_1430_1" class="week-selector">14:30</td>
-                                            <td id="week_1430_0323" class="week-selector" item-value-day="0323" item-value-time="1430"></td>
-                                            <td id="week_1430_0324" class="week-selector" item-value-day="0324" item-value-time="1430"></td>
-                                            <td id="week_1430_0325" class="week-selector" item-value-day="0325" item-value-time="1430"></td>
-                                            <td id="week_1430_0326" class="week-selector" item-value-day="0326" item-value-time="1430"></td>
-                                            <td id="week_1430_0327" class="week-selector" item-value-day="0327" item-value-time="1430"></td>
-                                            <td id="week_1430_0328" class="week-selector" item-value-day="0328" item-value-time="1430"></td>
-                                            <td id="week_1430_0329" class="week-selector" item-value-day="0329" item-value-time="1430"></td>
-                                        </tr>
-										                                        <tr id="week_1500" class="timeZone">
-                                            <td id="week_1500_1" class="week-selector">15:00</td>
-                                            <td id="week_1500_0323"  class="week-selector" item-value-day="0323" item-value-time="1500">
-																							</td>
-                                            <td id="week_1500_0324"  class="week-selector" item-value-day="0324" item-value-time="1500"></td>
-                                            <td id="week_1500_0325"  class="week-selector" item-value-day="0325" item-value-time="1500"></td>
-                                            <td id="week_1500_0326"  class="week-selector" item-value-day="0326" item-value-time="1500"></td>
-                                            <td id="week_1500_0327"  class="week-selector" item-value-day="0327" item-value-time="1500"></td>
-                                            <td id="week_1500_0328"  class="week-selector" item-value-day="0328" item-value-time="1500"></td>
-                                            <td id="week_1500_0329"  class="week-selector" item-value-day="0329" item-value-time="1500"></td>
-                                        </tr>
-                                        <tr id="1530" class="timeZone">
-                                            <td id="week_1530_1" class="week-selector">15:30</td>
-                                            <td id="week_1530_0323" class="week-selector" item-value-day="0323" item-value-time="1530"></td>
-                                            <td id="week_1530_0324" class="week-selector" item-value-day="0324" item-value-time="1530"></td>
-                                            <td id="week_1530_0325" class="week-selector" item-value-day="0325" item-value-time="1530"></td>
-                                            <td id="week_1530_0326" class="week-selector" item-value-day="0326" item-value-time="1530"></td>
-                                            <td id="week_1530_0327" class="week-selector" item-value-day="0327" item-value-time="1530"></td>
-                                            <td id="week_1530_0328" class="week-selector" item-value-day="0328" item-value-time="1530"></td>
-                                            <td id="week_1530_0329" class="week-selector" item-value-day="0329" item-value-time="1530"></td>
-                                        </tr>
-										                                        <tr id="week_1600" class="timeZone">
-                                            <td id="week_1600_1" class="week-selector">16:00</td>
-                                            <td id="week_1600_0323"  class="week-selector" item-value-day="0323" item-value-time="1600">
-																							</td>
-                                            <td id="week_1600_0324"  class="week-selector" item-value-day="0324" item-value-time="1600"></td>
-                                            <td id="week_1600_0325"  class="week-selector" item-value-day="0325" item-value-time="1600"></td>
-                                            <td id="week_1600_0326"  class="week-selector" item-value-day="0326" item-value-time="1600"></td>
-                                            <td id="week_1600_0327"  class="week-selector" item-value-day="0327" item-value-time="1600"></td>
-                                            <td id="week_1600_0328"  class="week-selector" item-value-day="0328" item-value-time="1600"></td>
-                                            <td id="week_1600_0329"  class="week-selector" item-value-day="0329" item-value-time="1600"></td>
-                                        </tr>
-                                        <tr id="1630" class="timeZone">
-                                            <td id="week_1630_1" class="week-selector">16:30</td>
-                                            <td id="week_1630_0323" class="week-selector" item-value-day="0323" item-value-time="1630"></td>
-                                            <td id="week_1630_0324" class="week-selector" item-value-day="0324" item-value-time="1630"></td>
-                                            <td id="week_1630_0325" class="week-selector" item-value-day="0325" item-value-time="1630"></td>
-                                            <td id="week_1630_0326" class="week-selector" item-value-day="0326" item-value-time="1630"></td>
-                                            <td id="week_1630_0327" class="week-selector" item-value-day="0327" item-value-time="1630"></td>
-                                            <td id="week_1630_0328" class="week-selector" item-value-day="0328" item-value-time="1630"></td>
-                                            <td id="week_1630_0329" class="week-selector" item-value-day="0329" item-value-time="1630"></td>
-                                        </tr>
-										                                        <tr id="week_1700" class="timeZone">
-                                            <td id="week_1700_1" class="week-selector">17:00</td>
-                                            <td id="week_1700_0323"  class="week-selector" item-value-day="0323" item-value-time="1700">
-																							</td>
-                                            <td id="week_1700_0324"  class="week-selector" item-value-day="0324" item-value-time="1700"></td>
-                                            <td id="week_1700_0325"  class="week-selector" item-value-day="0325" item-value-time="1700"></td>
-                                            <td id="week_1700_0326"  class="week-selector" item-value-day="0326" item-value-time="1700"></td>
-                                            <td id="week_1700_0327"  class="week-selector" item-value-day="0327" item-value-time="1700"></td>
-                                            <td id="week_1700_0328"  class="week-selector" item-value-day="0328" item-value-time="1700"></td>
-                                            <td id="week_1700_0329"  class="week-selector" item-value-day="0329" item-value-time="1700"></td>
-                                        </tr>
-                                        <tr id="1730" class="timeZone">
-                                            <td id="week_1730_1" class="week-selector">17:30</td>
-                                            <td id="week_1730_0323" class="week-selector" item-value-day="0323" item-value-time="1730"></td>
-                                            <td id="week_1730_0324" class="week-selector" item-value-day="0324" item-value-time="1730"></td>
-                                            <td id="week_1730_0325" class="week-selector" item-value-day="0325" item-value-time="1730"></td>
-                                            <td id="week_1730_0326" class="week-selector" item-value-day="0326" item-value-time="1730"></td>
-                                            <td id="week_1730_0327" class="week-selector" item-value-day="0327" item-value-time="1730"></td>
-                                            <td id="week_1730_0328" class="week-selector" item-value-day="0328" item-value-time="1730"></td>
-                                            <td id="week_1730_0329" class="week-selector" item-value-day="0329" item-value-time="1730"></td>
-                                        </tr>
-										                                    </tbody>
+										<?php } ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -1288,7 +865,7 @@
                                             <th style="width: 15%;"><div class="th-text">토</div></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="selectable">
+                                    <tbody>
                                         <tr>
                                             <td id="month_0301" item-value-day="0301" class="month-selector">1<div id="month_0301_area"></div></td>
                                             <td id="month_0302" item-value-day="0302" class="month-selector">2<div id="month_0302_area"></div></td>
@@ -1385,7 +962,7 @@
         </div>
     </div>
     </div>
-    <div class="modal on" id="reserv">
+    <div class="modal " id="reserv">
         <div class="modal-bg"></div>
         <div class="modalContent">
             <header class="modalHd">
@@ -2324,23 +1901,23 @@
                     <div class="serviceSrc half">
                         <div class="formwrap2">
                                 <form action="">
-                                    <label for="paymentSrc2">진료서비스 검색</label>
-                                    <input type="text" class="input2 srcinput" id="paymentSrc2">
+                                    <label for="paymentSrc">진료서비스 검색</label>
+                                    <input type="text" class="input2 srcinput" id="paymentSrc">
                                     <div class="srcwrap flexwrap">
                                         <ul class="dp1">
-                                            <li><a href="#" data-id="paytab2-1" class="on">비만클리닉</a></li>
-                                            <li><a href="#" data-id="paytab2-2">스케일링</a></li>
-                                            <li><a href="#" data-id="paytab2-3">치아</a></li>
-                                            <li><a href="#" data-id="paytab2-4">입</a></li>
-                                            <li><a href="#" data-id="paytab2-5">틀니</a></li>
-                                            <li><a href="#" data-id="paytab2-6">타원</a></li>
-                                            <li><a href="#" data-id="paytab2-7">체크</a></li>
-                                            <li><a href="#" data-id="paytab2-8">눈</a></li>
-                                            <li><a href="#" data-id="paytab2-9">상담</a></li>
-                                            <li><a href="#" data-id="paytab2-10">보철</a></li>
+                                            <li><a href="#" data-id="paytab1" class="on">비만클리닉</a></li>
+                                            <li><a href="#" data-id="paytab2">스케일링</a></li>
+                                            <li><a href="#" data-id="paytab3">치아</a></li>
+                                            <li><a href="#" data-id="paytab4">입</a></li>
+                                            <li><a href="#" data-id="paytab5">틀니</a></li>
+                                            <li><a href="#" data-id="paytab6">타원</a></li>
+                                            <li><a href="#" data-id="paytab7">체크</a></li>
+                                            <li><a href="#" data-id="paytab8">눈</a></li>
+                                            <li><a href="#" data-id="paytab9">상담</a></li>
+                                            <li><a href="#" data-id="paytab10">보철</a></li>
                                         </ul>
                                         <div class="dp2">
-                                            <table id="paytab2-1" class="on">
+                                            <table id="paytab1" class="on">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2362,7 +1939,7 @@
                                                     <td>10</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-2">
+                                            <table id="paytab2">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2384,44 +1961,7 @@
                                                     <td>10</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-3">
-                                                <colgroup>
-                                                    <col width="50%">
-                                                    <col width="30%">
-                                                    <col width="20%">
-                                                </colgroup>
-                                                <tr tabindex="0">
-                                                    <td>골드인레이</td>
-                                                    <td>700,000</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr tabindex="0">
-                                                    <td>골드인레이</td>
-                                                    <td>1,000,000</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr tabindex="0">
-                                                    <td>틀니</td>
-                                                    <td>700,000</td>
-                                                    <td>10</td>
-                                                </tr>
-                                                <tr tabindex="0">
-                                                    <td>골드인레이</td>
-                                                    <td>10,000</td>
-                                                    <td>100</td>
-                                                </tr>
-                                                <tr tabindex="0">
-                                                    <td>골드인레이</td>
-                                                    <td>700,000</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr tabindex="0">
-                                                    <td>골드인레이</td>
-                                                    <td>700,000</td>
-                                                    <td>1</td>
-                                                </tr>
-                                            </table>
-                                            <table id="paytab2-4">
+                                            <table id="paytab3">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2458,7 +1998,7 @@
                                                     <td>1</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-5">
+                                            <table id="paytab4">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2495,7 +2035,7 @@
                                                     <td>1</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-6">
+                                            <table id="paytab5">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2532,7 +2072,7 @@
                                                     <td>1</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-7">
+                                            <table id="paytab6">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2569,7 +2109,7 @@
                                                     <td>1</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-8">
+                                            <table id="paytab7">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2606,7 +2146,7 @@
                                                     <td>1</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-9">
+                                            <table id="paytab8">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2643,7 +2183,44 @@
                                                     <td>1</td>
                                                 </tr>
                                             </table>
-                                            <table id="paytab2-10">
+                                            <table id="paytab9">
+                                                <colgroup>
+                                                    <col width="50%">
+                                                    <col width="30%">
+                                                    <col width="20%">
+                                                </colgroup>
+                                                <tr tabindex="0">
+                                                    <td>골드인레이</td>
+                                                    <td>700,000</td>
+                                                    <td>1</td>
+                                                </tr>
+                                                <tr tabindex="0">
+                                                    <td>골드인레이</td>
+                                                    <td>1,000,000</td>
+                                                    <td>1</td>
+                                                </tr>
+                                                <tr tabindex="0">
+                                                    <td>틀니</td>
+                                                    <td>700,000</td>
+                                                    <td>10</td>
+                                                </tr>
+                                                <tr tabindex="0">
+                                                    <td>골드인레이</td>
+                                                    <td>10,000</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr tabindex="0">
+                                                    <td>골드인레이</td>
+                                                    <td>700,000</td>
+                                                    <td>1</td>
+                                                </tr>
+                                                <tr tabindex="0">
+                                                    <td>골드인레이</td>
+                                                    <td>700,000</td>
+                                                    <td>1</td>
+                                                </tr>
+                                            </table>
+                                            <table id="paytab10">
                                                 <colgroup>
                                                     <col width="50%">
                                                     <col width="30%">
@@ -2735,14 +2312,14 @@
                         <div class="flexwrap blue">
                             <div class="blueHd"><span>고객정보</span></div>
                             <div class="formwrap3">
-                                <label for="CSdate2">고객명</label>
-                                <input type="text" class="input7" id="CSdate2" value="홍진수">
-                                <label for="Csname2">고객번호</label>
-                                <input type="text" class="input7" id="CSname2" value="12121212">
-                                <input type="radio" name="reserv-ra3" id="reserv2-1">
-                                <label for="reserv2-1">초진</label>
-                                <input type="radio" name="reserv-ra3" id="reserv2-2">
-                                <label for="reserv2-2">재진</label>
+                                <label for="CSdate">고객명</label>
+                                <input type="text" class="input7" id="CSdate" value="홍진수">
+                                <label for="Csname">고객번호</label>
+                                <input type="text" class="input7" id="CSname" value="12121212">
+                                <input type="radio" name="reserv-ra" id="reserv1">
+                                <label for="reserv1">초진</label>
+                                <input type="radio" name="reserv-ra" id="reserv2">
+                                <label for="reserv2">재진</label>
                             </div>
                         </div>
                         <div class="flexwrap blue">
@@ -2792,13 +2369,13 @@
                 <div class="flexwrap">
                     <div class="flexgrow mr20">
                         <ul class="tabUl">
-                            <li data-id="rsvtab2-1" class="on">상담정보</li>
-                            <li data-id="rsvtab2-2">수납정보</li>
-                            <li data-id="rsvtab2-3">진료차트</li>
-                            <li data-id="rsvtab2-4">예약정보</li>
+                            <li data-id="rsvtab1" class="on">상담정보</li>
+                            <li data-id="rsvtab2">수납정보</li>
+                            <li data-id="rsvtab3">진료차트</li>
+                            <li data-id="rsvtab4">예약정보</li>
                         </ul>
                         <div class="tabContent info">
-                            <div class="tabbox on" id="rsvtab2-1">
+                            <div class="tabbox on" id="rsvtab1">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -2866,7 +2443,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tabbox" id="rsvtab2-2">
+                            <div class="tabbox" id="rsvtab2">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -2914,7 +2491,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tabbox" id="rsvtab2-3">
+                            <div class="tabbox" id="rsvtab3">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -2982,7 +2559,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tabbox" id="rsvtab2-4">
+                            <div class="tabbox" id="rsvtab4">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -3269,10 +2846,10 @@
                         <div class="flexwrap blue">
                             <div class="blueHd"><span>고객구분</span></div>
                             <div class="formwrap3">
-                                <label for="CSdate3">등록일자</label>
-                                <input type="text" class="input3" id="CSdate3" value="2020년 3월 11일 수 12:24" readonly>
-                                <label for="Csname3">고객등급</label>
-                                <input type="text" class="input3" id="CSname3" value="VIP">
+                                <label for="CSdate">등록일자</label>
+                                <input type="text" class="input3" id="CSdate" value="2020년 3월 11일 수 12:24" readonly>
+                                <label for="Csname">고객등급</label>
+                                <input type="text" class="input3" id="CSname" value="VIP">
                             </div>
                         </div>
                         <div class="flexwrap blue">
@@ -3499,13 +3076,18 @@
                                 <label for="">소개등급</label>
                                 <input type="text" value="블루" readonly class="cus-rating cus-blue">
                                 <input type="text" value="3건" readonly class="cus-rating">
+                                <!--05.21 체크박스 항목 수정  -->
                                 <label for="cus-ck1">수신거부</label>
                                 <input type="checkbox" id="cus-ck2">
                                 <label for="cus-ck2" class="cus-ck"><span></span>문자</label>
                                 <input type="checkbox" id="cus-ck3">
                                 <label for="cus-ck3" class="cus-ck"><span></span>마케팅</label>
                                 <input type="checkbox" id="cus-ck4">
-                                <label for="cus-ck4" class="cus-ck"><span></span>관심</label>                               
+                                <label for="cus-ck4" class="cus-ck"><span></span>관심</label>
+                                <!-- <input type="checkbox" id="cus-ck5">
+                                <label for="cus-ck5" class="cus-ck mar-r-9"><span></span>PSD</label> -->
+                                <!-- ~ -->
+                                
                                 <label for="" class="marL-76">고객구분</label>
                                 <input type="text" class="input3" id="" value="신환고객" readonly>
                             </div>
@@ -7984,8 +7566,7 @@
                     dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
                     numberOfMonths: [1,1],
                 });
-                $(".date_pick").datepicker();  
-                $('.selectable').selectable();/*2020.06.03 추가*/
+                $(".date_pick").datepicker();                    
             });
     </script>
 </body>

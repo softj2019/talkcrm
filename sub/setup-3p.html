@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>TalkCRM 리콜관리</title>
+    <title>TalkCRM 설정관리</title><!-- 20.06.16 수정-->
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -65,6 +65,7 @@
                 </li>
                 <li><a href="#"><i class="navfront"></i><span>Front</span></a></li>
                 <li><a href="#"><i class="navcust"></i><span>고객관리</span></a></li>
+                <li><a href="#" class="nav-aP"><i class="mem"></i><span>고객상세</span></a></li><!-- 20.06.15 추가-->
                 <li class="hassub">
                     <a href="../sub/recall.html"><i class="navrecall"></i><span>리콜관리</span></a>
                     <button type="button" class="down-arrow"></button>
@@ -156,7 +157,7 @@
                                     <button type="button" class="excel-upload-mdbtn"><img src="../assets/img/plusicon.svg" alt="">진료구분 엑셀업로드</button>
                                 </div>
                             </div>
-                            <div class="wrap-set flexwrap">
+                            <div class="wrap-set flexwrap wrap-set3-H1">
                                 <div class="d-name-wrap mr10">
                                     <div class="pac-tit bg-blue">
                                         <p>진료명 설정</p>
@@ -450,7 +451,8 @@
                                         <p>패키지 항목</p>
                                         <div>
                                             <button type="button" class="yes-i"><i></i>저장</button>
-                                            <button type="button" class="pac-add"><i></i>추가</button>
+                                            <button type="button" class="pac-add set-package-add-mdbtn"><i></i>추가</button><!-- 20.06.15 클래스 추가 -->
+                                            
                                             <button type="button" class="pac-del"><i></i>삭제</button>
                                         </div>
                                     </div>
@@ -824,11 +826,11 @@
                                     <button type="button" class="bun-prescription-mdbtn"><img src="../assets/img/plusicon.svg" alt="">신규</button>
                                 </div>
                             </div>
-                            <div class="wrap-set T2-inBg">
+                            <div class="wrap-set T2-inBg wrap-set3-H1">
                                 <div class="set3-inH table-wrap">
                                     <div class="t-hd-width">
                                         <div class="table-header-bg"></div>
-                                        <div class="table-in">
+                                        <div class="table-in in-set3-H2"><!-- 20.06.16 클래스 추가 -->
                                             <table class="pac-table">
                                                 <thead>
                                                     <tr>
@@ -1156,11 +1158,11 @@
                                 <button type="button" class="coupon-name-mdbtn "><img src="../assets/img/plusicon.svg" alt="">신규</button>
                             </div>
                         </div>
-                        <div class="wrap-set T2-inBg">
+                        <div class="wrap-set T2-inBg wrap-set3-H1">
                             <div class="set3-inH table-wrap">
                                 <div class="t-hd-width">
                                     <div class="table-header-bg"></div>
-                                    <div class="table-in">
+                                    <div class="table-in in-set3-H2"><!-- 20.06.16 클래스 추가 -->
                                         <table class="pac-table">
                                             <thead>
                                                 <tr>
@@ -1169,7 +1171,7 @@
                                                     <th style="width: 15%"><div class="th-text">사용</div> </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody class="clk2-tr"><!-- 20.06.16 클래스 수정 -->
                                                 <tr>
                                                     <td>1</td>
                                                     <td>할인쿠폰</td>
@@ -1319,11 +1321,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="wrap-set T2-inBg">
+                        <div class="wrap-set T2-inBg wrap-set3-H1">
                             <div class="set3-inH table-wrap">
                                 <div class="t-hd-width">
                                     <div class="table-header-bg"></div>
-                                    <div class="table-in">
+                                    <div class="table-in in-set3-H2"><!-- 20.06.16 클래스 추가 -->
                                         <table class="pac-table">
                                             <thead>
                                                 <tr>
@@ -6501,8 +6503,7 @@
                                             <th style="width: 20%"><div class="th-text">사용</div></th>
                                         </tr>
                                     </thead>
-                                    <!-- 20.06.04 수정 -->
-                                    <tbody class="com-i">
+                                    <tbody class="com-i clk2-tr"><!-- 20.06.16 클래스 추가 -->
                                         <tr>
                                             <td>1</td>
                                             <td>비만</td>
@@ -6564,13 +6565,17 @@
                             <div class="table-header-bg"></div>
                             <div class="table-in">
                                 <table class="pac-table">
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                        <col style="width: 80%;">
+                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th style="width: 20%"><div class="th-text">순서</div> </th>
                                             <th style="width: 80%"><div class="th-text">진료구분</div></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="com-i clk-tr">
+                                    <tbody class="com-i clk2-tr"><!-- 20.06.16 클래스 수정 -->
                                         <tr>
                                             <td>1</td>
                                             <td>골드인레인</td>
@@ -6631,7 +6636,7 @@
                                             <th style="width: 15%"><div class="th-text">수량</div></th>
                                         </tr>
                                     </thead>
-                                    <tbody  class="com-i">
+                                    <tbody  class="com-i clk3-tr"><!-- 20.06.16 클래스 추가 -->
                                         <tr>
                                             <td>1</td>
                                             <td>보톡스</td>

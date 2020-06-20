@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>TalkCRM 고객관리</title>
+    <title>TalkCRM 고객상세</title> <!-- 20.06.17 수정 -->
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -415,27 +415,33 @@
                                 </div>
                             </div>
                             <div class="Rmenu-rel" style="position:relative">
-                            <div class="listwrap Rmenu">
-                               <div class="Rmenu-inner">
-                                <div class="ps-wrap">
-                                    <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
-                                    <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.</p>
+                            <div class="listwrap Rmenu"><!-- 20.06.16 추가 수정 -->
+                                <div class="hoverpop2 in-rcW">
+                                    <button type="button" class="today-on-btn"><i class="warning-I"></i></button>
+                                    <button type="button" class="inM-ann-btn"><i class="edit-I"></i></button>
+                                    <button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button>
                                 </div>
-                                <div class="ps-wrap">
-                                    <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
-                                    <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.전달사항 입력하고 저장하면 상단에 저장됨.전달사항 입력하고 저장하면 상단에 저장됨.전달사항 입력하고 저장하면 상단에 저장됨.</p>
-                                </div>
-                                <div class="ps-wrap">
-                                    <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
-                                    <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.</p>
-                                </div>
-                                <div class="ps-wrap">
-                                    <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
-                                    <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.</p>
-                                </div>
+                                <div class="Rmenu-inner">
+                                    <div class="ps-wrap">
+                                        <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
+                                        <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.</p>
+                                    </div>
+                                    <div class="ps-wrap">
+                                        <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
+                                        <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.전달사항 입력하고 저장하면 상단에 저장됨.전달사항 입력하고 저장하면 상단에 저장됨.전달사항 입력하고 저장하면 상단에 저장됨.</p>
+                                    </div>
+                                    <div class="ps-wrap">
+                                        <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
+                                        <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.</p>
+                                    </div>
+                                    <div class="ps-wrap">
+                                        <p class="ps-date">2020-05-04 12:40 <span>(이지은)</span></p>
+                                        <p class="ps-content">전달사항 입력하고 저장하면 상단에 저장됨.</p>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
+                            </div><!-- ~ -->
+                            <!-- 20.06.17 수정 ~-->
                             <textarea name="" placeholder="전달사항 입력"></textarea>
                             <div class="ps-footer">
                                <select name="" id="">
@@ -447,7 +453,7 @@
                                    <option value="이지은">이지은</option>
                                    <option value="이지은">이지은</option>
                                </select>
-                                <button type="button" class="customerl-btn"><img src="../assets/img/yes-m.png" alt="">예약등록</button>
+                                <button type="button" class="customerl-btn"><img src="../assets/img/Yes-m.png" alt="">메모등록</button>
                             </div>
                             <div class="in-modal" id="inM-del">
                                 <div class="in-mo-bg"></div>
@@ -460,7 +466,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div><!-- ~ -->
                         </div>
                     </div>
                 </div>
@@ -474,7 +480,7 @@
                     <div class="tabContent">
                         <div class="tabbox on clearfix" id="top-tab1">
                             <button type="button" class="consult-btn btn-inline"><img src="../assets/img/plusicon.svg" alt="">신규</button>
-                            <div class="tab-in">
+                            <div class="tab-in tab1-in">
                                <div class="tab-in-inner">
                                     <div class="dt-rsvwrap mb20">
                                         <h3><i class="sq-dot"></i>예약정보
@@ -1081,8 +1087,184 @@
                         <input type="text" id="from_date5" class="date_pick dtinput1" value="2020-03-11">
                         <label for="">상담사</label>
                         <input type="text" class="dtinput1" id="" value="김진수">
-                        <label for="">유입경로</label>
-                        <input type="text" class="dtinput1" id="" value="">
+                        <div class="fn-out"><!-- 20.06.16 추가 수정 -->
+                            <label for="">유입경로</label>
+                            <input type="text" class="dtinput1 fninput" id="" value="">
+                            <div class="fnwrap flexwrap dt-fnwrap">
+                                <ul class="dp1">
+                                    <li><a href="#" data-id="cu-fntab1" class="on">굿닥</a></li>
+                                    <li><a href="#" data-id="cu-fntab2">네이버</a></li>
+                                    <li><a href="#" data-id="cu-fntab3">광고</a></li>
+                                    <li><a href="#" data-id="cu-fntab4">소셜</a></li>
+                                    <li><a href="#" data-id="cu-fntab5">잡지</a></li>
+                                    <li><a href="#" data-id="cu-fntab6">카카오</a></li>
+                                    <li><a href="#" data-id="cu-fntab7">소개</a></li>
+                                    <li><a href="#" data-id="cu-fntab8">대분류1</a></li>
+                                    <li><a href="#" data-id="cu-fntab9">대분류2</a></li>
+                                    <li><a href="#" data-id="cu-fntab10">대분류3</a></li>
+                                </ul>
+                                <div class="dp2">
+                                    <table id="cu-fntab1" class="on">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>검색</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>포스트</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>실시간검색어</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>광고 메일</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>검색</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>최대열자까지기본노출</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab2">
+                                        <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab3">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab4">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab5">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab6">
+                                        <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab7">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab8">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab9">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                    <table id="cu-fntab10">
+                                    <colgroup>
+                                            <col width="150px">
+                                        </colgroup>
+                                        <tr tabindex="0">
+                                            <td>블로그</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>카페</td>
+                                        </tr>
+                                        <tr tabindex="0">
+                                            <td>메인배너</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- ~ -->
                         <input type="checkbox" id="rsvmsg"><label for="rsvmsg">예약문자</label>
                         <select class="dtselect"><option value="05-12 12:30">05-12 12:30</option></select>
                         <select class="dtselect"><option value="설정문자">설정문자</option></select>
@@ -1188,20 +1370,20 @@
                                 <label for="consultSrc">진료서비스 검색</label>
                                 <input type="text" class="input5 srcinput" id="consultSrc">
                                 <div class="srcwrap flexwrap">
-                                    <ul class="dp1">
-                                        <li><a href="#" data-id="consrctab1" class="on">비만클리닉</a></li>
-                                        <li><a href="#" data-id="consrctab2">스케일링</a></li>
-                                        <li><a href="#" data-id="consrctab3">치아</a></li>
-                                        <li><a href="#" data-id="consrctab4">입</a></li>
-                                        <li><a href="#" data-id="consrctab5">틀니</a></li>
-                                        <li><a href="#" data-id="consrctab6">타원</a></li>
-                                        <li><a href="#" data-id="consrctab7">체크</a></li>
-                                        <li><a href="#" data-id="consrctab8">눈</a></li>
-                                        <li><a href="#" data-id="consrctab9">상담</a></li>
-                                        <li><a href="#" data-id="consrctab10">보철</a></li>
+                                    <ul class="dp1"><!-- 20.06.17 수정~ -->
+                                        <li><a href="#" data-id="consrctab1-2" class="on">비만클리닉</a></li>
+                                        <li><a href="#" data-id="consrctab2-2">스케일링</a></li>
+                                        <li><a href="#" data-id="consrctab3-2">치아</a></li>
+                                        <li><a href="#" data-id="consrctab4-2">입</a></li>
+                                        <li><a href="#" data-id="consrctab5-2">틀니</a></li>
+                                        <li><a href="#" data-id="consrctab6-2">타원</a></li>
+                                        <li><a href="#" data-id="consrctab7-2">체크</a></li>
+                                        <li><a href="#" data-id="consrctab8-2">눈</a></li>
+                                        <li><a href="#" data-id="consrctab9-2">상담</a></li>
+                                        <li><a href="#" data-id="consrctab10-2">보철</a></li>
                                     </ul>
                                     <div class="dp2">
-                                        <table id="consrctab1" class="on">
+                                        <table id="consrctab1-2" class="on">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1223,7 +1405,7 @@
                                                 <td>10</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab2">
+                                        <table id="consrctab2-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1245,44 +1427,7 @@
                                                 <td>10</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab3">
-                                            <colgroup>
-                                                <col width="50%">
-                                                <col width="30%">
-                                                <col width="20%">
-                                            </colgroup>
-                                            <tbody><tr tabindex="0">
-                                                <td>골드인레이</td>
-                                                <td>700,000</td>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr tabindex="0">
-                                                <td>골드인레이</td>
-                                                <td>1,000,000</td>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr tabindex="0">
-                                                <td>틀니</td>
-                                                <td>700,000</td>
-                                                <td>10</td>
-                                            </tr>
-                                            <tr tabindex="0">
-                                                <td>골드인레이</td>
-                                                <td>10,000</td>
-                                                <td>100</td>
-                                            </tr>
-                                            <tr tabindex="0">
-                                                <td>골드인레이</td>
-                                                <td>700,000</td>
-                                                <td>1</td>
-                                            </tr>
-                                            <tr tabindex="0">
-                                                <td>골드인레이</td>
-                                                <td>700,000</td>
-                                                <td>1</td>
-                                            </tr>
-                                        </tbody></table>
-                                        <table id="consrctab4">
+                                        <table id="consrctab3-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1319,7 +1464,7 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab5">
+                                        <table id="consrctab4-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1356,7 +1501,7 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab6">
+                                        <table id="consrctab5-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1393,7 +1538,7 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab7">
+                                        <table id="consrctab6-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1430,7 +1575,7 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab8">
+                                        <table id="consrctab7-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1467,7 +1612,7 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab9">
+                                        <table id="consrctab8-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1504,7 +1649,7 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                        <table id="consrctab10">
+                                        <table id="consrctab9-2">
                                             <colgroup>
                                                 <col width="50%">
                                                 <col width="30%">
@@ -1541,7 +1686,44 @@
                                                 <td>1</td>
                                             </tr>
                                         </tbody></table>
-                                    </div>
+                                        <table id="consrctab10-2">
+                                            <colgroup>
+                                                <col width="50%">
+                                                <col width="30%">
+                                                <col width="20%">
+                                            </colgroup>
+                                            <tbody><tr tabindex="0">
+                                                <td>골드인레이</td>
+                                                <td>700,000</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr tabindex="0">
+                                                <td>골드인레이</td>
+                                                <td>1,000,000</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr tabindex="0">
+                                                <td>틀니</td>
+                                                <td>700,000</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr tabindex="0">
+                                                <td>골드인레이</td>
+                                                <td>10,000</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr tabindex="0">
+                                                <td>골드인레이</td>
+                                                <td>700,000</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr tabindex="0">
+                                                <td>골드인레이</td>
+                                                <td>700,000</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div><!-- ~ -->
                                     <div class="doc">
                                         <ul>
                                             <li>지정의</li>
@@ -4346,7 +4528,7 @@
                             <div class="formwrap3">
                                 <label for="">상담일</label>
 <!--                                input.date_pick, i.cal 수정, 추가-->
-                                <input type="text" id="from_date5" class="date_pick input3"><i class="cal"></i>
+                                <input type="text" id="from_date8" class="date_pick input3"><i class="cal cal-i-po"></i><!-- 20.06.17 id수정 클래스 추가 -->
                                 <label for="">상담사</label>
                                 <input type="text" class="input3" id="" value="김진수">
                             </div>
@@ -8843,14 +9025,14 @@
                 </div>
                 <div class="flexwrap">
                     <div class="flexgrow mr20">
-                        <ul class="tabUl">
-                            <li data-id="rsvtab1" class="on">상담정보</li>
-                            <li data-id="rsvtab2">수납정보</li>
-                            <li data-id="rsvtab3">진료차트</li>
-                            <li data-id="rsvtab4">예약정보</li>
+                        <ul class="tabUl"><!-- 20.06.16 id수정 ~ -->
+                            <li data-id="rsvtab1-1" class="on">상담정보</li>
+                            <li data-id="rsvtab2-1">수납정보</li>
+                            <li data-id="rsvtab3-1">진료차트</li>
+                            <li data-id="rsvtab4-1">예약정보</li>
                         </ul>
                         <div class="tabContent info">
-                            <div class="tabbox on" id="rsvtab1">
+                            <div class="tabbox on" id="rsvtab1-1">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -8918,7 +9100,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tabbox" id="rsvtab2">
+                            <div class="tabbox" id="rsvtab2-1">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -8966,7 +9148,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tabbox" id="rsvtab3">
+                            <div class="tabbox" id="rsvtab3-1">
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>
@@ -9034,7 +9216,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="tabbox" id="rsvtab4">
+                            <div class="tabbox" id="rsvtab4-1"><!-- ~ -->
                                 <div class="wrap">
                                     <table class="greyTable">
                                         <colgroup>

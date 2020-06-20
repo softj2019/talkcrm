@@ -69,9 +69,7 @@
 
         
     </script>
-    <style type="text/css">
-        
-    </style>
+    
 </head>
 <body>
 <div class="main-wrap">
@@ -171,12 +169,12 @@
                         <div class="select">
                             <a href="#">전체선택</a>
                             <ul>
-                                <li><input type="checkbox" id="sel-ck1" checked><label for="sel-ck1"><span></span>전체선택</label></li>
-                                <li><input type="checkbox" id="sel-ck2"
-                                checked><label for="sel-ck2"><span></span>상담</label></li>
-                                <li><input type="checkbox" id="sel-ck3" checked><label for="sel-ck3"><span></span>수술</label></li>
-                                <li><input type="checkbox" id="sel-ck4" checked><label for="sel-ck4"><span></span>시술</label></li>
-                                <li><input type="checkbox" id="sel-ck5" checked><label for="sel-ck5"><span></span>치료</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck1" name="selectResourseId" checked><label for="sel-ck1"><span></span>전체선택</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck2" name="selectResourseId" value="a"
+                                checked><label for="sel-ck2"><span></span>초진</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck3" name="selectResourseId" value="b" checked><label for="sel-ck3"><span></span>재진</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck4" name="selectResourseId" value="c"  checked><label for="sel-ck4"><span></span>취소</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck5" name="selectResourseId" value="d"  checked><label for="sel-ck5"><span></span>치료</label></li>
                             </ul>
                         </div>
                     </div>
@@ -206,78 +204,11 @@
         <div class="content clearfix min-Wcon"> 
             <div class="con-left reserv-con">
                 <div class="left-con releft-t">
-                    <table>
-                        <colgroup>
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
-                            <col style="width: 10%;">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <td><button type="button" class="a-left"><i></i></button></td>
-                                <td colspan="5"><span>2020.03</span></td>
-                                <td><button type="button" class="a-right"><i></i></button></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="red-dot"></span><span>1</span></td>
-                                <td><span>2</span></td>
-                                <td><span>3</span></td>
-                                <td><span>4</span></td>
-                                <td class="gray-c"><span>5</span></td>
-                                <td><span>6</span></td>
-                                <td><span>7</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>8</span></td>
-                                <td><span>9</span></td>
-                                <td><span>10</span></td>
-                                <td><span>11</span></td>
-                                <td class="gray-c"><span>12</span></td>
-                                <td><span>13</span></td>
-                                <td><span>14</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>15</span></td>
-                                <td><span>16</span></td>
-                                <td><span>17</span></td>
-                                <td><span>18</span></td>
-                                <td><span>19</span></td>
-                                <td><span>20</span></td>
-                                <td><span>21</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>22</span></td>
-                                <td><span>23</span></td>
-                                <td><span>24</span></td>
-                                <td><span>25</span></td>
-                                <td><span>26</span></td>
-                                <td><span>27</span></td>
-                                <td><span>28</span></td>
-                            </tr>
-                            <tr>
-                                <td><span>29</span></td>
-                                <td><span>30</span></td>
-                                <td><span>31</span></td>
-                                <td><span></span></td>
-                                <td><span></span></td>
-                                <td><span></span></td>
-                                <td><span></span></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="3"><button type="button" class="today-btn">Today</button></td>
-                                <td colspan="2"></td>
-                                <td colspan="2"><button type="button" class="re-btn"></button></td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <div class="releft-t-date"></div>
+                    <div class="flexwrap pd10">
+                        <button type="button" class="today-btn">Today</button>
+                        <button type="button" class="re-btn"></button>
+                    </div>
                 </div>
                 <div class="left-f">
                     <ul class="tabUl clearfix">
@@ -588,82 +519,6 @@
                                     <!-- ~ -->
                                 </div>
                                 <div class="r-calander clearfix">
-                                    <table>
-                                        <colgroup>
-                                            <col style="width: 2%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 3%;">
-                                            <col style="width: 2%">
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <!-- 05.21 클래스 수정,추가 -->
-                                                <td><button type="button"></button></td>
-                                                <td class="sun">1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>6</td>
-                                                <td class="sat">7</td>
-                                                <td class="sun">8</td>
-                                                <td>9</td>
-                                                <td>10</td>
-                                                <td>11</td>
-                                                <td>12</td>
-                                                <td>13</td>
-                                                <td class=" sat">14</td>
-                                                <td class="sun">15</td>
-                                                <td>16</td>
-                                                <td><span class="red-dot"></span>17</td>
-                                                <td class="gray-c">18</td>
-                                                <td>19</td>
-                                                <td>20</td>
-                                                <td class="sat">21</td>
-                                                <td class="sun">22</td>
-                                                <td>23</td>
-                                                <td>24</td>
-                                                <td>25</td>
-                                                <td>26</td>
-                                                <td>27</td>
-                                                <td class="sat">28</td>
-                                                <td class="sun">29</td>
-                                                <td>30</td>
-                                                <td>31</td>
-                                                <td><button type="button"></button></td>
-                                                <!-- ~ -->
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -7275,6 +7130,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
+        
         $(function() { 
                 $.datepicker.setDefaults({
                     dateFormat: 'yy-mm-dd',
@@ -7288,6 +7144,28 @@
                 
                 
             });
+        //20.06.17 추가
+        $(".releft-t-date").datepicker({
+             monthNames: ['01','02','03','04','05','06','07','08','09','10','11','12'] // 월의 한글 형식.
+        });
+       
+        $(".r-calander").datepicker({
+            showButtonPanel :false,
+             monthNames: ['01','02','03','04','05','06','07','08','09','10','11','12'], // 월의 한글 형식.
+            onSelect: function(a,bbb) {  
+                var obj = $('#' + bbb.id + ' table tbody')
+                //console.log(obj.get(0).querySelector('tr'))
+                if(obj.get(0).querySelector('tr') == null){
+                    setTimeout( function(){
+                        $('.r-calander table.ui-datepicker-calendar tbody tr td').unwrap();
+                        //console.log(bbb);
+                     }, 0);
+                }
+            }
+        });
+        setTimeout( function(){
+            $('.r-calander table.ui-datepicker-calendar tbody tr td').unwrap();
+        }, 0);
     </script>
 </body>
 </html>

@@ -321,7 +321,7 @@ uploadFile2.on('change', function(){
 //마우스오버 메뉴
   //메뉴보이기+위치
   $('.hoverpopList tbody tr').mouseenter(function(e){
-    var tp = $(this).parents('.table-in');
+    var tp = $(this).parents('.tabbox');
     //Get window size:
     var winWidth = $(document).width();
     var winHeight = $(document).height();
@@ -667,17 +667,34 @@ $('.hoverpopList-res tbody .table-M, .table-M-h').mouseover(function(e){
 
 
 
-// 메모버튼
-var txt_btn = true;
+// 메모버튼 20.06.17 수정 달력크기연동
 $('.reserv-con .left-f .tabContent textarea').focusin(function(){
-        $(".area-btn").addClass('on');
+    $(".area-btn").addClass('on');
+    var l = $('.left-con .ui-datepicker-calendar tbody tr').length;
+    if(l == 6){
+        $(".reserv-con .left-f .tabContent textarea").css('height',"380px");
+    }else{
         $(".reserv-con .left-f .tabContent textarea").css('height',"420px");
-        txt_btn = false;
-});
-$('.reserv-con .left-f .tabContent textarea').focusout(function(){
-        $(".area-btn").removeClass('on');
+    }   
+}).focusout(function(){
+    $(".area-btn").removeClass('on');
+    var l = $('.left-con .ui-datepicker-calendar tbody tr').length;
+    if(l == 6){
+        $(".reserv-con .left-f .tabContent textarea").css('height',"420px");
+    }else{
         $(".reserv-con .left-f .tabContent textarea").css('height',"460px");
-        txt_btn = true;
+    }
+});
+//20.06.17 추가
+$(document).on('click', '.ui-datepicker-header>a', function(){
+    var l = $('.left-con .ui-datepicker-calendar tbody tr').length;
+    if(l == 6){
+        $('.releft-t .ui-datepicker').height(276.920);
+        $(".reserv-con .left-f .tabContent textarea, .rese-tab3-in").css('height',"420px");
+    }else{
+        $('.releft-t .ui-datepicker').height(236.920);
+        $(".reserv-con .left-f .tabContent textarea, .rese-tab3-in").css('height',"460px");
+    }
 });
 // 05.25 가로보기 메모버튼
 $('.r-memo .d-memo').focusin(function(){
@@ -763,19 +780,16 @@ $('.hor-view').click(function(){
     $('.reright-box .tabContent .table-in').height(reRight_H - calander_h - 40);
 });
 // ~
-// 05.22 일자,예약 버튼수정 20.06.12 재수정
-
+// 05.22 일자,예약 버튼수정 20.06.17 재수정
 $(document).ready(function(){
     $('.tab-btn button').click(function(){
         if($(this).hasClass('on')){
             $('.tab-btn button, .r-reser, .r-memo').removeClass('on');
-            $('.res-t.on .fc-view-container').css('margin-top', '68px');
         }else{
             $('.tab-btn button, .r-reser, .r-memo').removeClass('on');
             var gray_id = $(this).attr('data-id');
             $(this).addClass('on');
             $("#"+gray_id).addClass('on');
-            $('.res-t.on .fc-view-container').css('margin-top', '220px');
         }
     });
 });
@@ -1075,17 +1089,18 @@ $(document).ready(function(){
     $('.com-i').sortable({
     });
 });
-// 20.06.11 추가
-$( function() {
-    $( "#datepicker" ).datepicker({
-      showOn: "button",
-      buttonImage: "../assets/img/Icon-Event-Filled.png",
-      buttonImageOnly: true
+// 20.06.12 추가~
+$("#dp").datepicker({
+    onSelect: function(dateText, inst) {
+        alert(dateText);
+    },
     });
-  });
+    $("#datep").click(function() {
+        $("#dp").datepicker("show");
+    });
   $('.Bgck-tr tr').click(function(){
     $(this).toggleClass('on');
-});
+});//~
 $(document).ready(function(){
     $('.front-Tbtn button').click(function(){
         if($(this).hasClass('on')){
@@ -1109,83 +1124,84 @@ $('.sk-position').click(function(){
 $(".clinic-re-btn").click(function(){
     $("#clinic-re").addClass('on');
 });
-$(".mouse-sk1 tbody tr").on("mousedown", function(e){
-    //우클릭 기본메뉴 제거
-    var thison = $(this);
-    $(".mouse-sk1 tbody tr").on('contextmenu', function() {
-    return false;
-    });
-    //if 오른쪽클릭일경우
-    if( e.which == 3 ){
-        $('.mouse-sk1 tbody tr').removeClass('here');//20.06.12 추가
-        $(this).addClass('here');//20.06.12 추가
-        $('.rcpop').remove();//기존 팝업제거
-        $(this).parents('.mouse-skout').append('<div class="rcpop"><button type="button" class="today-on-btn"><i class="warning-I"></i></button><button type="button" class="inM-ann-btn"><i class="edit-I"></i></button><button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button><button type="button" class="complet-on-btn"><i class="yesin-I"></i></button></div>');
-            //메뉴보이기+위치
-            var tp = $(this).parents('.mouse-skout');
-            //Get pointer position:
-            var MposX = e.pageX - tp.offset().left;
-            var MposY = e.pageY - tp.offset().top;
-            posLeft = MposX + "px";
-            posTop = MposY + 3 + "px";
-            //Display menu:
-            $('.rcpop').css({
-            "left": posLeft,
-            "top": posTop
-            }).addClass('on');
-        //20.06.12 삭제, 기존 1137 ~ 1145
-        return false;
-    }
-});
-$(".mouse-sk2 tbody tr").on("mousedown", function(e){
-    //우클릭 기본메뉴 제거
-    $(".mouse-sk2 tbody tr").on('contextmenu', function() {
-    return false;
-    });
-    //if 오른쪽클릭일경우
-    if( e.which == 3 ){
-        $('.rcpop').remove();//기존 팝업제거
-        $(this).parents('.mouse-skout').append('<div class="rcpop in-rcW"><button type="button"><i class="warning-I"></i></button><button type="button" class="inM-ann2-btn"><i class="edit-I"></i></button><button type="button" class="inM-del2-btn"><i class="cancel-d-I"></i></button></div>');
-            //메뉴보이기+위치
-            var tp = $(this).parents('.mouse-skout');
-            //Get pointer position:
-            var MposX = e.pageX - tp.offset().left;
-            var MposY = e.pageY - tp.offset().top;
-            posLeft = MposX + "px";
-            posTop = MposY + 3 + "px";
-            //Display menu:
-            $('.rcpop').css({
-            "left": posLeft,
-            "top": posTop
-            }).addClass('on');
-        return false;
-    }
-});
-$(".mouse-sk3 tbody tr").on("mousedown", function(e){
-    //우클릭 기본메뉴 제거
-    $(".mouse-sk3 tbody tr").on('contextmenu', function() {
-    return false;
-    });
-    //if 오른쪽클릭일경우
-    if( e.which == 3 ){
-        $('.rcpop').remove();//기존 팝업제거
-        $(this).parents('.mouse-skout').append('<div class="rcpop in-rcW"><button type="button"><i class="yesin-I"></i></button><button type="button" class="reserved-btn"><i class="edit-I"></i></button><button type="button" class="msg-btn"><i class="Messages-I"></i></button></div>');
-            //메뉴보이기+위치
-            var tp = $(this).parents('.mouse-skout');
-            //Get pointer position:
-            var MposX = e.pageX - tp.offset().left;
-            var MposY = e.pageY - tp.offset().top;
-            posLeft = MposX + "px";
-            posTop = MposY + 3 + "px";
-            //Display menu:
-            $('.rcpop').css({
-            "left": posLeft,
-            "top": posTop
-            }).addClass('on');
-        //Prevent browser default contextmenu.
-        return false;
-    }
-});
+// 20.06.16 삭제~
+// $(".mouse-sk1 tbody tr").on("mousedown", function(e){
+//     //우클릭 기본메뉴 제거
+//     var thison = $(this);
+//     $(".mouse-sk1 tbody tr").on('contextmenu', function() {
+//     return false;
+//     });
+//     //if 오른쪽클릭일경우
+//     if( e.which == 3 ){
+//         $('.mouse-sk1 tbody tr').removeClass('here');//20.06.12 추가
+//         $(this).addClass('here');//20.06.12 추가
+//         $('.rcpop').remove();//기존 팝업제거
+//         $(this).parents('.mouse-skout').append('<div class="rcpop"><button type="button" class="today-on-btn"><i class="warning-I"></i></button><button type="button" class="inM-ann-btn"><i class="edit-I"></i></button><button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button><button type="button" class="complet-on-btn"><i class="yesin-I"></i></button></div>');
+//             //메뉴보이기+위치
+//             var tp = $(this).parents('.mouse-skout');
+//             //Get pointer position:
+//             var MposX = e.pageX - tp.offset().left;
+//             var MposY = e.pageY - tp.offset().top;
+//             posLeft = MposX + "px";
+//             posTop = MposY + 3 + "px";
+//             //Display menu:
+//             $('.rcpop').css({
+//             "left": posLeft,
+//             "top": posTop
+//             }).addClass('on');
+//         //20.06.12 삭제, 기존 1137 ~ 1145
+//         return false;
+//     }
+// });
+// $(".mouse-sk2 tbody tr").on("mousedown", function(e){
+//     //우클릭 기본메뉴 제거
+//     $(".mouse-sk2 tbody tr").on('contextmenu', function() {
+//     return false;
+//     });
+//     //if 오른쪽클릭일경우
+//     if( e.which == 3 ){
+//         $('.rcpop').remove();//기존 팝업제거
+//         $(this).parents('.mouse-skout').append('<div class="rcpop in-rcW"><button type="button"><i class="warning-I"></i></button><button type="button" class="inM-ann2-btn"><i class="edit-I"></i></button><button type="button" class="inM-del2-btn"><i class="cancel-d-I"></i></button></div>');
+//             //메뉴보이기+위치
+//             var tp = $(this).parents('.mouse-skout');
+//             //Get pointer position:
+//             var MposX = e.pageX - tp.offset().left;
+//             var MposY = e.pageY - tp.offset().top;
+//             posLeft = MposX + "px";
+//             posTop = MposY + 3 + "px";
+//             //Display menu:
+//             $('.rcpop').css({
+//             "left": posLeft,
+//             "top": posTop
+//             }).addClass('on');
+//         return false;
+//     }
+// });
+// $(".mouse-sk3 tbody tr").on("mousedown", function(e){
+//     //우클릭 기본메뉴 제거
+//     $(".mouse-sk3 tbody tr").on('contextmenu', function() {
+//     return false;
+//     });
+//     //if 오른쪽클릭일경우
+//     if( e.which == 3 ){
+//         $('.rcpop').remove();//기존 팝업제거
+//         $(this).parents('.mouse-skout').append('<div class="rcpop in-rcW"><button type="button"><i class="yesin-I"></i></button><button type="button" class="reserved-btn"><i class="edit-I"></i></button><button type="button" class="msg-btn"><i class="Messages-I"></i></button></div>');
+//             //메뉴보이기+위치
+//             var tp = $(this).parents('.mouse-skout');
+//             //Get pointer position:
+//             var MposX = e.pageX - tp.offset().left;
+//             var MposY = e.pageY - tp.offset().top;
+//             posLeft = MposX + "px";
+//             posTop = MposY + 3 + "px";
+//             //Display menu:
+//             $('.rcpop').css({
+//             "left": posLeft,
+//             "top": posTop
+//             }).addClass('on');
+//         //Prevent browser default contextmenu.
+//         return false;
+//     }
+// }); ~
 $(document).on('click', '.inM-ann-btn', function(){/*20.06.12 수정 ~ 1204*/
     $('.rcpop').remove();
     $('.sk-main').css('overflow', 'hidden');
@@ -1243,40 +1259,139 @@ $('.tabUl li').click(function(){
     $(this).addClass('on');
     $("#"+tab_id).addClass('on');
 });
-
-//주의 및 전달사항 우클릭 메뉴
-//우클릭 기본메뉴 제거
-$(".Rmenu-rel .ps-wrap").on('contextmenu', function() {
-    return false;
-});
-$(".Rmenu-rel .ps-wrap").on("mousedown", function(e){
-    //if 오른쪽클릭일경우
-    if( e.which == 3 ){
-        $('.rcpop').remove();//기존 팝업제거
-        $('.Rmenu-rel .ps-wrap').removeClass('here');
-        $(this).addClass('here');
-        $(this).parents('.Rmenu').append('<div class="rcpop"><button type="button" class="today-on-btn"><i class="warning-I"></i></button><button type="button" class="inM-ann-btn"><i class="edit-I"></i></button><button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button><button type="button" class="complet-on-btn"><i class="yesin-I"></i></button></div>');
-            //메뉴보이기+위치
-            var tp = $(this).parents('.Rmenu');
-            //Get pointer position:
-            var MposX = e.pageX - tp.offset().left;
-            var MposY = e.pageY - tp.offset().top;
-            posLeft = MposX + "px";
-            posTop = MposY + 3 + "px";
-            //Display menu:
-            $('.rcpop').css({
-            "left": posLeft,
-            "top": posTop
-            }).addClass('on');
-        return false;
-    }
+// 20.06.16 삭제~
+// //주의 및 전달사항 우클릭 메뉴
+// //우클릭 기본메뉴 제거
+// $(".Rmenu-rel .ps-wrap").on('contextmenu', function() {
+//     return false;
+// });
+// $(".Rmenu-rel .ps-wrap").on("mousedown", function(e){
+//     //if 오른쪽클릭일경우
+//     if( e.which == 3 ){
+//         $('.rcpop').remove();//기존 팝업제거
+//         $('.Rmenu-rel .ps-wrap').removeClass('here');
+//         $(this).addClass('here');
+//         $(this).parents('.Rmenu').append('<div class="rcpop"><button type="button" class="today-on-btn"><i class="warning-I"></i></button><button type="button" class="inM-ann-btn"><i class="edit-I"></i></button><button type="button" class="inM-del-btn"><i class="cancel-d-I"></i></button><button type="button" class="complet-on-btn"><i class="yesin-I"></i></button></div>');
+//             //메뉴보이기+위치
+//             var tp = $(this).parents('.Rmenu');
+//             //Get pointer position:
+//             var MposX = e.pageX - tp.offset().left;
+//             var MposY = e.pageY - tp.offset().top;
+//             posLeft = MposX + "px";
+//             posTop = MposY + 3 + "px";
+//             //Display menu:
+//             $('.rcpop').css({
+//             "left": posLeft,
+//             "top": posTop
+//             }).addClass('on');
+//         return false;
+//     }
     
-});
-$(document).on('click', '.rcpop .today-on-btn', function(){
-    $('.here').toggleClass('today-on');
-    $('.today-on').removeClass('here');
-    $('.rcpop').remove();
-});
+// });
+// $(document).on('click', '.rcpop .today-on-btn', function(){
+//     $('.here').toggleClass('today-on');
+//     $('.today-on').removeClass('here');
+//     $('.rcpop').remove();
+// });~
 $(".reserv-edit-btn").click(function(){
     $("#reserv-edit").addClass('on');
+});
+// 20.06.16 QC 추가
+
+//마우스오버 팝업 //20.06.17 QC 수정
+$('.sk-hover tbody tr, .ps-wrap').mouseenter(function(e){
+    $('.sk-hover tbody tr, .ps-wrap').removeClass('here');
+    $(this).addClass('here');
+    var tp = $(this).parents('.mouse-skout, .Rmenu-rel');
+    //Get window size:
+    var winWidth = $(document).width();
+    var winHeight = $(document).height();
+    //Get pointer position:
+    var RposX = e.pageX;
+    var RposY = e.pageY;
+    var posX = e.pageX - tp.offset().left;
+    var posY = e.pageY - tp.offset().top;
+    //Get contextmenu size:
+    var menuWidth = tp.find('.hoverpop2').width();
+    var menuHeight = tp.find('.hoverpop2').height();
+    //Security margin:
+    var secMargin = 10;
+    //Prevent page overflow:
+    if(RposX + menuWidth + secMargin >= winWidth
+    && RposY + menuHeight + secMargin >= winHeight){
+      //Case 1: right-bottom overflow:
+      posLeft = posX - menuWidth - 10 + "px";
+      posTop = posY - menuHeight - 10 + "px";
+    }
+    else if(RposX + menuWidth + secMargin >= winWidth){
+      //Case 2: right overflow:
+      posLeft = posX - menuWidth - secMargin - 10 + "px";
+      posTop = posY + secMargin - 10 + "px";
+    }
+    else if(RposY + menuHeight + secMargin >= winHeight){
+      //Case 3: bottom overflow:
+      posLeft = posX + secMargin - 10 + "px";
+      posTop = posY - menuHeight - secMargin - 10 + "px";
+    }
+    else {
+      //Case 4: default values:
+      posLeft = posX + secMargin - 10 + "px";
+      posTop = posY + secMargin - 10 + "px";
+    }
+     console.log(tp);
+    //Display menu:
+    tp.find('.hoverpop2').css({
+       "left": posLeft,
+       "top": posTop
+    }).addClass('on');
+  });
+    
+  //메뉴사라지기
+  $('body').on('mousemove', function(e){
+    var $tgPoint = $(e.target);
+    var $popArea = $tgPoint.parents().is('.sk-position, .Rmenu-rel');
+    if ( !$popArea ){
+        $('.hoverpop2').removeClass('on');
+    }
+});
+$(document).on('click', '.hoverpop2 .today-on-btn', function(){
+    $('.here').toggleClass('today-on');
+});
+$(document).on('click', '.hoverpop2 .complet-on-btn', function(){
+    $('.here').toggleClass('complet-on');
+});
+
+$(document).ready(function(){
+    $('.clk2-tr tr ,.clk3-tr tr').click(function(){
+        if($(this).hasClass('on')){
+            $(this).parent().children('tr').removeClass('on')
+        }else{
+            $(this).parent().children('tr').removeClass('on')
+            $(this).addClass('on');
+        }
+    });
+    $('.clk2-td td:first-child').click(function(){
+        $(this).toggleClass('on');
+    });
+    $('.clk2-td td:last-child').click(function(){
+        if($(this).hasClass('on')){
+            $('.clk2-td td:last-child').removeClass('on');
+        }else{
+            $('.clk2-td td:last-child').removeClass('on');
+            $(this).addClass('on');
+        }
+    });
+    $('.com-i').on('mousedown', function(){
+        $('.com-i tr').find('td').each(function(i, e){
+            var td_W = $(this).width()
+            $(this).css('width',td_W);
+        });
+    });
+});
+//유입경로탭
+$('.fnwrap .dp2 td').on('click', function(){
+    var tab_id = $(this).parents('table').attr('id');
+    var depth1 = $('a[data-id="' + tab_id + '"]').text();
+    var depth2 = $(this).text();
+    $(this).parents('.formwrap3').children('.fn-out').children('input.fninput').val(depth1 + '▶' + depth2);
 });

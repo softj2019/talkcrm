@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         header: {
             left: 'resourceTimeGridDay,timeGridWeek,dayGridMonth',
             center: 'prev title next',
-            right: false
+            right: false,
         },
         //한번에 표시가능한 이벤트 수량
         eventLimit: true, // for all non-TimeGrid views
@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
             timeGrid: {
                 type: 'timeGrid',
                 buttonText: 'timeGrid',
-                eventLimit: 3 // adjust to 6 only for timeGridWeek/timeGridDay
+                eventLimit: 3, // adjust to 6 only for timeGridWeek/timeGridDay
             },
             dayGridMonth: {
                 type: 'dayGridMonth',
                 buttonText: 'Month',
-                eventLimit:7
+                eventLimit:7,
             }
         },
 
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $('.eventDescription').addClass('hidden');
             $('.tooltip').addClass('hidden');
 
-            callRightSmallNav(arg.jsEvent)
+            //callRightSmallNav(arg.jsEvent) 20.06.17 삭제
 
         },
 
@@ -266,16 +266,17 @@ document.addEventListener('DOMContentLoaded', function() {
             $('.tooltip').addClass('hidden');
             console.log('eventResize');
         },
-        //드롭
-        // eventDrop: function(info) {
+//        드롭
+         eventDrop: function(info) {
         // alert(info.event.title + " was dropped on " + info.event.start.toISOString());
         // if (!confirm("Are you sure about this change?")) {
         //     info.revert();
         // }
         // },
         // eventClick(arg) {
-
-        // },
+            $('.eventDescription').addClass('hidden');
+            $('.tooltip').addClass('hidden');
+         },
     });
     calendar.render();
 
@@ -303,6 +304,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         $('#reserv').removeClass('on');
         calendar.render();
+    });
+    //20.06.17 추가
+    $('.selectResourseId').on('change', function(){
+        var resourceA;
+        var thisVal;
+        $.each($('input[name=selectResourseId]:checked'), function(key,value){
+            thisVal = $(this).val()
+            resourceA = calendar.getResourceById(thisVal);
+            resourceA.remove();
+//            calendar.remove();
+            console.log(thisVal);
+        });
     });
 });
     //옵션트리거
@@ -334,7 +347,7 @@ function callRightSmallNav(e){
 //메뉴호출 빈셀 빈날짜
 function callRightSmallNavEmptyDate(e,el){
     var querySelectorAll=e.target.querySelectorAll(
-        '.fc-title',
+        'div.fc-title',
         '.fc-time',
         '.fc-content',
         '.fc-content',
@@ -380,43 +393,28 @@ $( document ).ready(function() {
     // $("#calendar .res-f").insertAfter("#calendar .fc-toolbar");
 });
 
-//가로보기 기본보기 높이수정
+//가로보기 기본보기 높이수정 20.06.17 수정
 $(document).on('click', '.bas-view', function(){
-    $('.res-t .fc-view-container').css('margin-top','0');
     $('.tab-btn button.on').trigger('click');
-    $('.fc-scroller.fc-time-grid-container').height('696px');
-    $('.fc-scroller.fc-day-grid-container').height('696px');
-});
-$(document).on('click', '.hor-view', function(){
-    $('.fc-scroller.fc-time-grid-container').height('662px');
-    $('.fc-scroller.fc-day-grid-container').height('662px');
-    $('.res-t .fc-view-container').css('margin-top','68px');
 });
 
-//가로보기 일간주간월간 높이 수정
-//일간
-$(document).on('click', '.fc-button-group button', function(){
-    if($('.hor-view').hasClass('on')){
-        $('.fc-scroller.fc-time-grid-container').height('662px');
-        $('.fc-scroller.fc-day-grid-container').height('662px');
-    }
-});
-$(document).on('click', '.fc-button-group button', function(){
-    if($('.hor-view').hasClass('on') && $('.tab-btn button').hasClass('on')){
-        $('.fc-scroller.fc-time-grid-container').height('510px');
-        $('.fc-scroller.fc-day-grid-container').height('510px');
-    }
-});
-
-
+//가로보기 일간주간월간 높이 수정 20.06.17 수정
 $(document).on('click', '.tab-btn button', function(){
     if($(this).hasClass('on')){
-        $('.fc-scroller.fc-time-grid-container').height('510px');
-        $('.fc-scroller.fc-day-grid-container').height('510px');
-    }else{  
-    $('.fc-scroller.fc-time-grid-container').height('662px');
-    $('.fc-scroller.fc-day-grid-container').height('662px');
+        console.log('add');
+        $('.fc-view-container').addClass('on');
+    }else{
+        console.log('re');
+        $('.fc-view-container').removeClass('on');
     }
 });
-
-
+//가로보기 달력 가로크기 20.06.17
+$(document).on('click', '.ui-datepicker-header .ui-corner-all', function(){
+    $('.r-calander .ui-datepicker-calendar tbody tr').contents().unwrap();
+});
+$(window).resize( function(){
+    $('.r-calander .ui-datepicker-calendar tbody tr').contents().unwrap();
+});
+$(document).on('click', 'table.ui-datepicker-calendar', function(){
+    $('.r-calander .ui-datepicker-calendar tbody tr').contents().unwrap();
+});

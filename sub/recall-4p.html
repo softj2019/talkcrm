@@ -46,6 +46,9 @@
 
         window.addEventListener('keydown', handleFirstTab);
     </script>
+    <style type="text/css">
+        
+    </style>
 </head>
 <body>
    <div class="main-wrap">
@@ -62,6 +65,7 @@
                 </li>
                 <li><a href="#"><i class="navfront"></i><span>Front</span></a></li>
                 <li><a href="#"><i class="navcust"></i><span>고객관리</span></a></li>
+                <li><a href="#" class="nav-aP"><i class="mem"></i><span>고객상세</span></a></li><!-- 20.06.08 추가-->
                 <li class="hassub on">
                     <a href="../sub/recall.html"><i class="navrecall"></i><span>리콜관리</span></a>
                     <button type="button" class="down-arrow"></button>
@@ -69,7 +73,7 @@
                         <li><a href="../sub/recall.html">예약취소리콜</a></li>
                         <li><a href="../sub/recall-2p.html">예약부도리콜</a></li>
                         <li><a href="../sub/recall-3p.html">응대리콜</a></li>
-                        <li class="on"><a href="../sub/recall-4p.html">확인콜</a></li>
+                        <li><a href="../sub/recall-4p.html">확인콜</a></li>
                         <li><a href="../sub/recall-5p.html">해피콜</a></li>
                         <li><a href="../sub/recall-6p.html">상담권유리콜</a></li>
                         <li><a href="../sub/recall-7p.html">소개자리콜</a></li>
@@ -269,7 +273,7 @@
                                     <tbody class="sub-btn">
                                         <tr>
                                             <td>
-                                                <button type="button" class="btn-gray ex-btn">엑셀</button>
+                                                <button type="button" class="btn-gray">엑셀</button>
                                                 <button type="button" class="btn-gray">고객이동</button>
                                             </td>
                                         </tr>
@@ -5171,22 +5175,6 @@
                     <ul class="tableFt">
                         <li class="Ftbtn"><button class="btn-white help-btn">목록</button></li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal " id="excel-save">
-        <div class="modal-bg"></div>
-        <div class="modalContent xs board-con">
-            <header class="modalHd ">
-                <h3>내용이 엑셀파일로 저장됩니다. (다운로드 폴더)</h3>
-                <button class="modalClose"></button>
-            </header>
-            <div class="modalBody">
-                <div class="save-box">
-                    <div>파일명</div>
-                    <input type="text" value="리콜관리_20200305.xlsx">
-                    <button type="button" class="btn-grey">저장</button>
                 </div>
             </div>
         </div>
