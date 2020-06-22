@@ -17,7 +17,6 @@
     <link href="../assets/css/reset.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/common.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/header.css" rel="stylesheet" type="text/css">
-
     <!--풀캘린더-->
     <link href="../assets/plugins/fullcalendar/packages/core/main.css" rel="stylesheet" />
     <link href="../assets/plugins/fullcalendar/packages/daygrid/main.css" rel="stylesheet" />
@@ -169,12 +168,17 @@
                         <div class="select">
                             <a href="#">전체선택</a>
                             <ul>
-                                <li><input class="selectResourseId" type="checkbox" id="sel-ck1" name="selectResourseId" checked><label for="sel-ck1"><span></span>전체선택</label></li>
-                                <li><input class="selectResourseId" type="checkbox" id="sel-ck2" name="selectResourseId" value="a"
-                                checked><label for="sel-ck2"><span></span>초진</label></li>
-                                <li><input class="selectResourseId" type="checkbox" id="sel-ck3" name="selectResourseId" value="b" checked><label for="sel-ck3"><span></span>재진</label></li>
-                                <li><input class="selectResourseId" type="checkbox" id="sel-ck4" name="selectResourseId" value="c"  checked><label for="sel-ck4"><span></span>취소</label></li>
-                                <li><input class="selectResourseId" type="checkbox" id="sel-ck5" name="selectResourseId" value="d"  checked><label for="sel-ck5"><span></span>치료</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck1" name="selectResourseId" value="" checked><label for="sel-ck1"><span></span>전체선택</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck2" name="selectResourseId" value="a" checked><label for="sel-ck2"><span></span>전체</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck3" name="selectResourseId" value="b" checked><label for="sel-ck3"><span></span>초진</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck4" name="selectResourseId" value="c" checked><label for="sel-ck4"><span></span>재진</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck5" name="selectResourseId" value="d"  checked><label for="sel-ck5"><span></span>취소</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck6" name="selectResourseId" value="e"  checked><label for="sel-ck6"><span></span>치료</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck7" name="selectResourseId" value="f"  checked><label for="sel-ck7"><span></span>경과</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck8" name="selectResourseId" value="g"  checked><label for="sel-ck8"><span></span>시술</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck9" name="selectResourseId" value="h"  checked><label for="sel-ck9"><span></span>상담</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck10" name="selectResourseId" value="i"  checked><label for="sel-ck10"><span></span>치료</label></li>
+                                <li><input class="selectResourseId" type="checkbox" id="sel-ck11" name="selectResourseId" value="j"  checked><label for="sel-ck11"><span></span>수술1</label></li>
                             </ul>
                         </div>
                     </div>
@@ -348,7 +352,7 @@
             </div>
             <div class="con-right reright-box">
                 <div class="tab-box1">
-                    <div class="res-t clearfix hidden">
+                    <div class="res-t clearfix">
                         <div class="ul-tab-box">
                             <div class="toggle-btnwrap">
                                 <button type="button" class="today-btn">Today</button>
@@ -7140,8 +7144,8 @@
                     dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
                     numberOfMonths: [1,1],
                 });
-                $(".date_pick").datepicker();     
-                
+                $(".date_pick").datepicker();
+                $('.fc-body').selectable();/*2020.06.03 추가*/
                 
             });
         //20.06.17 추가

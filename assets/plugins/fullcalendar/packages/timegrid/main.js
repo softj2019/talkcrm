@@ -163,18 +163,19 @@ Docs & License: https://fullcalendar.io/
                     '') +
                 '>' +
                 '<div class="fc-content">' +
-                (timeText ?
-                    '<div class="fc-time"' +
-                        ' data-start="' + core.htmlEscape(startTimeText) + '"' +
-                        ' data-full="' + core.htmlEscape(fullTimeText) + '"' +
-                        '>' +
-                        '<span>' + core.htmlEscape(timeText) + '</span>' +
-                        '</div>' :
-                    '') +
+
                 (eventDef.title ?
                     '<div class="fc-title">' +
                         core.htmlEscape(eventDef.title) +
                         '</div>' :
+                    '') +
+                (timeText ?
+                    '<div class="fc-time"' +
+                    ' data-start="' + core.htmlEscape(startTimeText) + '"' +
+                    ' data-full="' + core.htmlEscape(fullTimeText) + '"' +
+                    '>' +
+                    '<span>' + core.htmlEscape(timeText) + '</span>' +
+                    '</div>' :
                     '') +
                 '</div>' +
                 /* TODO: write CSS for this

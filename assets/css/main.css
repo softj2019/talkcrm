@@ -52,7 +52,7 @@
 .fc-dayGrid-view .fc-body .fc-row {
     min-height: 10.5em;
 }
-.fc-time-grid-event .fc-time span::before{
+.fc-time-grid-event .fc-title::before{
     content: '';
     display: inline-block;
     width: 18px;
@@ -312,4 +312,7 @@
 }
 .fc-day-header.fc-sun.fc-past span, .fc-day-header.fc-sat.fc-future span{
     color: #333;
+}
+.hidden{
+    display: none!important;
 }
