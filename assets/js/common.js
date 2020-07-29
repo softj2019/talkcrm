@@ -45,7 +45,7 @@ $('.dp1 li').click(function(e){
     $(this).children('a').addClass('on');
     $("#"+tab_id).addClass('on');
 });
-//검색탭
+//검색탭~ 진료서비스 선택 방식 20.07.17 수정
 $('.doc li').click(function(e){
    e.preventDefault();
     $(this).siblings('li').children('a').removeClass('on');
@@ -55,18 +55,42 @@ $('.dp2 table tr').click(function(){
     $('.dp2 table tr').removeClass('on');
     $(this).addClass('on');
 });
-
-$('.srcinput , .srcwrap').focusin(function(){
-    $('.srcwrap').addClass('on');
+$('.dp1 table tr').click(function(){
+    $('.dp1 table tr').removeClass('on');
+    $(this).addClass('on');
 });
-//검색팝업
+//20.07.17 검색팝업 수정
+$(document).on('focusin', '.srcinput', function(){
+    if($(this).val() === ''){
+        $('.srcwrap').addClass('on');
+    }else{
+        $('.srcwrap2').addClass('on');
+    }
+});
+$('.srcinput').on('input',function(){
+    if($(this).val() === ''){
+        $('.srcwrap').addClass('on');
+        $('.srcwrap2').removeClass('on');
+    }
+    else{
+        $('.srcwrap').removeClass('on');
+        $('.srcwrap2').addClass('on');
+    }
+});
+
+//20.07.17 검색팝업 수정
 $('body').on('click', function(e){
     var $tgPoint = $(e.target);
     var $popBtn = $tgPoint.hasClass('srcinput');
     var $popArea = $tgPoint.parents().hasClass('srcwrap');
+    var $popArea2 = $tgPoint.parents().hasClass('srcwrap2');
+    
     
     if ( !$popBtn && !$popArea ){
         $('.srcwrap').removeClass('on');
+    }
+    if( !$popBtn && !$popArea2 ){
+        $('.srcwrap2').removeClass('on');
     }
 });
 //유입경로탭
@@ -171,7 +195,7 @@ $('.Rtab-pri').click(function(){
     $('.pri-on').trigger('click');
 });
 $('.R-T-Close').click(function(){
-    $('.right-tab-box').css('right','-800px');
+    $('.right-tab-box').css('right','-830px');/*20.07.17 수정*/
 });
 
 // 모달
@@ -1362,7 +1386,7 @@ $(document).on('click', '.hoverpop2 .complet-on-btn', function(){
 });
 
 $(document).ready(function(){
-    $('.clk2-tr tr ,.clk3-tr tr').click(function(){
+    $('.clk2-tr tr ,.clk3-tr tr, .Bgck2-tr tr').click(function(){//20.07.17 클래스 추가
         if($(this).hasClass('on')){
             $(this).parent().children('tr').removeClass('on')
         }else{
@@ -1382,7 +1406,7 @@ $(document).ready(function(){
         }
     });
     $('.com-i').on('mousedown', function(){
-        $('.com-i tr').find('td').each(function(i, e){
+        $('.com-i tr').find('td').each(function(){
             var td_W = $(this).width()
             $(this).css('width',td_W);
         });
@@ -1394,4 +1418,77 @@ $('.fnwrap .dp2 td').on('click', function(){
     var depth1 = $('a[data-id="' + tab_id + '"]').text();
     var depth2 = $(this).text();
     $(this).parents('.formwrap3').children('.fn-out').children('input.fninput').val(depth1 + '▶' + depth2);
+});
+//20.06.24 추가
+$(".color-M-btn").click(function(){
+    $("#color-M").addClass('on');
+});
+$(".set-package-add-btn").click(function(){
+    $("#set-package-add").addClass('on');
+});
+$(".drug-reg-btn").click(function(){
+    $("#drug-reg").addClass('on');
+});
+$(".excel-upload-btn").click(function(){
+    $("#excel-upload").addClass('on');
+});
+$(".coupon-reg-btn").click(function(){
+    $("#coupon-reg").addClass('on');
+});
+$(".coupon-name-btn").click(function(){
+    $("#coupon-name").addClass('on');
+});
+$(".bun-prescription-btn").click(function(){
+    $("#bun-prescription").addClass('on');
+});
+$(".msg-class-btn").click(function(){
+    $("#msg-class").addClass('on');
+});
+$(".doctor-M-btn").click(function(){
+    $("#doctor-M").addClass('on');
+});
+$(".chart-reg-btn").click(function(){
+    $("#chart-reg").addClass('on');
+});
+$(".chart-reg-btn").click(function(){
+    $("#chart-reg").addClass('on');
+});
+$(".data-reset-btn").click(function(){
+    $("#data-reset").addClass('on');
+});
+//20.07.17 추가
+$('.drug-add-M button').click(function(){
+    $('.drug-add-M button').removeClass('on');
+    $(this).addClass('on');
+});
+$(".drug-reg-add-btn").click(function(){
+    $("#drug-reg-add").addClass('on');
+});
+//20.07.17 소개자입력 추가
+$(document).on('click', '.table-wrap.blue tr', function(){
+    if($(this).hasClass('on')){
+        $('.table-wrap.blue tr').removeClass('on');
+    }else{
+        $('.table-wrap.blue tr').removeClass('on');
+        $(this).addClass('on')
+    }
+});
+$(document).on('click', '.fr-add-btn', function(){
+    $('#fr-add').addClass('on')
+});
+$(document).on('click', '.fr-rm-btn', function(){
+    $('.table-wrap.blue tr.on').remove()
+});
+$(document).on('change', '#funnels', function(){
+    var std = $("#funnels option:selected").val()
+    if(std == '직원' || std == "지인" || std == "업체"){
+        $('#fr').addClass('on')
+    } ;
+});
+$(document).on('click', 'body', function(e){
+    var $tgPoint = $(e.target);
+    var $popArea = $tgPoint.parents().hasClass('right-tab-box');
+    if ( !$popArea && $('.right-tab-box').css('right')=='0px'){
+        $('.R-T-Close').trigger('click');
+    }
 });

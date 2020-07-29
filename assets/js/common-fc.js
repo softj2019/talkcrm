@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
+        firstDay: 1,//20.07.14 추가
         height: 800,
         locale: 'ko',
         schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
@@ -101,76 +102,73 @@ document.addEventListener('DOMContentLoaded', function() {
             {id: 'i', title: '치료'},
             {id: 'j', title: '수술1'},
         ],
-        // 데이터 베이스 출력 할 리소스 - 예약내역
-        events: {
-            url: '../controller/getEventTest.php',
-            method: 'POST'
-        },
-        events: [
-            //    U key            행   시작시간                   종료시간                       예약명
-
-            {
-                id: '2',
-                resourceId: 'a',
-                title: 'event 2',
-                start: today + 'T09:00:00',
-                end: today + 'T09:30:00',
-                description: '' +
-                    '' +
-                    '<ul class="eventDescription">\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">상담사</span> : <span class="popTd">김진수</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">상담결과</span> : <span class="popTd">성공</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">희망일자</span> : <span class="popTd"></span>\n' +
-                    '    </li>\n' +
-                    '    <li>\n' +
-                    '        <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>\n' +
-                    '    </li>\n' +
-                    '</ul>' +
-                    '',
-            },
-
-            {id: '3', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 3',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
-            {id: '4', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 4',backgroundColor:'#DBEFDC',textColor:'#285B2A',borderColor:"#4CAF50"},
-            {id: '5', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 5',backgroundColor:'#FDD9D7',textColor:'#51221F',borderColor:"#F44336"},
-
-            {id: '6', resourceId: 'a', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 6',backgroundColor:'#f0f0f0',textColor:'#666',borderColor:"#ccc"},
-            {id: '7', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 7',backgroundColor:'#FFDECD',textColor:'#854D04',borderColor:"#F48236"},
-            {id: '8', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 8',backgroundColor:'#CDFDFF',textColor:'#045985',borderColor:"#4C9EAF"},
-            {id: '9', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 9',backgroundColor:'#CDCDFF',textColor:'#260485',borderColor:"#7547C7"},
-
-            {id: '10', resourceId: 'b', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 10',backgroundColor:'#FDCDFF',textColor:'#85044D',borderColor:"#C747C2"},
-            {id: '11', resourceId: 'b', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 11',backgroundColor:'#666666',textColor:'#fff',borderColor:"#333333"},
-            {id: '12', resourceId: 'b', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 12',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
-            {id: '13', resourceId: 'b', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 13',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
-
-
-        ],
-        selectOverlap: function(event) {
-            return event.rendering === 'background';
-        },
+        //데이터 베이스 출력 할 리소스 - 예약내역 20.06.25 수정
+         eventsResources: { 
+             url: '../controller/getEventTest.php',
+             method: 'POST'
+         },
+        // events: [
+        //     //    U key            행   시작시간                   종료시간                       예약명
+        //
+        //     {
+        //         id: '2',
+        //         resourceId: 'a',
+        //         title: 'event 2',
+        //         start: today + 'T09:00:00',
+        //         end: today + 'T09:30:00',
+        //         description: '' +
+        //             '' +
+        //             '<ul class="eventDescription">\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">상담사</span> : <span class="popTd">김진수</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">상담결과</span> : <span class="popTd">성공</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">희망일자</span> : <span class="popTd"></span>\n' +
+        //             '    </li>\n' +
+        //             '    <li>\n' +
+        //             '        <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>\n' +
+        //             '    </li>\n' +
+        //             '</ul>' +
+        //             '',
+        //     },
+        //
+        //     {id: '3', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 3',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
+        //     {id: '4', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 4',backgroundColor:'#DBEFDC',textColor:'#285B2A',borderColor:"#4CAF50"},
+        //     {id: '5', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 5',backgroundColor:'#FDD9D7',textColor:'#51221F',borderColor:"#F44336"},
+        //
+        //     {id: '6', resourceId: 'a', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 6',backgroundColor:'#f0f0f0',textColor:'#666',borderColor:"#ccc"},
+        //     {id: '7', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 7',backgroundColor:'#FFDECD',textColor:'#854D04',borderColor:"#F48236"},
+        //     {id: '8', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 8',backgroundColor:'#CDFDFF',textColor:'#045985',borderColor:"#4C9EAF"},
+        //     {id: '9', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 9',backgroundColor:'#CDCDFF',textColor:'#260485',borderColor:"#7547C7"},
+        //
+        //     {id: '10', resourceId: 'b', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 10',backgroundColor:'#FDCDFF',textColor:'#85044D',borderColor:"#C747C2"},
+        //     {id: '11', resourceId: 'b', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 11',backgroundColor:'#666666',textColor:'#fff',borderColor:"#333333"},
+        //     {id: '12', resourceId: 'b', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 12',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
+        //     {id: '13', resourceId: 'b', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 13',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
+        //
+        //
+        // ],
         //현재 렌더링 된 날짜 세트가 DOM에서 제거되기 전에 트리거됩니다
         // datesDestroy(arg) {
             // console.log('datesDestroy',arg);
@@ -187,14 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // },
         //날짜 드래그 선택
-        select: function (arg,start,end) {
-            console.log('select',start,end,
-                arg
-                // 'select',
-                // arg.startStr,
-                // arg.endStr,
-                // arg.resource ? arg.resource.id : '(no resource)'
-            );
+        select: function (arg) {
+             console.log('select',
+                 arg
+                 // 'select',
+                 // arg.startStr,
+                 // arg.endStr,
+                 // arg.resource ? arg.resource.id : '(no resource)'
+             );
             if(arg.endStr){
                 // callRightSmallNavEmptyDate(arg.jsEvent,arg.view);
             }
@@ -215,9 +213,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // },
         //새로운 날짜 집합이 렌더링되면 트리거됩니다.
-        datesRender(arg) {
+        datesRender: function(arg) {
             //마우스 우클릭
-            arg.el.oncontextmenu = ((e) => {
+            arg.el.oncontextmenu = (function(e){ //20.06.25 수정
                 callRightSmallNavEmptyDate(e, arg);
             });
         },
@@ -231,15 +229,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 html: true,
             });
 
-            arg.el.ondblclick = (() => {
+            arg.el.ondblclick = (function(){//20.06.25 수정
                 $('#reserv').addClass('on');
             });
             // arg.el.onclick = ((e) => {
                 // e.preventDefault();
             // })
-            arg.el.oncontextmenu = ((e) => {
-                callRightSmallNav(e);
-            });
+             arg.el.oncontextmenu = (function(e){//20.06.25 수정
+                 callRightSmallNav(e);
+             });
             // arg.el.onmousedown= ((e)=>{
             //     if(e.button===2){
             //         callRightSmallNav(e);
@@ -278,9 +276,9 @@ document.addEventListener('DOMContentLoaded', function() {
             $('.tooltip').addClass('hidden');
             callRightSmallNav(arg.jsEvent)
         },
-        eventResize(arg) {
-            console.log('eventResize');
-        },
+         eventResize: function(arg) {
+             console.log('eventResize');
+         },
 //        드롭
          eventDrop: function(info) {
         // alert(info.event.title + " was dropped on " + info.event.start.toISOString());
@@ -298,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     calendar.render();
 
-    //예약 이벤트 추가
+    //예약 등록 > 예약 정보 저장 시 예약 이벤트 추가 2020.07.29
     $('#submitReservAdd').on('click',function () {
         // id: 'a', title: '전체'
         // id: 'b', title: '초진'
@@ -313,12 +311,47 @@ document.addEventListener('DOMContentLoaded', function() {
         var formData = $('#reservAddForm').serializeArray();
 
         calendar.addEvent({
-            id: Math.round( Math.random()*10),//d
-            resourceId: 'c',
-            start:  formData[4].value+'T'+formData[5].value,
-            end:  formData[4].value+'T'+formData[6].value,
-            title: formData[2].value
-
+            id: Math.round( Math.random()*10),//랜던생성된 고유 키
+            resourceId: 'c',//각 행 의 타켓 id 상단 주석 참조
+            start:  formData[4].value+'T'+formData[5].value,//시작시간
+            end:  formData[4].value+'T'+formData[6].value,//종료시간
+            title: formData[2].value,//예약제목
+            //마우스 오버시 출력될 내용
+            description: '' +
+                '' +
+                '<ul class="eventDescription">\n' +
+                '    <li>\n' +
+                '        <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">상담사</span> : <span class="popTd">김진수</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">상담결과</span> : <span class="popTd">성공</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">희망일자</span> : <span class="popTd"></span>\n' +
+                '    </li>\n' +
+                '    <li>\n' +
+                '        <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>\n' +
+                '    </li>\n' +
+                '</ul>' +
+                '',
         });
         $('#reserv').removeClass('on');
         calendar.render();
