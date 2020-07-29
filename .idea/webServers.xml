@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="c5063fc9-536f-4e89-ab3a-6bcda4fd0094" name="test.vryus.co.kr" url="http://test.vryus.co.kr">
+      <webServer id="c5063fc9-536f-4e89-ab3a-6bcda4fd0094" name="test.vryus.co.kr" url="localhost">
         <fileTransfer host="test.vryus.co.kr" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

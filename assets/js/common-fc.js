@@ -101,73 +101,76 @@ document.addEventListener('DOMContentLoaded', function() {
             {id: 'i', title: '치료'},
             {id: 'j', title: '수술1'},
         ],
-        //데이터 베이스 출력 할 리소스 - 예약내역
+        // 데이터 베이스 출력 할 리소스 - 예약내역
         events: {
             url: '../controller/getEventTest.php',
             method: 'POST'
         },
-        // events: [
-        //     //    U key            행   시작시간                   종료시간                       예약명
-        //
-        //     {
-        //         id: '2',
-        //         resourceId: 'a',
-        //         title: 'event 2',
-        //         start: today + 'T09:00:00',
-        //         end: today + 'T09:30:00',
-        //         description: '' +
-        //             '' +
-        //             '<ul class="eventDescription">\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">상담사</span> : <span class="popTd">김진수</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">상담결과</span> : <span class="popTd">성공</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">희망일자</span> : <span class="popTd"></span>\n' +
-        //             '    </li>\n' +
-        //             '    <li>\n' +
-        //             '        <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>\n' +
-        //             '    </li>\n' +
-        //             '</ul>' +
-        //             '',
-        //     },
-        //
-        //     {id: '3', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 3',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
-        //     {id: '4', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 4',backgroundColor:'#DBEFDC',textColor:'#285B2A',borderColor:"#4CAF50"},
-        //     {id: '5', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 5',backgroundColor:'#FDD9D7',textColor:'#51221F',borderColor:"#F44336"},
-        //
-        //     {id: '6', resourceId: 'a', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 6',backgroundColor:'#f0f0f0',textColor:'#666',borderColor:"#ccc"},
-        //     {id: '7', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 7',backgroundColor:'#FFDECD',textColor:'#854D04',borderColor:"#F48236"},
-        //     {id: '8', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 8',backgroundColor:'#CDFDFF',textColor:'#045985',borderColor:"#4C9EAF"},
-        //     {id: '9', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 9',backgroundColor:'#CDCDFF',textColor:'#260485',borderColor:"#7547C7"},
-        //
-        //     {id: '10', resourceId: 'b', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 10',backgroundColor:'#FDCDFF',textColor:'#85044D',borderColor:"#C747C2"},
-        //     {id: '11', resourceId: 'b', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 11',backgroundColor:'#666666',textColor:'#fff',borderColor:"#333333"},
-        //     {id: '12', resourceId: 'b', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 12',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
-        //     {id: '13', resourceId: 'b', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 13',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
-        //
-        //
-        // ],
+        events: [
+            //    U key            행   시작시간                   종료시간                       예약명
+
+            {
+                id: '2',
+                resourceId: 'a',
+                title: 'event 2',
+                start: today + 'T09:00:00',
+                end: today + 'T09:30:00',
+                description: '' +
+                    '' +
+                    '<ul class="eventDescription">\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">상담일</span> : <span class="popTd">2020-03-04 수</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">상담사</span> : <span class="popTd">김진수</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">상담분류</span> : <span class="popTd">초진_이벤트</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">상담결과</span> : <span class="popTd">성공</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">표준금액</span> : <span class="popTd">900,000</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">할인금액</span> : <span class="popTd">100,000</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">견적금액</span> : <span class="popTd">800,000</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">할인사유</span> : <span class="popTd">지인소개</span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">희망일자</span> : <span class="popTd"></span>\n' +
+                    '    </li>\n' +
+                    '    <li>\n' +
+                    '        <span class="popTh">메모</span> : <span class="popTd">메모를 입력합니다. 메모를 입력합니다. 메모를 입력합니다.</span>\n' +
+                    '    </li>\n' +
+                    '</ul>' +
+                    '',
+            },
+
+            {id: '3', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 3',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
+            {id: '4', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 4',backgroundColor:'#DBEFDC',textColor:'#285B2A',borderColor:"#4CAF50"},
+            {id: '5', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 5',backgroundColor:'#FDD9D7',textColor:'#51221F',borderColor:"#F44336"},
+
+            {id: '6', resourceId: 'a', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 6',backgroundColor:'#f0f0f0',textColor:'#666',borderColor:"#ccc"},
+            {id: '7', resourceId: 'a', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 7',backgroundColor:'#FFDECD',textColor:'#854D04',borderColor:"#F48236"},
+            {id: '8', resourceId: 'a', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 8',backgroundColor:'#CDFDFF',textColor:'#045985',borderColor:"#4C9EAF"},
+            {id: '9', resourceId: 'a', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 9',backgroundColor:'#CDCDFF',textColor:'#260485',borderColor:"#7547C7"},
+
+            {id: '10', resourceId: 'b', start: today + 'T09:00:00', end: today + 'T09:30:00', title: 'event 10',backgroundColor:'#FDCDFF',textColor:'#85044D',borderColor:"#C747C2"},
+            {id: '11', resourceId: 'b', start: today + 'T10:00:00', end: today + 'T10:30:00', title: 'event 11',backgroundColor:'#666666',textColor:'#fff',borderColor:"#333333"},
+            {id: '12', resourceId: 'b', start: today + 'T11:00:00', end: today + 'T11:30:00', title: 'event 12',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
+            {id: '13', resourceId: 'b', start: today + 'T14:00:00', end: today + 'T14:30:00', title: 'event 13',backgroundColor:'#CCD6E3',textColor:'#001B3C',borderColor:"#003473"},
+
+
+        ],
+        selectOverlap: function(event) {
+            return event.rendering === 'background';
+        },
         //현재 렌더링 된 날짜 세트가 DOM에서 제거되기 전에 트리거됩니다
         // datesDestroy(arg) {
             // console.log('datesDestroy',arg);
@@ -184,8 +187,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // },
         //날짜 드래그 선택
-        select: function (arg) {
-            console.log('select',
+        select: function (arg,start,end) {
+            console.log('select',start,end,
                 arg
                 // 'select',
                 // arg.startStr,
